@@ -23,7 +23,17 @@
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": null
+      }
+    ]
   },
   "concepts": [],
   "key_features": [],
