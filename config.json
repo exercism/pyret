@@ -8,22 +8,44 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "A programming language explicitly designed to introduce students to computer science, Pyret plays a central role in 'A Data-Centric Introduction to Computing', an introductory college textbook, and is currently being taught in U.S. high schools",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4,
+    "indent_size": 2,
     "highlightjs_language": "TODO: specify highlightjs language"
   },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "%{kebab_slug}.arr"
+    ],
+    "test": [
+      "%{kebab_slug}-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ],
+    "exemplar": [
+      ".meta/exemplar.arr"
+    ]
+  },
+  "approaches": {
+    "snippet_extension": "arr"
   },
   "exercises": {
     "concept": [],
     "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Ahoy World",
+        "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
       {
         "slug": "darts",
         "name": "Darts",
@@ -36,6 +58,32 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "Simplified syntax",
+      "content": "As a teaching language, Pyret prioritizes readability using clean and straight-forward syntax",
+      "icon": "readable"
+    },
+    {
+      "title": "Pedagogical design",
+      "content": "Pyret was explicitly designed for a gradual learning curve, focusing on general programming practices",
+      "icon": "easy"
+    },
+    {
+      "title": "Innovative",
+      "content": "Pyret is an actively-developed testbed for pedagogy in high school and college computer science.",
+      "icon": "evolving"
+    }
+  ],
+  "tags": [
+      "execution_mode/compiled",
+      "paradigm/functional",
+      "typing/dynamic",
+      "platform/windows",
+      "platform/mac",
+      "platform/linux",
+      "runtime/language_specific",
+      "used_for/scientific_calculations",
+      "used_for/scripts"
+  ]
 }
