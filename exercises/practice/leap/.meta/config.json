@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "leap.arr"
+    ],
+    "test": [
+      "leap-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
