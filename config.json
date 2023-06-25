@@ -47,6 +47,20 @@
         ]
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "dff46c06-d8be-48e0-8158-4c6c484a3cbc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "algorithms",
+          "conditionals",
+          "loops",
+          "strings"
+        ]
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
