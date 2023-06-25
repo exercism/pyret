@@ -47,6 +47,15 @@
         ]
       },
       {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": null
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "d70a98f9-4743-40b7-ab18-f37d5508a7a5",
