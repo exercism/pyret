@@ -23,7 +23,17 @@
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": null
+      }
+    ]
   },
   "concepts": [],
   "key_features": [],
