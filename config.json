@@ -80,6 +80,15 @@
         "status": "beta"
       },
       {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
+      {
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
         "uuid": "3f897d66-6f49-49ca-a6ab-a168d6ef5e68",
