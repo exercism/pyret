@@ -8,7 +8,7 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "A programming language explicitly designed to introduce students to computer science, Pyret plays a central role in 'A Data-Centric Introduction to Computing', an introductory college textbook, and is currently being taught in U.S. high schools",
+  "blurb": "Designed in part to ease students into computer science fundamentals, Pyret plays a central role in 'A Data-Centric Introduction to Computing', an introductory college textbook, and is currently being taught in U.S. high schools.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
@@ -41,10 +41,7 @@
         "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "isogram",
@@ -53,12 +50,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "conditionals",
-          "loops",
-          "strings"
-        ]
+        "status": "beta"
       },
       {
         "slug": "triangle",
@@ -66,8 +58,8 @@
         "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": null
+        "difficulty": 3,
+        "status": "beta"
       },
       {
         "slug": "resistor-color",
@@ -75,8 +67,8 @@
         "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": null
+        "difficulty": 2,
+        "status": "beta"
       },
       {
         "slug": "leap",
@@ -84,8 +76,8 @@
         "uuid": "c67175ca-9706-4aec-a45b-040a23ef25c7",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": null
+        "difficulty": 3,
+        "status": "beta"
       },
       {
         "slug": "resistor-color-duo",
@@ -94,7 +86,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
-        "topics": null
+        "status": "beta"
       },
       {
         "slug": "darts",
@@ -103,7 +95,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": null
+        "status": "beta"
       }
     ]
   },
@@ -112,16 +104,31 @@
     {
       "title": "Simplified syntax",
       "content": "As a teaching language, Pyret prioritizes readability using clean and straight-forward syntax",
-      "icon": "readable"
-    },
-    {
-      "title": "Pedagogical design",
-      "content": "Pyret was explicitly designed for a gradual learning curve, focusing on general programming practices",
       "icon": "easy"
     },
     {
+      "title": "Runs almost everywhere",
+      "content": "Pyret is available wherever npm can be installed or online at https://code.pyret.org/editor",
+      "icon": "cross-platform"
+    },
+    {
+      "title": "Pedagogical design",
+      "content": "Pyret was designed to have a gradual learning curve, focusing on general programming practices",
+      "icon": "easy"
+    },
+    {
+      "title": "Lightweight",
+      "content": "Entire toolchain is about 100 MB download",
+      "icon": "small"
+    },
+    {
+      "title": "Tooling",
+      "content": "Pyret provides a built-in test runner, making testing a natural part of the development process",
+      "icon": "tooling"
+    },
+    {
       "title": "Innovative",
-      "content": "Pyret is an actively-developed testbed for pedagogy in high school and college computer science.",
+      "content": "Pyret is an actively-developed testbed for advancements in teaching computer science fundamentals",
       "icon": "evolving"
     }
   ],
