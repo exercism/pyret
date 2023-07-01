@@ -80,6 +80,15 @@
         "status": "beta"
       },
       {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "status": "beta"
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
