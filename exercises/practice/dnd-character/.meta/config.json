@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "BNAndras"
+  ],
   "files": {
     "solution": [
       "dnd-character.arr"
