@@ -97,6 +97,15 @@
         "difficulty": 3,
         "status": "beta"
       },
+            {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "8dcd513e-93f5-499b-a388-0a7f3c7898dd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
       {
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
