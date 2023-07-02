@@ -89,6 +89,15 @@
         "status": "beta"
       },
       {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "beta"
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
