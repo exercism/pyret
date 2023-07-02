@@ -1,29 +1,21 @@
-provide-types *
+provide: character, modifier, ability end
 
-data Character:
-  | randomized-character() with:
-    method roll-stats(self) -> Character:
-      abilities = self.ability()
-      strength = self.ability()
-      dexterity = self.ability()
-      constitution = self.ability()
-      intelligence = self.ability()
-      wisdom = self.ability()
-      charisma = self.ability()
-      character(strength, dexterity, constitution, intelligence, wisdom, charisma)
-    end
-  | character(strength, dexterity, constitution, intelligence, wisdom, charisma) with:
-    method get-hitpoints(self):
-      10 + self.modifier(self.constitution)
-    end,
-    method modifier(self, value :: NumInteger) -> NumInteger:
-      modified = (value - 10) / 2
-      num-floor(modified)
-    end
-sharing:
-    method ability(self) -> NumInteger:
-      roll-dice = lam(_): num-random(5) + 1 end
-      rolls = map(roll-dice, repeat(4, 0))
-      rolls.sort().drop(1).foldl(lam(elt, acc): elt + acc end, 0)
-    end
+modifier = lam(value): num-floor((value - 10) / 2) end
+ability = lam():
+    roll-dice = lam(_): num-random(5) + 1 end
+    rolls = map(roll-dice, repeat(4, 0))
+    rolls.sort().drop(1).foldl(lam(elt, acc): elt + acc end, 0)
+end
+
+character = lam():
+  constitution = ability()
+  {
+    strength: ability(),
+    dexterity: ability(),
+    constitution: constitution,
+    intelligence: ability(),
+    wisdom: ability(),
+    charisma: ability(),
+    hitpoints: modifier(constitution)
+  }
 end
