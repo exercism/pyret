@@ -1,1 +1,3 @@
-TODO: add snippet
+fun hello(name):
+    "Hello, " + name + "!"
+end
