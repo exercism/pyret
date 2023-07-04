@@ -1,13 +1,6 @@
 # Learning
 
-<!-- TODO: write document
-
-  This document should link to learning resources.
-
-  Feel free to link to any good learning resources you know, whether they
-  be websites, blogs, books, videos or courses.
-
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/learning`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+Besides Exercism's exercises and mentoring, here are some other resources from the PLT group at Brown University and academics around the world.
+* [A Data-Centric Introduction to Computing][https://dcic-world.org/]
+* [Programming and Programming Languages][https://papl.cs.brown.edu/2020/]
+* [Grade 7 - 12 Lesson Plans for Bootstrap:Data Science][https://www.bootstrapworld.org/materials/fall2023/en-us/courses/data-science/]
