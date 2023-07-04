@@ -1,15 +1,14 @@
 # Installation
 
-<!-- TODO: write document
+You can install Pyret by first installing [NodeJS][node-js] for your operating system. After that, you can use the `npm` package manager to install the [pyret-npm][pyret-npm] package by running `npm install pyret-npm`.
 
-  This document should describe what the student needs to install
-  to allow working on the track on their local system using the CLI.
 
-  You can include the installation instructions in this document, but
-  usually it is better to link to a resource with the official installation
-  instructions, to prevent the instructions from becoming outdated.
+## IDEs
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/installation`.
+Because offline use of Pyret is experimental at the moment, there isn't strong IDE support and using the [online CPO editor][cpo] will generally give you the best experience out of the box. Syntax highlighting is provided in Atom and Pulsar Edit by [atom-language-pyret][atom-language-pyret] or in Visual Studio Code by [the Pyret extension][vscode-pyret].
 
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[node-js]: https://nodejs.org/en/download
+[pyret-npm]: https://npm.io/package/pyret-npm
+[cpo]: https://code.pyret.org/editor
+[atom-language-pyret]: https://github.com/brownplt/atom-language-pyret
+[vscode-pyret]: https://marketplace.visualstudio.com/items?itemName=SethPoulsen.vscode-language-pyret
