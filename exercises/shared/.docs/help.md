@@ -1,21 +1,9 @@
 # Help
 
-<!-- TODO: write document
+Below are some resources for getting help if you run into trouble:
 
-  This document should contain track-specific instructions on how to get help when
-  the student is stuck.
-
-  The instructions should be short and to the point.
-
-  You could link to resources like Gitter channels, forums or mailing lists:
-  whatever can help a student become unstuck.
-
-  This document should **not** link to Exercism-wide (track-agnostic) help resources,
-  as those resources will automatically be included in the HELP.md file.
-
-  The links in this document can overlap with those in docs/LEARNING.md or docs/RESOURCES.md
-
-  When a student downloads an exercise via the CLI, this file's contents are
-  included into the HELP.md file.
-
-  See https://exercism.org/docs/building/tracks/shared-files for more information. -->
+* [Official Pyret Documentation](https://pyret.org/docs/latest/)
+* [Official Pyret Online Editor](https://code.pyret.org/editor)
+* [Pyret Discuss on Google Groups](https://groups.google.com/g/pyret-discuss)
+* [Pyret Twitter](https://twitter.com/pyretlang)
+* [Pyret Discord](https://discord.gg/9nFHuaBp)

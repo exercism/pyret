@@ -1,15 +1,33 @@
 # Tests
 
-<!-- TODO: write document
+This track uses `pyret` which is [available as a NPM package][pyret-npm]. Once installed, you can run your exercise's test file by passing `pyret` its location relative to your current working directory.
 
-  This document should contain instructions on how to run the exercise's tests.
+Linux/MacOS
+```bash
+$ cd {path/to/exercise-folder-location}
+```
 
-  The instructions should be short and to the point.
+Windows
+```powershell
+PS C:\Users\foobar> cd {path\to\exercise-folder-location}
+```
 
-  The docs/TESTS.md file can contain a more verbose description on how to run tests.
+Then you can run the tests by running the `pyret` command as shown below, replacing `{exercise-test.arr}` with the name of the test file.
 
-  When a student downloads an exercise via the CLI, this file's contents are
-  included into the HELP.md file.
+Linux/MacOS
+```bash
+$ pyret {exercise-test.arr}
+2/2 modules compiled ({exercise-test.arr})
+Cleaning up and generating standalone...
+Looks shipshape, all 9 tests passed, mate!
+```
 
-  See https://exercism.org/docs/building/tracks/shared-files for more information.
--->
+Windows
+```powershell
+PS C:\Users\foobar\Exercism\pyret\exercise> pyret {exercise-test.arr}
+2/2 modules compiled ({exercise-test.arr})
+Cleaning up and generating standalone...
+Looks shipshape, all 9 tests passed, mate!
+```
+
+[pyret-npm]: "https://www.npmjs.com/package/pyret-npm"
