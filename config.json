@@ -125,6 +125,15 @@
         "status": "beta"
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "3a830edd-253c-4889-ad6b-9402fea4af97",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
