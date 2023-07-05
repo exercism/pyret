@@ -143,6 +143,15 @@
         "topics": null
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
+      {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
