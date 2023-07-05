@@ -143,6 +143,15 @@
         "topics": null
       },
       {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "52e3290f-b78f-423f-a1cf-d727edc9fa73",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
