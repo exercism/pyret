@@ -80,17 +80,17 @@
         "status": "beta"
       },
       {
-        "slug": "leap",
-        "name": "Leap",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
         "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
+        "difficulty": 3,
         "status": "beta"
       },
       {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
+        "slug": "leap",
+        "name": "Leap",
         "uuid": "c67175ca-9706-4aec-a45b-040a23ef25c7",
         "practices": [],
         "prerequisites": [],
