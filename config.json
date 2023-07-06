@@ -80,8 +80,8 @@
         "status": "beta"
       },
       {
-        "slug": "etl",
-        "name": "Etl",
+        "slug": "leap",
+        "name": "Leap",
         "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
         "practices": [],
         "prerequisites": [],
