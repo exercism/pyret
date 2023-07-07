@@ -80,6 +80,15 @@
         "status": "beta"
       },
       {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "dc4437e4-9ab3-4ab0-ae0d-ae3d2287e97c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "beta"
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
