@@ -170,6 +170,14 @@
         "status": "beta"
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "04948c47-34d1-4200-a6f0-5131f63c5600",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
