@@ -125,6 +125,15 @@
         "status": "beta"
       },
       {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "7263c877-5ddd-4c48-886f-e3f57967f649",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "beta"
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
