@@ -124,7 +124,7 @@
         "difficulty": 2,
         "status": "beta"
       },
-            {
+      {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "7263c877-5ddd-4c48-886f-e3f57967f649",
