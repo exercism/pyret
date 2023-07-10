@@ -72,7 +72,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "a86c1654-da80-46c9-aba5-a2eec3f66262",
         "practices": [],
         "prerequisites": [],
