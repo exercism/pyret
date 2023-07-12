@@ -279,7 +279,7 @@
       "execution_mode/compiled",
       "paradigm/functional",
       "typing/dynamic",
-      "platform/windows",
+      "platform/web",
       "platform/mac",
       "platform/linux",
       "runtime/language_specific",
