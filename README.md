@@ -7,7 +7,8 @@ Exercism exercises in Pyret.
 ## Testing
 
 To test the exercises, run `./bin/test`.
-This command will iterate over all exercises and check to see if their exemplar/example implementation passes all the tests.
+This command will iterate over all exercises and check to see if their exemplar/example implementation passes all the tests.  
+**Note:** Pyret doesn't work on Windows, but if you have one, feel free to use WSL to run `./bin/test`.
 
 ### Track linting
 
