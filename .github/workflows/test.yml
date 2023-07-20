@@ -13,26 +13,27 @@
 # Requires scripts:
 # - bin/test
 
-name: pyret / Test
+name: <track> / Test
 
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: <image-name>
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js LTS (18.x)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-    
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use <setup tooling>
+        uses: <action to setup tooling>
+
       - name: Install project dependencies
-        run: npm ci
+        run: <install dependencies>
 
       - name: Verify all exercises
         run: bin/verify-exercises
