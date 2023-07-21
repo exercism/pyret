@@ -151,6 +151,14 @@
         "status": "beta"
       },
       {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "8dcd513e-93f5-499b-a388-0a7f3c7898dd",
