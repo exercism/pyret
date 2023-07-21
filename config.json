@@ -116,6 +116,14 @@
         "status": "beta"
       },
       {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
@@ -141,6 +149,14 @@
         "prerequisites": [],
         "difficulty": 3,
         "status": "beta"
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "raindrops",
@@ -279,7 +295,7 @@
       "execution_mode/compiled",
       "paradigm/functional",
       "typing/dynamic",
-      "platform/windows",
+      "platform/web",
       "platform/mac",
       "platform/linux",
       "runtime/language_specific",
