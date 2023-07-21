@@ -1,6 +1,6 @@
-provide: binary_search end
+provide: binary-search end
 
-fun binary_search(numbers, x):
+fun binary-search(numbers, x):
   n = num-floor((numbers.length() - 1) / 2)
   if numbers.length() == 0 block:
     raise("value not in list")
@@ -11,12 +11,12 @@ fun binary_search(numbers, x):
     when new_numbers.suffix == numbers block:
       raise("value not in list")
     end
-    n + 1 + binary_search(new_numbers.suffix, x)
+    n + 1 + binary-search(new_numbers.suffix, x)
   else:
     var new_numbers = split-at(n, numbers)
     when new_numbers.prefix == numbers block:
       raise("value not in list")
     end
-    binary_search(new_numbers.prefix, x)
+    binary-search(new_numbers.prefix, x)
   end
 end

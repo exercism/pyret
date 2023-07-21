@@ -1,5 +1,5 @@
-provide: binary_search end
+provide: binary-search end
 
-fun binary_search(numbers, x):
-  raise("Please implement the binary_search function")
+fun binary-search(lst, elt):
+  raise("Please implement the binary-search function")
 end
