@@ -1,8 +1,10 @@
 # Tests
-Execute the tests by passing the location of the test as a relative path to `pyret`:
+
+When working offline, first make sure [pyret-npm][pyret-npm] is installed and available. Then execute tests by passing to `pyret` the location of the test file relative to your current working directory.
 `$ pyret relative/path/to/example-test.arr`
 
 # Debugging
+
 In many languages, there is a common idiom of printing text to the screen during code execution. This can trivially be done using the
 [`print`][print] function which prints its provided value and then returns it.
 
@@ -83,14 +85,13 @@ Spying "subtracting" (at .../math.arr:6:2-6:35)
 true
 ```
 
-
-
 # Notes
+
 Tests on this track will `import` your file, allowing them access to anything explicitly exported from your code.
 
 To export bindings, you need to add a [`provide statement`][provide-statement] on the first line that specifies that bindings in a comma-separated list like `provide foo, bar end` to allow the tests to import both `foo` and `bar`. To import all bindings, you can use `provide *`, but generally that's not recommended because it may pollute the namespace and lead to [shadowing][shadowing] which Pyret does not allow.
 
-To export a custom type / data declaration, you instead should use a `provide-types statement` as `provide-types *`. It is an error to try and provide 
+To export a custom type / data declaration, you instead should use a `provide-types statement` as `provide-types *`. It is an error to try and provide
 
 ```pyret
 provide-types *
@@ -103,6 +104,7 @@ end
 
 All exercise stubs will have either `provide` or `provide-types` statements set up for your use.
 
+[pyret-npm]: https://npm.io/package/pyret-npm
 [print]: https://pyret.org/docs/latest/_global_.html#%28part._~3cglobal~3e_print%29
 [spy-statement]: https://pyret.org/docs/latest/s_spies.html
 [provide-statement]: https://pyret.org/docs/latest/Provide_Statements.html
