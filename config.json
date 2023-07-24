@@ -53,6 +53,14 @@
         "status": "beta"
       },
       {
+        "slug": "flatten-array",
+        "name": "Flatten List",
+        "uuid": "23b5a864-186c-4a4d-ba32-83608b0d18f6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
