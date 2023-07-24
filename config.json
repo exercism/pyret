@@ -154,7 +154,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }
+      },
       {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
@@ -200,7 +200,8 @@
         "name": "Reverse String",
         "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
         "practices": [],
-        "prerequisites": []
+        "prerequisites": [],
+        "difficulty": 1
       },
       {
         "slug": "secret-handshake",
