@@ -36,12 +36,12 @@
     "concept": [],
     "practice": [
       {
-        "slug": "hello-world",
-        "name": "Ahoy World",
-        "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "52e3290f-b78f-423f-a1cf-d727edc9fa73",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
         "slug": "armstrong-numbers",
@@ -52,40 +52,12 @@
         "difficulty": 2
       },
       {
-        "slug": "isogram",
-        "name": "Isogram",
-        "uuid": "dff46c06-d8be-48e0-8158-4c6c484a3cbc",
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "7263c877-5ddd-4c48-886f-e3f57967f649",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "triangle",
-        "name": "Triangle",
-        "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "beta"
-      },
-      {
-        "slug": "etl",
-        "name": "ETL",
-        "uuid": "a86c1654-da80-46c9-aba5-a2eec3f66262",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "beta"
+        "difficulty": 3
       },
       {
         "slug": "binary-search",
@@ -93,114 +65,7 @@
         "uuid": "dc4437e4-9ab3-4ab0-ae0d-ae3d2287e97c",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "status": "beta"
-      },
-      {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "difference-of-squares",
-        "name": "Difference of Squares",
-        "uuid": "6968b216-4478-4778-93d3-197ed849fd40",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "leap",
-        "name": "Leap",
-        "uuid": "c67175ca-9706-4aec-a45b-040a23ef25c7",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "two-fer",
-        "name": "Two Fer",
-        "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "space-age",
-        "name": "Space Age",
-        "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "beta"
-      },
-      {
-        "slug": "atbash-cipher",
-        "name": "Atbash Cipher",
-        "uuid": "7263c877-5ddd-4c48-886f-e3f57967f649",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "collatz-conjecture",
-        "name": "Collatz Conjecture",
-        "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "reverse-string",
-        "name": "Reverse String",
-        "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
-        "practices": [],
-        "prerequisites": [],
         "difficulty": 2
-      },
-      {
-        "slug": "raindrops",
-        "name": "Raindrops",
-        "uuid": "8dcd513e-93f5-499b-a388-0a7f3c7898dd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
-        "uuid": "3f897d66-6f49-49ca-a6ab-a168d6ef5e68",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "series",
-        "name": "Series",
-        "uuid": "f58b5305-3bf2-4c15-8aac-339a97204d06",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
-      {
-        "slug": "secret-handshake",
-        "name": "Secret Handshake",
-        "uuid": "3a830edd-253c-4889-ad6b-9402fea4af97",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
       },
       {
         "slug": "bob",
@@ -208,26 +73,47 @@
         "uuid": "28d1beed-ff83-4341-8a71-08fd287489fd",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "status": "beta"
+        "difficulty": 2
       },
       {
-        "slug": "protein-translation",
-        "name": "Protein Translation",
-        "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": null
+        "difficulty": 3
       },
       {
-        "slug": "anagram",
-        "name": "Anagram",
-        "uuid": "52e3290f-b78f-423f-a1cf-d727edc9fa73",
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "d70a98f9-4743-40b7-ab18-f37d5508a7a5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
+        "difficulty": 1
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "uuid": "6968b216-4478-4778-93d3-197ed849fd40",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "a86c1654-da80-46c9-aba5-a2eec3f66262",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "grains",
@@ -238,31 +124,123 @@
         "difficulty": 3
       },
       {
+        "slug": "hello-world",
+        "name": "Ahoy World",
+        "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "dff46c06-d8be-48e0-8158-4c6c484a3cbc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "c67175ca-9706-4aec-a45b-040a23ef25c7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "status": "beta"
-      },
+        "difficulty": 3
+      }
       {
-        "slug": "dnd-character",
-        "name": "D&D Character",
-        "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5,
-        "status": "beta"
+        "difficulty": 3
       },
       {
-        "slug": "darts",
-        "name": "Darts",
-        "uuid": "d70a98f9-4743-40b7-ab18-f37d5508a7a5",
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "status": "beta"
+        "difficulty": 3
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "8dcd513e-93f5-499b-a388-0a7f3c7898dd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "3f897d66-6f49-49ca-a6ab-a168d6ef5e68",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
+        "practices": [],
+        "prerequisites": []
+      },
+      {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "3a830edd-253c-4889-ad6b-9402fea4af97",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "series",
+        "name": "Series",
+        "uuid": "f58b5305-3bf2-4c15-8aac-339a97204d06",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
