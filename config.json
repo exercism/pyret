@@ -44,6 +44,14 @@
         "difficulty": 1
       },
       {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "26431238-01d5-4890-9bb1-f5b023e2c295",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "dff46c06-d8be-48e0-8158-4c6c484a3cbc",
