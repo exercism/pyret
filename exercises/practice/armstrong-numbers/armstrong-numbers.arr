@@ -1,5 +1,5 @@
 provide: is-armstrong-number end
 
 fun is-armstrong-number(number):
-  raise("please implement the is-armstrong-number test")
+  raise("please implement the is-armstrong-number function")
 end
