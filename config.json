@@ -36,12 +36,20 @@
     "concept": [],
     "practice": [
       {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "5ae47f42-45fc-4de2-b0df-3098ef622b0c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "52e3290f-b78f-423f-a1cf-d727edc9fa73",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "armstrong-numbers",
