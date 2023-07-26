@@ -33,17 +33,15 @@ for practice_exercise_dir in ./exercises/practice/*/; do
     if [[ $SUCCESS -eq 0 && -d $practice_exercise_dir ]]; then
         exercise=$(basename "${practice_exercise_dir}")
         practice_exercise_dir=${practice_exercise_dir%/}
-        echo "$practice_exercise_dir/$exercise".arr 
         if [ -f "$practice_exercise_dir/$exercise".arr ]; then
             mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr_
             mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
 
             test_file="$practice_exercise_dir/$exercise"-test.arr
-            pyret -q "${test_file}" 2>&1
             test_output=$(pyret -q "${test_file}" 2>&1)
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
             if [[ $test_success -le 0 ]]; then
-                echo "FAILURE"
+                echo "FAILURE: $exercise"
                 SUCCESS=1
             fi
         fi
