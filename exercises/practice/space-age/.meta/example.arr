@@ -19,7 +19,6 @@ fun on-planet(planet, seconds):
   cases(Option) ORBITAL-RATIOS.get(planet):
     | none => raise("not a planet")
     | some(ratio) => 
-        value = ((seconds / EARTH-SECONDS) / ratio)
-        num-round(value * 100) / 100
+        (seconds / EARTH-SECONDS) / ratio
   end
 end
