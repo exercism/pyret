@@ -36,6 +36,9 @@ jobs:
 
       - name: Install project dependencies
         run: npm ci
+      
+      - name: Check if Pyret is installed
+        run: npm list -g pyret-npm
 
       - name: Verify all exercises
         run: bin/verify-exercises
