@@ -37,7 +37,12 @@ for practice_exercise_dir in ./exercises/practice/*/; do
             mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr_
             mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
             test_file="$practice_exercise_dir/$exercise"-test.arr
-            test_output=$(npx pyret -q "${test_file}" 2>&1)
+
+            redirect_file=$(mktemp)
+            pyret -q $relative_test_file &> $redirect_file
+            test_output=$(cat $redirect_file)
+            rm $redirect_file
+
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
 
             if [[ $test_success -le 0 ]]; then
