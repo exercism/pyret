@@ -45,7 +45,7 @@ jobs:
         run: npm ci --install-strategy=shallow
 
       - name: Verify pyret-npm
-        run: pyret --version
+        run: npx pyret --version
 
       - name: Verify all exercises
         run: bin/verify-exercises
