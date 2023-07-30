@@ -36,10 +36,12 @@ for practice_exercise_dir in ./exercises/practice/*/; do
         if [ -f "$practice_exercise_dir/$exercise".arr ]; then
             mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr_
             mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
-
+            echo "${exercise}"
+            npx pyret -q "${test_file}" 2>&1
             test_file="$practice_exercise_dir/$exercise"-test.arr
             test_output=$(npx pyret -q "${test_file}" 2>&1)
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
+
             if [[ $test_success -le 0 ]]; then
                 echo "FAILURE: $exercise"
                 SUCCESS=1
