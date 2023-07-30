@@ -18,7 +18,6 @@
 # Example:
 # ./bin/verify-exercises.sh
 
-echo "Entering"
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d $concept_exercise_dir ]; then
@@ -39,12 +38,8 @@ for practice_exercise_dir in ./exercises/practice/*/; do
             mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
 
             test_file="$practice_exercise_dir/$exercise"-test.arr
-            npx pyret -q "${test_file}" 2>&1
             test_output=$(npx pyret -q "${test_file}" 2>&1)
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
-            if [[ $test_success -gt 0 ]]; then
-                echo "SUCCESS: $exercise"
-            fi
             if [[ $test_success -le 0 ]]; then
                 echo "FAILURE: $exercise"
                 SUCCESS=1
