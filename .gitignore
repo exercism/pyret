@@ -4,3 +4,4 @@ bin/configlet
 bin/configlet.exe
 .pyret/
 *.jarr
+node_modules
