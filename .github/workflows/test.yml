@@ -33,16 +33,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'node'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-            path: ~/.npm
-            key: npm-${{ hashFiles('package-lock.json') }}
-            restore-keys: npm-
     
       - name: Install project dependencies
-        run: npm ci --install-strategy=shallow
+        run: npm ci
 
       - name: Verify pyret-npm
         run: npx pyret --version
