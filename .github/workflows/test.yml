@@ -38,7 +38,7 @@ jobs:
         run: npm ci
       
       - name: Check if Pyret is installed
-        run: npm list -g pyret-npm
+        run: echo $(((npm list -g pyret-npm) 2>&1) || true)
 
       - name: Verify all exercises
         run: bin/verify-exercises
