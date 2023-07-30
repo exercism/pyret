@@ -42,7 +42,7 @@ jobs:
             restore-keys: npm-
     
       - name: Install project dependencies
-        run: npm ci --ignore-scripts
+        run: npm ci --install-strategy=shallow
 
       - name: Verify all exercises
         run: bin/verify-exercises
