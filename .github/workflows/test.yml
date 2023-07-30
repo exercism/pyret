@@ -29,16 +29,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 'node'
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+            path: ~/.npm
+            key: npm-${{ hashFiles('package-lock.json') }}
+            restore-keys: npm-
+    
       - name: Install project dependencies
-        run: npm ci
-      
-      - name: Check if Pyret is installed
-        run: echo $(((npm list -g pyret-npm) 2>&1) || true)
+        run: npm ci --ignore-scripts
 
       - name: Verify all exercises
         run: bin/verify-exercises
