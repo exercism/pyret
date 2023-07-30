@@ -43,7 +43,6 @@ for practice_exercise_dir in ./exercises/practice/*/; do
             test_output=$(cat $redirect_file)
             rm $redirect_file
 
-            test_output=$(npx pyret -q "${test_file}" 2>&1)
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
 
             if [[ $test_success -le 0 ]]; then
