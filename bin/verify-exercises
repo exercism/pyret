@@ -39,7 +39,7 @@ for practice_exercise_dir in ./exercises/practice/*/; do
             test_file="$practice_exercise_dir/$exercise"-test.arr
 
             redirect_file="$practice_exercise_dir/$exercise".out
-            pyret -q $relative_test_file &> $redirect_file
+            npx pyret -q $relative_test_file &> $redirect_file
             test_output=$(cat $redirect_file)
             rm $redirect_file
 
