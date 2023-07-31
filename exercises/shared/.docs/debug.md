@@ -31,6 +31,7 @@ do_something() # will compile
 ```
 
 ## Spies
+
 Considering these limitations, a [spy][spy] is often recommended:
 
 ```pyret
@@ -78,6 +79,7 @@ do_something()
 ```
 
 ## Changing a custom representation
+
 Pyret by default uses a representation of a value that can be used to create the value you're printing. This means you could paste the output back into Pyret code and have it execute.
 
 However, this is a problem when you're working with [data declarations][data-declarations], because what gets printed then is the data variant used to construct the value. In such a situation, you'd likely need to override this string representation to provide more meaningful information.
