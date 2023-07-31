@@ -1,6 +1,6 @@
 # Tests
 
-When working offline, first make sure [pyret-npm][pyret-npm] is installed and available. Then execute tests by passing to `pyret` the location of the test file relative to your current working directory.
+When working offline, first make sure [pyret-npm][pyret-npm] is installed and available. Then execute tests by passing `pyret` the location of the test file relative to your current working directory.
 `$ pyret relative/path/to/example-test.arr`
 
 # Debugging
