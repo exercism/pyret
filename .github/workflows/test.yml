@@ -13,7 +13,7 @@
 # Requires scripts:
 # - bin/test
 
-name: Pyret / Test
+name: Test Exercises
 
 on:
   push:
