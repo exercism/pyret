@@ -1,6 +1,6 @@
 # Debug
 
-To help with debugging, you can use the fact that any console output will be shown in the test results window. You can write to the console using a [print][print] expression:
+To help with debugging, you can use the fact that any console output will be shown in the test results window. You can write to the console using a [print] expression:
 
 ```pyret
 print("Debug message")
@@ -82,7 +82,7 @@ do_something()
 
 Pyret by default uses a representation of a value that can be used to create the value you're printing. This means you could paste the output back into Pyret code and have it execute.
 
-However, this is a problem when you're working with [data declarations][data-declarations], because what gets printed then is the data variant used to construct the value. In such a situation, you'd likely need to override this string representation to provide more meaningful information.
+However, this is a problem when you're working with [data declarations], because what gets printed then is the data variant used to construct the value. In such a situation, you'd likely need to override this string representation to provide more meaningful information.
 
 This can be done by implementing a `_output` method which tells Pyret how to display the value. Pyret will expect an internal `ValueSkeleton` variant to be returned by this method so you can use `vs-value` or `vs-str`. The `vs-value` variant accepts any value, properly escaping characters and adding quote marks for strings. `vs-str` on the other hand only accepts strings and will print characters exactly as written.
 
@@ -129,4 +129,4 @@ spy: a, b, c end
 
 [print]: "https://pyret.org/docs/latest/_global_.html#%28idx._%28gentag._57%29%29"
 [spy]: "https://pyret.org/docs/latest/s_spies.html"
-[data-declarations]: "https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29"
+[data declarations]: "https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29"
