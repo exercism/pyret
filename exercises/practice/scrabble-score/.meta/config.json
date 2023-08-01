@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "BNAndras"
+  ],
   "files": {
     "solution": [
       "scrabble-score.arr"
