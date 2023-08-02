@@ -132,6 +132,14 @@
         "difficulty": 3
       },
       {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "731dcc09-a78c-4da4-a6c7-47bb0b6720f2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Ahoy World",
         "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
