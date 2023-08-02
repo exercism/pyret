@@ -252,6 +252,14 @@
         "difficulty": 3
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "351651f4-3e42-4392-8862-9a18f9acb70d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
