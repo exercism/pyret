@@ -164,6 +164,14 @@
         "difficulty": 3
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "9476a1c3-1775-453d-bb08-be919fd03bad",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
