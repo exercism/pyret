@@ -16,7 +16,7 @@
 # .meta/config.json file, or possibly inferred from the exercise's directory name.
 
 # Example:
-# ./bin/test
+# ./bin/verify-exercises.sh
 
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
@@ -26,10 +26,45 @@ for concept_exercise_dir in ./exercises/concept/*/; do
     fi
 done
 
+
+SUCCESS=0
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/*/; do
-    if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        # TODO: run command to verify that the example solution passes the tests
+    if [[ $SUCCESS -eq 0 && -d $practice_exercise_dir ]]; then
+        exercise=$(basename "${practice_exercise_dir}")
+        practice_exercise_dir=${practice_exercise_dir%/}
+        if [ -f "$practice_exercise_dir/$exercise".arr ]; then
+            mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr_
+            mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
+
+            test_file="$practice_exercise_dir/$exercise"-test.arr
+            redirect_file="$practice_exercise_dir/$exercise".out
+            npx pyret -q $test_file &> $redirect_file
+            test_output=$(cat $redirect_file)
+            rm $redirect_file
+
+            test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
+
+            if [[ $test_success -le 0 ]]; then
+                echo "FAILURE: $exercise"
+                SUCCESS=1
+            fi
+        fi
     fi
 done
+
+for practice_exercise_dir in ./exercises/practice/*/; do
+    if [ -d $practice_exercise_dir ]; then
+        exercise=$(basename "${practice_exercise_dir}")
+        if [ -f "$practice_exercise_dir/$exercise".arr ]; then
+            mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir"/.meta/example.arr 
+            if [ -f "$practice_exercise_dir/$exercise".arr_ ]; then
+                mv "$practice_exercise_dir/$exercise".arr_ "$practice_exercise_dir/$exercise".arr
+            fi
+        fi     
+    fi
+done
+
+if [ $SUCCESS -ne 0 ]; then
+    exit $SUCCESS
+fi

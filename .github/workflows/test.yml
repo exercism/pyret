@@ -13,7 +13,7 @@
 # Requires scripts:
 # - bin/test
 
-name: <track> / Test
+name: Test Exercises
 
 on:
   push:
@@ -23,17 +23,19 @@ on:
 
 jobs:
   ci:
-    runs-on: <image-name>
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use <setup tooling>
-        uses: <action to setup tooling>
-
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'node'
+    
       - name: Install project dependencies
-        run: <install dependencies>
-
+        run: npm ci
+        
       - name: Verify all exercises
         run: bin/verify-exercises

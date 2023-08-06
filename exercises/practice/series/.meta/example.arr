@@ -1,4 +1,4 @@
-provide: series end
+provide: slices end
 
 fun slices(series, len):
   ask:
