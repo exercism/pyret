@@ -53,7 +53,7 @@ spy: a, b, c end
 #   c: 100
 ```
 
-[data-declaration]: "https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29"
-[spy]: "https://pyret.org/docs/latest/s_spies.html#%28idx._%28gentag._56%29%29"
-[block:]: "https://pyret.org/docs/latest/Blocks.html#%28part._s~3ablocky-blocks%29"
-[equality]: "https://pyret.org/docs/latest/equality.html"
+[data-declaration]: https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29
+[spy]: https://pyret.org/docs/latest/s_spies.html#%28idx._%28gentag._56%29%29
+[block:]: https://pyret.org/docs/latest/Blocks.html#%28part._s~3ablocky-blocks%29
+[equality]: https://pyret.org/docs/latest/equality.html
