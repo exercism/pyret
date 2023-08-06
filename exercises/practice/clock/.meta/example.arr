@@ -1,54 +1,59 @@
 provide-types *
 
+import equality as E
+
 data Clock:
   | clock(hours :: Number, minutes :: Number)
 sharing:
   method add(self, minutes :: Number) -> Clock:
     new-clock = clock(self.hours, self.minutes + minutes)
-    ask:
-      | new-clock.minutes > 60 then:
-        new-clock.normalize()
-      | otherwise:
-        new-clock
-    end
+
+    new-clock.normalize()
   end,
   method subtract(self, minutes :: Number) -> Clock:
     new-clock = clock(self.hours, self.minutes - minutes)
-    ask:
-      | new-clock.minutes < 0 then:
-        new-clock.normalize()
-      | otherwise:
-        new-clock
-    end
-  end,
-  method normalize-hours(self) -> Clock:
-    additional-hours = num-floor(self.minutes / 60)
-    final-hours = num-modulo((self.hours + additional-hours), 24)
-    clock(final-hours, self.minutes)
-  end,
-  method normalize-minutes(self) -> Clock:
-    remaining-minutes = num-modulo(self.minutes, 60)
-    clock(self.hours, remaining-minutes)
+
+    new-clock.normalize()
   end,
   method normalize(self) -> Clock:
-    self.normalize-hours().normalize-minutes()
+    is-in-range = lam():
+      ((self.minutes >= 0) and (self.minutes < 60))
+      and ((self.hours >= 0) and (self.hours < 24))
+    end
+
+    ask:
+      | not(is-in-range()) then:
+        additional-hours = num-floor(self.minutes / 60)
+        hours = num-modulo((self.hours + additional-hours), 24)
+        minutes = num-modulo(self.minutes, 60)
+
+        clock(hours, minutes)
+      | otherwise:
+        self
+    end
   end,
-  method values-equal(self, other :: Clock) -> Boolean:
+  method _equals(self, other :: Clock, _) -> E.EqualityResult:
     left = self.normalize()
     right = other.normalize()
-    (left.hours == right.hours) and (left.minutes == right.minutes)
+
+    if (left.hours == right.hours) and (left.minutes == right.minutes):
+      E.Equal
+    else:
+      E.NotEqual("Clocks represent different periods in time", self, other)
+    end
   end,
   method to-string(self) -> String:
     to-two-digits = lam(n):
       stringified = num-to-string(n)
-      ask:
-        | string-length(stringified) == 1 then:
-          "0" + stringified
-        | otherwise:
-          stringified
+      if string-length(stringified) == 1:
+        "0" + stringified
+      else:
+        stringified
       end
     end
 
-    to-two-digits(self.hours) + ":" + to-two-digits(self.minutes)
+    normalized = self.normalize()
+
+    to-two-digits(normalized.hours) + ":" + to-two-digits(normalized.minutes)
   end
 end

@@ -145,65 +145,65 @@ check "Subtract minutes -> subtract more than two days":
 end
 
 check "Compare two clocks for equality -> clocks with same time":
-  clock(15, 37).values-equal(clock(15, 37)) is true
+  clock(15, 37) is clock(15, 37)
 end
 
 check "Compare two clocks for equality -> clocks a minute apart":
-  clock(15, 36).values-equal(clock(15, 37)) is-not true
+  clock(15, 36) is-not clock(15, 37)
 end
 
 check "Compare two clocks for equality -> clocks an hour apart":
-  clock(14, 37).values-equal(clock(15, 37)) is-not true
+  clock(14, 37) is-not clock(15, 37)
 end
 
 check "Compare two clocks for equality -> clocks with hour overflow":
-  clock(10, 37).values-equal(clock(34, 37)) is true
+  clock(10, 37) is clock(34, 37)
 end
 
 check "Compare two clocks for equality -> clocks with hour overflow by several days":
-  clock(3, 11).values-equal(clock(99, 11)) is true
+  clock(3, 11) is clock(99, 11)
 end
 
 check "Compare two clocks for equality -> clocks with negative hour":
-  clock(22, 40).values-equal(clock(-2, 40)) is true
+  clock(22, 40) is clock(-2, 40)
 end
 
 check "Compare two clocks for equality -> clocks with negative hour that wraps":
-  clock(17, 3).values-equal(clock(-31, 3)) is true
+  clock(17, 3) is clock(-31, 3)
 end
 
 check "Compare two clocks for equality -> clocks with negative hour that wraps multiple times":
-  clock(13, 49).values-equal(clock(-83, 49)) is true
+  clock(13, 49) is clock(-83, 49)
 end
 
 check "Compare two clocks for equality -> clocks with minute overflow":
-  clock(0, 1).values-equal(clock(0, 1441)) is true
+  clock(0, 1) is clock(0, 1441)
 end
 
 check "Compare two clocks for equality -> clocks with minute overflow by several days":
-  clock(2, 2).values-equal(clock(2, 4322)) is true
+  clock(2, 2) is clock(2, 4322)
 end
 
 check "Compare two clocks for equality -> clocks with negative minute":
-  clock(2, 40).values-equal(clock(3, -20)) is true
+  clock(2, 40) is clock(3, -20)
 end
 
 check "Compare two clocks for equality -> clocks with negative minute that wraps":
-  clock(4, 10).values-equal(clock(5, -1490)) is true
+  clock(4, 10) is clock(5, -1490)
 end
 
 check "Compare two clocks for equality -> clocks with negative minute that wraps multiple times":
-  clock(6, 15).values-equal(clock(6, -4305)) is true
+  clock(6, 15) is clock(6, -4305)
 end
 
 check "Compare two clocks for equality -> clocks with negative hours and minutes":
-  clock(7, 32).values-equal(clock(-12, -268)) is true
+  clock(7, 32) is clock(-12, -268)
 end
 
 check "Compare two clocks for equality -> clocks with negative hours and minutes that wrap":
-  clock(18, 7).values-equal(clock(-54, -11513)) is true
+  clock(18, 7) is clock(-54, -11513)
 end
 
 check "Compare two clocks for equality -> full clock and zeroed clock":
-  clock(24, 0).values-equal(clock(0, 0)) is true
+  clock(24, 0) is clock(0, 0)
 end
