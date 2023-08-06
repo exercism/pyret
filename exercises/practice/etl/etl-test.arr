@@ -2,16 +2,16 @@ include file("etl.arr")
 include string-dict
 
 check "single letter":
-  translate([string-dict: "1", [list: "A"]]) is [mutable-string-dict: "a", "1"]
+  translate([string-dict: "1", [list: "A"]]) is [string-dict: "a", "1"]
 end
 
 check "single score with multiple letters":
-  translate([string-dict: "1", [list: "A", "E", "I", "O", "U"]]) is [mutable-string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1"]
+  translate([string-dict: "1", [list: "A", "E", "I", "O", "U"]]) is [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1"]
 end
 
 check "multiple scores with multiple letters":
   input = [string-dict: "1", [list: "A", "E", "I", "O", "U"], "2", [list: "D", "G"]]
-  expected = [mutable-string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1", "d", "2", "g", "2"]
+  expected = [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1", "d", "2", "g", "2"]
   translate(input) is expected
 end
 
@@ -23,7 +23,7 @@ check "multiple scores with multiple letters and multiple scores":
                         "5", [list: "K"], 
                         "8", [list: "J", "X"], 
                         "10", [list: "Q", "Z"]]
-  expected = [mutable-string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1", 
+  expected = [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1", 
                                   "d", "2", "g", "2", 
                                   "b", "3", "c", "3", "m", "3", "p", "3",
                                   "f", "4", "h", "4", "v", "4", "w", "4", "y", "4",
