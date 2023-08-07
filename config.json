@@ -198,7 +198,7 @@
         "prerequisites": [],
         "difficulty": 3
       },
-            {
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "dbf1655b-c3d3-4443-8862-db4e6c3136e4",
@@ -253,6 +253,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "1382711a-e980-4ff1-825a-a6373ae3d88f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "scrabble-score",
