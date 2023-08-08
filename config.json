@@ -255,6 +255,14 @@
         "difficulty": 1
       },
       {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "00406c43-30c9-4756-a830-b110b6b53eb1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "1382711a-e980-4ff1-825a-a6373ae3d88f",
