@@ -318,6 +318,11 @@
         "prerequisites": [],
         "difficulty": 1
       }
+    ],
+    "foregone": [
+      "error-handling",
+      "gigasecond",
+      "lens-person"
     ]
   },
   "concepts": [],
