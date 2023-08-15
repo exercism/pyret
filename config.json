@@ -327,6 +327,14 @@
         "difficulty": 3
       },
       {
+        "slug": "strain",
+        "name": "strain",
+        "uuid": "8a4f0fdd-831f-4e28-9cf9-391b725bcf69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "df93be4e-a862-4636-bb1c-e51e0e294797",
