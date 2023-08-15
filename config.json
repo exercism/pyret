@@ -319,6 +319,14 @@
         "difficulty": 3
       },
       {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "df93be4e-a862-4636-bb1c-e51e0e294797",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
