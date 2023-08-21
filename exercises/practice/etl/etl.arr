@@ -1,6 +1,5 @@
-provide: translate end
-include string-dict
+provide: my-translate end
 
-fun translate(legacy):
+fun my-translate(legacy):
   raise("Please implement the translate function")
 end
