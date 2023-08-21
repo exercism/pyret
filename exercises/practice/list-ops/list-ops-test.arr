@@ -64,18 +64,18 @@ end
 
 check "filter list returning only values that satisfy the filter function -> empty list":
   input = [list: ]
-  predicate = lam(x): num-modulo(x, 2) == 1 end
+  f = lam(x): num-modulo(x, 2) == 1 end
   expected = [list: ]
 
-  my-filter(input, predicate) is expected
+  my-filter(input, f) is expected
 end
 
 check "filter list returning only values that satisfy the filter function -> non-empty list":
   input = [list: 1, 2, 3, 5]
-  predicate = lam(x): num-modulo(x, 2) == 1 end
+  f = lam(x): num-modulo(x, 2) == 1 end
   expected = [list: 1, 3, 5]
 
-  my-filter(input, predicate) is expected
+  my-filter(input, f) is expected
 end
 
 check "returns the length of a list -> empty list":
@@ -93,18 +93,18 @@ end
 
 check "return a list of elements whose values equal the list value transformed by the mapping function -> empty list":
   input = [list: ]
-  predicate = lam(x): x + 1 end
+  f = lam(x): x + 1 end
   expected = [list: ]
 
-  my-map(input, predicate) is expected
+  my-map(input, f) is expected
 end
 
 check "return a list of elements whose values equal the list value transformed by the mapping function -> non-empty list":
   input = [list: 1, 3, 5, 7]
-  predicate = lam(x): x + 1 end
+  f = lam(x): x + 1 end
   expected = [list: 2, 4, 6, 8]
 
-  my-map(input, predicate) is expected
+  my-map(input, f) is expected
 end
 
 check "folds (reduces) the given list from the left with a function -> empty list":
