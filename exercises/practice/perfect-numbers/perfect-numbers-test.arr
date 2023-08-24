@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("perfect-numbers.arr")
 
 check "Perfect numbers -> Smallest perfect number is classified correctly":

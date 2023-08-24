@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("series.arr")
 
 check "slices of one from one":

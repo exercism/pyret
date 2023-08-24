@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("triangle.arr")
 
 check "equilateral triangle -> all sides are equal":

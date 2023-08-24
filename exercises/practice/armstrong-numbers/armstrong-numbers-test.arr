@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("armstrong-numbers.arr")
 
 check "Zero is an Armstrong number":
