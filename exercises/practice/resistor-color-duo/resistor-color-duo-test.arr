@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("resistor-color-duo.arr")
 
 check "Brown and black":

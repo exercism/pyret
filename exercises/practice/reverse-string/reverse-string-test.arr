@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("reverse-string.arr")
 
 check "an empty string":

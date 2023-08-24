@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("bob.arr")
 
 check "stating something":

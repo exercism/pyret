@@ -1,3 +1,5 @@
+use context essentials2020 # Don't delete this line when using Pyret on Exercism 
+
 provide: square-of-sum, sum-of-squares, difference-of-squares end
 
 fun square-of-sum(number):

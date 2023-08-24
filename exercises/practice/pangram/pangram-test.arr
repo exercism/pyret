@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("pangram.arr")
 
 check "empty sentence":

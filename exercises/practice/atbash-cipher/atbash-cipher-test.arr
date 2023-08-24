@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("atbash-cipher.arr")
 
 check "encode -> encode yes":

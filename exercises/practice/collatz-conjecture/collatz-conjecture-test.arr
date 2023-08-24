@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("collatz-conjecture.arr")
 
 check "zero steps for one":

@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("grains.arr")
 
 check "returns the number of grains on the square -> grains on square 1":

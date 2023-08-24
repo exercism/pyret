@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("difference-of-squares.arr")
 
 check "Square the sum of the numbers up to the given number -> square of sum 1":

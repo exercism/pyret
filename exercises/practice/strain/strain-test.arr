@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("strain.arr")
 
 check "keep on empty list returns empty list":
