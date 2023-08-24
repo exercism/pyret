@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("list-ops.arr")
 
 check "append entries to a list and return the new list -> empty lists":

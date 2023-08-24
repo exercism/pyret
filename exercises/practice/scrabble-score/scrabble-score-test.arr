@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("scrabble-score.arr")
 
 check "lowercase letter":

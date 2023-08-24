@@ -1,19 +1,21 @@
+use context essentials2020
+
 include file("etl.arr")
 
 include string-dict
 
 check "single letter":
-  my-translate([string-dict: "1", [list: "A"]]) is [string-dict: "a", "1"]
+  translate([string-dict: "1", [list: "A"]]) is [string-dict: "a", "1"]
 end
 
 check "single score with multiple letters":
-  my-translate([string-dict: "1", [list: "A", "E", "I", "O", "U"]]) is [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1"]
+  translate([string-dict: "1", [list: "A", "E", "I", "O", "U"]]) is [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1"]
 end
 
 check "multiple scores with multiple letters":
   input = [string-dict: "1", [list: "A", "E", "I", "O", "U"], "2", [list: "D", "G"]]
   expected = [string-dict: "a", "1", "e", "1", "i", "1", "o", "1", "u", "1", "d", "2", "g", "2"]
-  my-translate(input) is expected
+  translate(input) is expected
 end
 
 check "multiple scores with multiple letters and multiple scores":
@@ -31,5 +33,5 @@ check "multiple scores with multiple letters and multiple scores":
                                   "k", "5", 
                                   "j", "8", "x", "8", 
                                   "q", "10", "z", "10"]
-  my-translate(input) is expected
+  translate(input) is expected
 end

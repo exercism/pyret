@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("square-root.arr")
 
 check "root of 1":

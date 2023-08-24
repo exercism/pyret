@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("protein-translation.arr")
 
 check "Empty RNA sequence results in no proteins":

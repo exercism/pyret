@@ -1,3 +1,5 @@
+use context essentials2020
+
 include file("binary-search.arr")
 
 check "finds a value in an array with one element":
