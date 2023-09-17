@@ -239,6 +239,14 @@
         "difficulty": 3
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "18946346-e04c-4032-b3dc-4abdb6c8f5a1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "5a57c5fa-f4a2-460d-9dec-812834ae1cd4",
