@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "bank-account.arr"
+    ],
+    "test": [
+      "bank-account-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ]
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdrawals, and deposits of money."
+}

@@ -71,6 +71,14 @@
         "difficulty": 3
       },
       {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "44b5048a-8e98-4300-8bd9-fce59dcc008b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "dc4437e4-9ab3-4ab0-ae0d-ae3d2287e97c",
