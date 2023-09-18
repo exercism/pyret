@@ -9,8 +9,12 @@ data LinkedList:
     method foldl(self, f, acc):
       self.tail.foldl(f, f(self.head, acc))
     end,
-    method head(self): self.head end,
-    method tail(self): self.tail end
+    method get-head(self):
+      self.head
+    end,
+    method get-tail(self):
+      self.tail
+    end
 sharing:
   method length(self):
     cases(LinkedList) self:
