@@ -1,3 +1,5 @@
+use context essentials2020
+
 provide-types *
 
 #|
@@ -5,7 +7,13 @@ provide-types *
 |#
 data LinkedList:
   | empty-list
-  | linked-list(head, tail)
+  | linked-list(head, tail) with:
+    method get-head(self):
+      raise("please implement the get-head method")
+    end,
+    method get-tail(self):
+      raise("please implement the get-tail method")
+    end
 sharing:
   method length(self):
     raise("please implement the length method")

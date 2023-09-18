@@ -1,3 +1,5 @@
+use context essentials2020
+
 provide-types *
 
 data LinkedList:
@@ -7,6 +9,8 @@ data LinkedList:
     method foldl(self, f, acc):
       self.tail.foldl(f, f(self.head, acc))
     end,
+    method head(self): self.head end,
+    method tail(self): self.tail end
 sharing:
   method length(self):
     cases(LinkedList) self:
