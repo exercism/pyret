@@ -2,54 +2,110 @@ use context essentials2020
 
 include file("darts.arr")
 
-check "Missed target":
-  score(-9, 9) is 0
+#|
+  When working offline, all tests except the first one are skipped by default.
+  Once you get the first test running, unskip the next one until all tests pass locally.
+  Check the block comment below for further details.
+|#
+
+fun missed-target():
+  check "Missed target":
+    score(-9, 9) is 0
+  end
 end
 
-check "On the outer circle":
-  score(0, 10) is 1
+fun on-outer-circle():
+  check "On the outer circle":
+    score(0, 10) is 1
+  end
 end
 
-check "On the middle circle":
-  score(-5, 0) is 5
+fun on-middle-circle():
+  check "On the middle circle":
+    score(-5, 0) is 5
+  end
 end
 
-check "On the inner circle":
-  score(0, -1) is 10
+fun on-inner-circle():
+  check "On the inner circle":
+    score(0, -1) is 10
+  end
 end
 
-check "Exactly on center":
-  score(0, 0) is 10
+fun at-center():
+  check "Exactly on center":
+    score(0, 0) is 10
+  end
 end
 
-check "Near the center":
-  score(-0.1, -0.1) is 10
+fun near-center():
+  check "Near the center":
+    score(-0.1, -0.1) is 10
+  end
 end
 
-check "Just within the inner circle":
-  score(0.7, 0.7) is 10
+fun just-within-inner-circle():
+  check "Just within the inner circle":
+    score(0.7, 0.7) is 10
+  end
 end
 
-check "Just outside the inner circle":
-  score(0.8, -0.8) is 5
+fun just-outside-inner-circle():
+  check "Just outside the inner circle":
+    score(0.8, -0.8) is 5
+  end
 end
 
-check "Just within the middle circle":
-  score(-3.5, 3.5) is 5
+fun just-within-middle-circle():
+  check "Just within the middle circle":
+    score(-3.5, 3.5) is 5
+  end
 end
 
-check "Just outside the middle circle":
-  score(-3.6, 3.6) is 1
+fun just-outside-middle-circle():
+  check "Just outside the middle circle":
+    score(-3.6, 3.6) is 1
+  end
 end
 
-check "Just within the outer circle":
-  score(-7.0, 7.0) is 1
+fun just-within-outer-circle():
+  check "Just within the outer circle":
+    score(-7.0, 7.0) is 1
+  end
 end
 
-check "Just outside the outer circle":
-  score(7.1, -7.1) is 0
+fun just-outside-outer-circle():
+  check "Just outside the outer circle":
+    score(7.1, -7.1) is 0
+  end
 end
 
-check "Asymmetric position between the inner and middle circles":
-  score(0.5, -4) is 5
+fun asymmetric-position():
+  check "Asymmetric position between the inner and middle circles":
+    score(0.5, -4) is 5
+  end
 end
+
+#|
+  Code to run each test. Each line corresponds to a test above and whether it should be run.
+  To mark a test to be run, replace `false` with `true` on that same line after the comma.
+  test(test-a, true) will be run. test(test-a, false) will be skipped.
+|#
+
+data TestRun: test(run, active) end
+
+[list: 
+  test(missed-target, true),
+  test(on-outer-circle, false),
+  test(on-middle-circle, false),
+  test(on-inner-circle, false),
+  test(at-center, false),
+  test(near-center, false),
+  test(just-within-inner-circle, false),
+  test(just-outside-inner-circle, false),
+  test(just-within-middle-circle, false),
+  test(just-outside-middle-circle, false),
+  test(just-within-outer-circle, false),
+  test(just-outside-outer-circle, false),
+  test(asymmetric-position, false)
+].each(lam(t): when t.active: t.run() end end)
