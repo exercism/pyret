@@ -12,6 +12,6 @@
     "url": "https://github.com/exercism/pyret"
   },
   "dependencies": {
-    "pyret-npm": "^0.0.25"
+    "pyret-npm": "^0.0.27"
   }
 }
