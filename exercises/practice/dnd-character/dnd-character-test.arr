@@ -129,13 +129,6 @@ fun random-character-is-valid():
   end
 end
 
-fun calculate-ability-once():
-  check "each ability is only calculated once":
-    char = character()
-    (char.strength == char.strength) is true
-  end
-end
-
 #|
   Code to run each test. Each line corresponds to a test above and whether it should be run.
   To mark a test to be run, replace `false` with `true` on that same line after the comma.
@@ -162,6 +155,5 @@ data TestRun: test(run, active) end
   test(modifier-score-17, false),
   test(modifier-score-18, false),
   test(ability-within-range, false),
-  test(random-character-is-valid, false),
-  test(calculate-ability-once, false)
+  test(random-character-is-valid, false)
 ].each(lam(t): when t.active: t.run() end end)
