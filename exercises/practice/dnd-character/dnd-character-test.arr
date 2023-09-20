@@ -8,6 +8,12 @@ include file("dnd-character.arr")
   Check the block comment below for further details.
 |#
 
+
+# declaring some variables to be more concise inside the tests.
+modifier = blank-character().modifier 
+ability = blank-character().ability
+randomize-stats = blank-character().randomize-stats
+
 fun modifier-score-3():
   check "ability modifier -> ability modifier for score 3 is -4":
     modifier(3) is -4
@@ -106,33 +112,29 @@ end
 
 fun ability-within-range():
   check "random ability is within range":
-      is-valid = lam(stat): (stat >= 3) and (stat <= 18) end
-
       stat = ability()
+  
+      is-valid = lam(n): (n >= 3) and (n <= 18) end
+
       is-valid(stat) is true
   end
 end
 
 fun random-character-is-valid():
   check "random character is valid":
-    is-valid = lam(stat): (stat >= 3) and (stat <= 18) end
+    new-character = randomize-stats()
 
-    char = character()
-    is-valid(char.strength) is true
-    is-valid(char.dexterity) is true
-    is-valid(char.constitution) is true
-    is-valid(char.intelligence) is true
-    is-valid(char.wisdom) is true
-    is-valid(char.charisma) is true
+    is-valid = lam(n): (n >= 3) and (n <= 18) end
 
-    (char.hitpoints == modifier(char.constitution)) is true
-  end
-end
+    is-valid(new-character.strength) is true
+    is-valid(new-character.dexterity) is true
+    is-valid(new-character.constitution) is true
+    is-valid(new-character.intelligence) is true
+    is-valid(new-character.wisdom) is true
+    is-valid(new-character.charisma) is true
 
-fun calculate-ability-once():
-  check "each ability is only calculated once":
-    char = character()
-    (char.strength == char.strength) is true
+    expected = 10 + new-character.modifier(new-character.constitution)
+    new-character.get-hitpoints() is expected
   end
 end
 
@@ -162,6 +164,5 @@ data TestRun: test(run, active) end
   test(modifier-score-17, false),
   test(modifier-score-18, false),
   test(ability-within-range, false),
-  test(random-character-is-valid, false),
-  test(calculate-ability-once, false)
+  test(random-character-is-valid, false)
 ].each(lam(t): when t.active: t.run() end end)
