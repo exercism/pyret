@@ -122,19 +122,19 @@ end
 
 fun random-character-is-valid():
   check "random character is valid":
-    character = randomize-stats()
+    new-character = randomize-stats()
 
     is-valid = lam(n): (n >= 3) and (n <= 18) end
 
-    is-valid(character.strength) is true
-    is-valid(character.dexterity) is true
-    is-valid(character.constitution) is true
-    is-valid(character.intelligence) is true
-    is-valid(character.wisdom) is true
-    is-valid(character.charisma) is true
+    is-valid(new-character.strength) is true
+    is-valid(new-character.dexterity) is true
+    is-valid(new-character.constitution) is true
+    is-valid(new-character.intelligence) is true
+    is-valid(new-character.wisdom) is true
+    is-valid(new-character.charisma) is true
 
-    expected = 10 + character.modifier(character.constitution)
-    character.get-hitpoints() is expected
+    expected = 10 + new-character.modifier(new-character.constitution)
+    new-character.get-hitpoints() is expected
   end
 end
 
