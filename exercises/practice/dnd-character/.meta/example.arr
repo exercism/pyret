@@ -3,7 +3,7 @@ use context essentials2020 # Don't delete this line when using Pyret on Exercism
 provide-types *
 
 data Character:
-  | new-character() with:
+  | blank-character() with:
     method randomize-stats(self) -> Character:
       abilities = self.ability()
       strength = self.ability()

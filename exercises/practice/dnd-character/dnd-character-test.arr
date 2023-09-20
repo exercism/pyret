@@ -8,105 +8,111 @@ include file("dnd-character.arr")
   Check the block comment below for further details.
 |#
 
+
+# declaring some variables to be more concise inside the tests.
+modifier = blank-character().modifier 
+ability = blank-character().ability
+randomize-stats = blank-character().randomize-stats
+
 fun modifier-score-3():
   check "ability modifier -> ability modifier for score 3 is -4":
-    new-character().modifier(3) is -4
+    modifier(3) is -4
   end
 end
 
 fun modifier-score-4():
   check "ability modifier -> ability modifier for score 4 is -3":
-    new-character().modifier(4) is -3
+    modifier(4) is -3
   end
 end
 
 fun modifier-score-5():
   check "ability modifier -> ability modifier for score 5 is -3":
-    new-character().modifier(5) is -3
+    modifier(5) is -3
   end
 end
 
 fun modifier-score-6():
   check "ability modifier -> ability modifier for score 6 is -2":
-    new-character().modifier(6) is -2
+    modifier(6) is -2
   end
 end
 
 fun modifier-score-7():
   check "ability modifier -> ability modifier for score 7 is -2":
-    new-character().modifier(7) is -2
+    modifier(7) is -2
   end
 end
 
 fun modifier-score-8():
   check "ability modifier -> ability modifier for score 8 is -1":
-    new-character().modifier(8) is -1
+    modifier(8) is -1
   end
 end
 
 fun modifier-score-9():
   check "ability modifier -> ability modifier for score 9 is -1":
-    new-character().modifier(9) is -1
+    modifier(9) is -1
   end
 end
 
 fun modifier-score-10():
   check "ability modifier -> ability modifier for score 10 is 0":
-    new-character().modifier(10) is 0
+    modifier(10) is 0
   end
 end
 
 fun modifier-score-11():
   check "ability modifier -> ability modifier for score 11 is 0":
-    new-character().modifier(11) is 0
+    modifier(11) is 0
   end
 end
 
 fun modifier-score-12():
   check "ability modifier -> ability modifier for score 12 is +1":
-    new-character().modifier(12) is 1
+    modifier(12) is 1
   end
 end
 
 fun modifier-score-13():
   check "ability modifier -> ability modifier for score 13 is +1":
-    new-character().modifier(13) is 1
+    modifier(13) is 1
   end
 end
 
 fun modifier-score-14():
   check "ability modifier -> ability modifier for score 14 is +2":
-    new-character().modifier(14) is 2
+    modifier(14) is 2
   end
 end
 
 fun modifier-score-15():
   check "ability modifier -> ability modifier for score 15 is +2":
-    new-character().modifier(15) is 2
+    modifier(15) is 2
   end
 end
 
 fun modifier-score-16():
   check "ability modifier -> ability modifier for score 16 is +3":
-    new-character().modifier(16) is 3
+    modifier(16) is 3
   end
 end
 
 fun modifier-score-17():
   check "ability modifier -> ability modifier for score 17 is +3":
-    new-character().modifier(17) is 3
+    modifier(17) is 3
   end
 end
 
 fun modifier-score-18():
   check "ability modifier -> ability modifier for score 18 is +4":
-    new-character().modifier(18) is 4
+    modifier(18) is 4
   end
 end
 
 fun ability-within-range():
   check "random ability is within range":
-      stat = new-character().ability()
+      stat = ability()
   
       is-valid = lam(n): (n >= 3) and (n <= 18) end
 
@@ -116,19 +122,19 @@ end
 
 fun random-character-is-valid():
   check "random character is valid":
-    char = new-character().randomize-stats()
+    character = randomize-stats()
 
     is-valid = lam(n): (n >= 3) and (n <= 18) end
 
-    is-valid(char.strength) is true
-    is-valid(char.dexterity) is true
-    is-valid(char.constitution) is true
-    is-valid(char.intelligence) is true
-    is-valid(char.wisdom) is true
-    is-valid(char.charisma) is true
+    is-valid(character.strength) is true
+    is-valid(character.dexterity) is true
+    is-valid(character.constitution) is true
+    is-valid(character.intelligence) is true
+    is-valid(character.wisdom) is true
+    is-valid(character.charisma) is true
 
-    expected = 10 + char.modifier(char.constitution)
-    char.get-hitpoints() is expected
+    expected = 10 + character.modifier(character.constitution)
+    character.get-hitpoints() is expected
   end
 end
 
