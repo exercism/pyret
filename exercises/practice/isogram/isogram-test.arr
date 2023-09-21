@@ -2,6 +2,11 @@ use context essentials2020
 
 include file("isogram.arr")
 
+#|
+  When working offline, all tests except the first one are skipped by default.
+  Once you get the first test running, unskip the next one until all tests pass locally.
+  Check the block comment below for further details.
+|#
 
 fun empty-string():
   check "empty string":
