@@ -32,17 +32,21 @@ SUCCESS=0
 for practice_exercise_dir in ./exercises/practice/*/; do
     if [[ $SUCCESS -eq 0 && -d $practice_exercise_dir ]]; then
         exercise=$(basename "${practice_exercise_dir}")
+        echo "Checking $exercise exercise..."
+        
         practice_exercise_dir=${practice_exercise_dir%/}
         if [ -f "$practice_exercise_dir/$exercise".arr ]; then
-            mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr_
+            mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir/$exercise".arr.bak
             mv "$practice_exercise_dir/.meta/example.arr" "$practice_exercise_dir/$exercise".arr
 
             test_file="$practice_exercise_dir/$exercise"-test.arr
+
+            sed -i.bak 's/test(\([^)]*\), false/test(\1, true/' $test_file
             redirect_file="$practice_exercise_dir/$exercise".out
             npx pyret -q $test_file &> $redirect_file
             test_output=$(cat $redirect_file)
             rm $redirect_file
-
+            mv "${test_file}.bak" "$test_file"
             test_success=$(echo "${test_output}" | grep -c -E 'Looks shipshape')
 
             if [[ $test_success -le 0 ]]; then
@@ -58,8 +62,8 @@ for practice_exercise_dir in ./exercises/practice/*/; do
         exercise=$(basename "${practice_exercise_dir}")
         if [ -f "$practice_exercise_dir/$exercise".arr ]; then
             mv "$practice_exercise_dir/$exercise".arr "$practice_exercise_dir"/.meta/example.arr 
-            if [ -f "$practice_exercise_dir/$exercise".arr_ ]; then
-                mv "$practice_exercise_dir/$exercise".arr_ "$practice_exercise_dir/$exercise".arr
+            if [ -f "$practice_exercise_dir/$exercise".arr.bak ]; then
+                mv "$practice_exercise_dir/$exercise".arr.bak "$practice_exercise_dir/$exercise".arr
             fi
         fi     
     fi
