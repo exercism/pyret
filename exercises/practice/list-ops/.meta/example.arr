@@ -10,6 +10,7 @@ provide:
   my-foldr,
   my-reverse
 end
+
 fun my-append(lst1, lst2):
   cases(List) lst1:
     | empty => lst2
