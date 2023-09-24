@@ -2,106 +2,202 @@ use context essentials2020
 
 include file("roman-numerals.arr")
 
-check "1 is I":
-  to-roman(1) is "I"
+#|
+  When working offline, all tests except the first one are skipped by default.
+  Once you get the first test running, unskip the next one until all tests pass locally.
+  Check the block comment below for further details.
+|#
+
+fun I():
+  check "1 is I":
+    to-roman(1) is "I"
+  end
 end
 
-check "2 is II":
-  to-roman(2) is "II"
+fun II():
+  check "2 is II":
+    to-roman(2) is "II"
+  end
 end
 
-check "3 is III":
-  to-roman(3) is "III"
+fun III():
+  check "3 is III":
+    to-roman(3) is "III"
+  end
 end
 
-check "4 is IV":
-  to-roman(4) is "IV"
+fun IV():
+  check "4 is IV":
+    to-roman(4) is "IV"
+  end
 end
 
-check "5 is V":
-  to-roman(5) is "V"
+fun V():
+  check "5 is V":
+    to-roman(5) is "V"
+  end
 end
 
-check "6 is VI":
-  to-roman(6) is "VI"
+fun VI():
+  check "6 is VI":
+    to-roman(6) is "VI"
+  end
 end
 
-check "9 is IX":
-  to-roman(9) is "IX"
+fun IX():
+  check "9 is IX":
+    to-roman(9) is "IX"
+  end
 end
 
-check "16 is XVI":
-  to-roman(16) is "XVI"
+fun XVI():
+  check "16 is XVI":
+    to-roman(16) is "XVI"
+  end
 end
 
-check "27 is XXVII":
-  to-roman(27) is "XXVII"
+fun XXVII():
+  check "27 is XXVII":
+    to-roman(27) is "XXVII"
+  end
 end
 
-check "48 is XLVIII":
-  to-roman(48) is "XLVIII"
+fun XLVIII():
+  check "48 is XLVIII":
+    to-roman(48) is "XLVIII"
+  end
 end
 
-check "49 is XLIX":
-  to-roman(49) is "XLIX"
+fun XLIX():
+  check "49 is XLIX":
+    to-roman(49) is "XLIX"
+  end
 end
 
-check "59 is LIX":
-  to-roman(59) is "LIX"
+fun LIX():
+  check "59 is LIX":
+    to-roman(59) is "LIX"
+  end
 end
 
-check "66 is LXVI":
-  to-roman(66) is "LXVI"
+fun LXVI():
+  check "66 is LXVI":
+    to-roman(66) is "LXVI"
+  end
 end
 
-check "93 is XCIII":
-  to-roman(93) is "XCIII"
+fun XCIII():
+  check "93 is XCIII":
+    to-roman(93) is "XCIII"
+  end
 end
 
-check "141 is CXLI":
-  to-roman(141) is "CXLI"
+fun CXLI():
+  check "141 is CXLI":
+    to-roman(141) is "CXLI"
+  end
 end
 
-check "163 is CLXIII":
-  to-roman(163) is "CLXIII"
+fun CLXIII():
+  check "163 is CLXIII":
+    to-roman(163) is "CLXIII"
+  end
 end
 
-check "166 is CLXVI":
-  to-roman(166) is "CLXVI"
+fun CLXVI():
+  check "166 is CLXVI":
+    to-roman(166) is "CLXVI"
+  end
 end
 
-check "402 is CDII":
-  to-roman(402) is "CDII"
+fun CDII():
+  check "402 is CDII":
+    to-roman(402) is "CDII"
+  end
 end
 
-check "575 is DLXXV":
-  to-roman(575) is "DLXXV"
+fun DLXXV():
+  check "575 is DLXXV":
+    to-roman(575) is "DLXXV"
+  end
 end
 
-check "666 is DCLXVI":
-  to-roman(666) is "DCLXVI"
+fun DCLXVI():
+  check "666 is DCLXVI":
+    to-roman(666) is "DCLXVI"
+  end
 end
 
-check "911 is CMXI":
-  to-roman(911) is "CMXI"
+fun CMXI():
+  check "911 is CMXI":
+    to-roman(911) is "CMXI"
+  end
 end
 
-check "1024 is MXXIV":
-  to-roman(1024) is "MXXIV"
+fun MXXIV():
+  check "1024 is MXXIV":
+    to-roman(1024) is "MXXIV"
+  end
 end
 
-check "1666 is MDCLXVI":
-  to-roman(1666) is "MDCLXVI"
+fun MDCLXVI():
+  check "1666 is MDCLXVI":
+    to-roman(1666) is "MDCLXVI"
+  end
 end
 
-check "3000 is MMM":
-  to-roman(3000) is "MMM"
+fun MMM():
+  check "3000 is MMM":
+    to-roman(3000) is "MMM"
+  end
 end
 
-check "3001 is MMMI":
-  to-roman(3001) is "MMMI"
+fun MMMI():
+  check "3001 is MMMI":
+    to-roman(3001) is "MMMI"
+  end
 end
 
-check "3999 is MMMCMXCIX":
-  to-roman(3999) is "MMMCMXCIX"
+fun MMMCMXCIX():
+  check "3999 is MMMCMXCIX":
+    to-roman(3999) is "MMMCMXCIX"
+  end
 end
+
+
+#|
+  Code to run each test. Each line corresponds to a test above and whether it should be run.
+  To mark a test to be run, replace `false` with `true` on that same line after the comma.
+  test(test-a, true) will be run. test(test-a, false) will be skipped.
+|#
+
+data TestRun: test(run, active) end
+
+[list: 
+  test(I, true),
+  test(II, false),
+  test(III, false),
+  test(IV, false),
+  test(V, false),
+  test(VI, false),
+  test(IX, false),
+  test(XVI, false),
+  test(XXVII, false),
+  test(XLVIII, false),
+  test(XLIX, false),
+  test(LIX, false),
+  test(LXVI, false),
+  test(XCIII, false),
+  test(CXLI, false),
+  test(CLXIII, false),
+  test(CLXVI, false),
+  test(CDII, false),
+  test(DLXXV, false),
+  test(DCLXVI, false),
+  test(CMXI, false),
+  test(MXXIV, false),
+  test(MDCLXVI, false),
+  test(MMM, false),
+  test(MMMI, false),
+  test(MMMCMXCIX, false)
+].each(lam(t): when t.active: t.run() end end)
