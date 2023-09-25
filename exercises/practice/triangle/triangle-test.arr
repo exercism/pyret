@@ -2,86 +2,166 @@ use context essentials2020
 
 include file("triangle.arr")
 
-check "equilateral triangle -> all sides are equal":
-  equilateral([list: 2, 2, 2]) is true
+#|
+  When working offline, all tests except the first one are skipped by default.
+  Once you get the first test running, unskip the next one until all tests pass locally.
+  Check the block comment below for further details.
+|#
+
+fun equilateral-all-equal-sides():
+  check "equilateral triangle -> all sides are equal":
+    equilateral([list: 2, 2, 2]) is true
+  end
 end
 
-check "equilateral triangle -> any side is unequal":
-  equilateral([list: 2, 3, 2]) is-not true
+fun equilateral-any-unequal-side():
+  check "equilateral triangle -> any side is unequal":
+    equilateral([list: 2, 3, 2]) is false
+  end
 end
 
-check "equilateral triangle -> no sides are equal":
-  equilateral([list: 5, 4, 6]) is-not true
+fun equilateral-no-equal-sides():
+  check "equilateral triangle -> no sides are equal":
+    equilateral([list: 5, 4, 6]) is false
+  end
 end
 
-check "equilateral triangle -> all zero sides is not a triangle":
-  equilateral([list: 0, 0, 0]) is-not true
+fun equilateral-all-zero-sides():
+  check "equilateral triangle -> all zero sides is not a triangle":
+    equilateral([list: 0, 0, 0]) is false
+  end
 end
 
-check "equilateral triangle -> sides may be floats":
-  equilateral([list: 0.5, 0.5, 0.5]) is true
+fun equilateral-decimal-sides():
+  check "equilateral triangle -> sides may be decimals":
+    equilateral([list: 0.5, 0.5, 0.5]) is true
+  end
 end
 
-check "isosceles triangle -> last two sides are equal":
-  isosceles([list: 3, 4, 4]) is true
+fun isosceles-second-third-equal-sides():
+  check "isosceles triangle -> last two sides are equal":
+    isosceles([list: 3, 4, 4]) is true
+  end
 end
 
-check "isosceles triangle -> first two sides are equal":
-  isosceles([list: 4, 4, 3]) is true
+fun isosceles-first-second-equal-sides():
+  check "isosceles triangle -> first two sides are equal":
+    isosceles([list: 4, 4, 3]) is true
+  end
 end
 
-check "isosceles triangle -> first and last sides are equal":
-  isosceles([list: 4, 3, 4]) is true
+fun isosceles-first-third-equal-sides():
+  check "isosceles triangle -> first and last sides are equal":
+    isosceles([list: 4, 3, 4]) is true
+  end
 end
 
-check "isosceles triangle -> equilateral triangles are also isosceles":
-  isosceles([list: 4, 4, 4]) is true
+fun isosceles-can-be-equilateral():
+  check "isosceles triangle -> equilateral triangles are also isosceles":
+    isosceles([list: 4, 4, 4]) is true
+  end
 end
 
-check "isosceles triangle -> no sides are equal":
-  isosceles([list: 2, 3, 4]) is-not true
+fun isosceles-no-equal-sides():
+  check "isosceles triangle -> no sides are equal":
+    isosceles([list: 2, 3, 4]) is false
+  end
 end
 
-check "isosceles triangle -> first triangle inequality violation":
-  isosceles([list: 1, 1, 3]) is-not true
+fun isosceles-triangle-inequality-first():
+  check "isosceles triangle -> first triangle inequality violation":
+    isosceles([list: 1, 1, 3]) is false
+  end
 end
 
-check "isosceles triangle -> second triangle inequality violation":
-  isosceles([list: 1, 3, 1]) is-not true
+fun isosceles-triangle-inequality-second():
+  check "isosceles triangle -> second triangle inequality violation":
+    isosceles([list: 1, 3, 1]) is false
+  end
 end
 
-check "isosceles triangle -> third triangle inequality violation":
-  isosceles([list: 3, 1, 1]) is-not true
+fun isosceles-triangle-inequality-third():
+  check "isosceles triangle -> third triangle inequality violation":
+    isosceles([list: 3, 1, 1]) is false
+  end
 end
 
-check "isosceles triangle -> sides may be floats":
-  isosceles([list: 0.5, 0.4, 0.5]) is true
+fun isosceles-decimal-sides():
+  check "isosceles triangle -> sides may be decimasl":
+    isosceles([list: 0.5, 0.4, 0.5]) is true
+  end
 end
 
-check "scalene triangle -> no sides are equal":
-  scalene([list: 5, 4, 6]) is true
+fun scalene-no-equal-sides():
+  check "scalene triangle -> no sides are equal":
+    scalene([list: 5, 4, 6]) is true
+  end
 end
 
-check "scalene triangle -> all sides are equal":
-  scalene([list: 4, 4, 4]) is-not true
+fun scalene-all-equal-sides():
+  check "scalene triangle -> all sides are equal":
+    scalene([list: 4, 4, 4]) is false
+  end
 end
 
-check "scalene triangle -> first and second sides are equal":
-  scalene([list: 4, 4, 3]) is-not true
+fun scalene-first-second-equal-sides():
+  check "scalene triangle -> first and second sides are equal":
+    scalene([list: 4, 4, 3]) is false
+  end
 end
 
-check "scalene triangle -> first and third sides are equal":
-  scalene([list: 3, 4, 3]) is-not true
+fun scalene-first-third-equal-sides():
+  check "scalene triangle -> first and third sides are equal":
+    scalene([list: 3, 4, 3]) is false
+  end
 end
 
-check "scalene triangle -> second and third sides are equal":
-  scalene([list: 4, 3, 3]) is-not true
+fun scalene-second-third-equal-sides():
+  check "scalene triangle -> second and third sides are equal":
+    scalene([list: 4, 3, 3]) is false
+  end
 end
 
-check "scalene triangle -> may not violate triangle inequality":
-  scalene([list: 7, 3, 2]) is-not true
+fun scalene-triangle-inequality():
+  check "scalene triangle -> may not violate triangle inequality":
+    scalene([list: 7, 3, 2]) is false
+  end
 end
 
-check "scalene triangle -> sides may be floats":
-  scalene([list: 0.5, 0.4, 0.6]) is true
+fun scalene-decimal-sides():
+  check "scalene triangle -> sides may be decimals":
+    scalene([list: 0.5, 0.4, 0.6]) is true
+  end
 end
+
+#|
+  Code to run each test. Each line corresponds to a test above and whether it should be run.
+  To mark a test to be run, replace `false` with `true` on that same line after the comma.
+  test(test-a, true) will be run. test(test-a, false) will be skipped.
+|#
+
+data TestRun: test(run, active) end
+
+[list: 
+  test(equilateral-all-equal-sides, true),
+  test(equilateral-any-unequal-side, false),
+  test(equilateral-no-equal-sides, false),
+  test(equilateral-all-zero-sides, false),
+  test(equilateral-decimal-sides, false),
+  test(isosceles-second-third-equal-sides, false),
+  test(isosceles-first-second-equal-sides, false),
+  test(isosceles-first-third-equal-sides, false),
+  test(isosceles-can-be-equilateral, false),
+  test(isosceles-no-equal-sides, false),
+  test(isosceles-triangle-inequality-first, false),
+  test(isosceles-triangle-inequality-second, false),
+  test(isosceles-triangle-inequality-third, false),
+  test(isosceles-decimal-sides, false),
+  test(scalene-no-equal-sides, false),
+  test(scalene-all-equal-sides, false),
+  test(scalene-first-second-equal-sides, false),
+  test(scalene-first-third-equal-sides, false),
+  test(scalene-second-third-equal-sides, false),
+  test(scalene-triangle-inequality, false),
+  test(scalene-decimal-sides, false)
+].each(lam(t): when t.active: t.run() end end)
