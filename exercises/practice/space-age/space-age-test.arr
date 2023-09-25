@@ -9,7 +9,8 @@ include file("space-age.arr")
 |#
 
 
-fun around(delta):
+fun around(delta :: Number) -> (Number, Number -> Boolean):
+  doc: "provides a predicate that returns true if the absolute values of two numbers are less than or equal to the specified delta"
   lam(actual, target):
     num-abs(target - actual) <= delta
   end
