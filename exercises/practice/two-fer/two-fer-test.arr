@@ -26,7 +26,6 @@ fun another-name-given():
   end
 end
 
-
 #|
   Code to run each test. Each line corresponds to a test above and whether it should be run.
   To mark a test to be run, replace `false` with `true` on that same line after the comma.
