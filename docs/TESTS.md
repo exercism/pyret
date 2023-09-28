@@ -1,4 +1,9 @@
-# Tests
+
+# Tests In Brief
+
+When working through the Exercism web editor, all tests defined in the test file will be run. When working offline, only the first test is enabled by default. To enable subsequent tests, find the corresponding `TestRun` value at the bottom of the file and change its `active` value from false to true. Rerunning `pyret example-test.arr` at this point will pick up and run the now-active tests.
+
+# Testing Details
 
 When working locally (i.e. not within the Exercism web editor), first make sure [pyret-npm] is installed and accessible.
 Then execute the tests by passing `pyret` the location of the test file relative to your current working directory like
@@ -7,7 +12,7 @@ Then execute the tests by passing `pyret` the location of the test file relative
 On this track, Pyret check blocks are wrapped in functions to delay detection and execution.
 Those functions are stored as a `TestRun` value with a field for the function and another field for whether it should be run.
 When working locally, this second field should be set to `true` instead of `false` if you want to run a specific test.
-On the Exercism website, all TestRun values are run regardless of that second field's contents so a solution passing locally may not pass on the website if all the local tessts haven't been enabled.
+On the Exercism website, all TestRun values are run regardless of that second field's contents so a solution passing locally may not pass on the website if all the local tests haven't been enabled.
 
 In the below example, the first TestRun value `test(foo, true)` has `true` for the `active` field so Pyret will invoke the stored function, evaluating the check block inside it.
 The second TestRun value `test(bar, false)` has `false` for the same field so Pyret won't invoke the bar function.
@@ -36,10 +41,6 @@ data TestRun: test(run, active) end
   test(bar, false)
 ].each(lam(t): when t.active: t.run() end end)
 ```
-
-# Skipping Tests
-
-When working through the Exercism web editor, all tests defined in the test file will be run. When working offline, only the first test is enabled by default.
 
 # Debugging
 
