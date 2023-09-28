@@ -1,7 +1,10 @@
 
 # Tests In Brief
 
-When working through the Exercism web editor, all tests defined in the test file will be run. When working offline, only the first test is enabled by default. To enable subsequent tests, find the corresponding `TestRun` value at the bottom of the file and change its `active` value from false to true. Rerunning `pyret example-test.arr` at this point will pick up and run the now-active tests.
+When working through the Exercism web editor, all tests defined in the test file will be run.
+When working offline, only the first test is enabled by default.
+To enable subsequent tests, find the corresponding `TestRun` value at the bottom of the file and change its `active` value from false to true.
+Rerunning `pyret example-test.arr` at this point will pick up and run the now-active tests.
 
 # Testing Details
 
