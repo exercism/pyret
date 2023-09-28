@@ -6,7 +6,10 @@ Exercism exercises in Pyret.
 
 ## Setup
 
-If you're solving Exercism exercises offline, you'll need a recent copy of [pyret-npm](https://www.npmjs.com/package/pyret-npm) (0.0.27+). Currently, pyret-npm works on Linux and MacOS platforms although Windows users can run it via the [WSL](https://learn.microsoft.com/en-us/windows/wsl/). However, you can also use [Pyret's online IDE](https://code.pyret.org/). In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `essentials2020` supported by pyret-npm.
+If you're solving Exercism exercises offline, you'll need a recent copy of [pyret-npm](https://www.npmjs.com/package/pyret-npm) (0.0.27+).
+Currently, pyret-npm works on Linux and MacOS platforms although Windows users can run it via the [WSL](https://learn.microsoft.com/en-us/windows/wsl/).
+However, you can also use [Pyret's online IDE](https://code.pyret.org/).
+In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `essentials2020` supported by pyret-npm.
 
 ## Support
 
@@ -25,7 +28,8 @@ This command will iterate over all exercises and check to see if their exemplar/
 
 Please see [Exercism's contributing guide](https://exercism.org/docs/building).
 
-At the moment, there's not a generator for Pyret exercises. Make sure `use context essentials2020` is the first line in all Pyret files to explicitly set the default namespace.
+At the moment, there's not a generator for Pyret exercises.
+Make sure `use context essentials2020` is the first line in all Pyret files to explicitly set the default namespace.
 
 ## Track linting
 

@@ -1,6 +1,9 @@
 # Installation
 
-Please review the [official installation directions]. The [official online editor] that can be used by most modern browsers and is generally the recommended way to use Pyret out of the box. However, an experimental command-line interface (CLI) is also available by first installing [NodeJS] following your platform's directions and then the [pyret-npm] package. Currently, the offline CLI works best in Linux and MacOS, but Windows users will need to install it using the [Windows Subsystem for Linux (WSL)]or a virtual machine of their choosing.
+Please review the [official installation directions].
+The [official online editor] can be used by most modern browsers and is generally the recommended way to use Pyret out of the box.
+However, a command-line interface (CLI) is also available by first installing [NodeJS] following your platform's directions and then the [pyret-npm] package.
+Currently, the offline CLI works best in Linux and MacOS, but Windows users will need to install it using the [Windows Subsystem for Linux (WSL)] or a virtual machine of their choosing.
 
 [official installation directions]: https://pyret.org/set-sail/
 [NodeJS]: https://nodejs.org/en/download
