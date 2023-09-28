@@ -343,6 +343,14 @@
         "difficulty": 3
       },
       {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "c2529f83-00db-427c-a478-57a8c7512f12",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
