@@ -8,7 +8,6 @@ On this track, Pyret check blocks are wrapped in functions to delay detection an
 In the below example, the first TestRun value `test(foo, true)` has true for the `active` field so Pyret will invoke the stored function, evaluating the check block inside it. The second TestRun value `test(bar, false)` has false for the same field so Pyret won't invoke the bar function. As a consequence, Pyret will locally report the single test seen as passed. However, when you submit your solution, the Exercism website runs both tests, and the second one will fail. To avoid this issue, enable each test as you work on your solution locally by changing the corresponding TestRun's active field to true. If all the tests are enabled locally and pass, so should the tests on the website once you submit the solution.
 
 ```pyret
-
 fun foo():
   check "foo":
     true is true
