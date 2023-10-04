@@ -42,7 +42,10 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "5ae47f42-45fc-4de2-b0df-3098ef622b0c",
-        "practices": [],
+        "practices": [
+          "loops",
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -58,7 +61,9 @@
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "26431238-01d5-4890-9bb1-f5b023e2c295",
-        "practices": [],
+        "practices": [
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -66,7 +71,10 @@
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "7263c877-5ddd-4c48-886f-e3f57967f649",
-        "practices": [],
+        "practices": [
+          "strings",
+          "conditionals"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -74,7 +82,9 @@
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "44b5048a-8e98-4300-8bd9-fce59dcc008b",
-        "practices": [],
+        "practices": [
+          "data-definitions"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -82,7 +92,10 @@
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "dc4437e4-9ab3-4ab0-ae0d-ae3d2287e97c",
-        "practices": [],
+        "practices": [
+          "loops",
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -90,7 +103,9 @@
         "slug": "bob",
         "name": "Bob",
         "uuid": "28d1beed-ff83-4341-8a71-08fd287489fd",
-        "practices": [],
+        "practices": [
+          "conditionals"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -98,7 +113,9 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
-        "practices": [],
+        "practices": [
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -106,7 +123,9 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "d70a98f9-4743-40b7-ab18-f37d5508a7a5",
-        "practices": [],
+        "practices": [
+          "comparisons"
+        ],
         "prerequisites": [],
         "difficulty": 1
       },
@@ -114,7 +133,10 @@
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "6968b216-4478-4778-93d3-197ed849fd40",
-        "practices": [],
+        "practices": [
+          "numbers",
+          "loops"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -122,7 +144,9 @@
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
-        "practices": [],
+        "practices": [
+          "data-definitions"
+        ],
         "prerequisites": [],
         "difficulty": 5
       },
@@ -130,7 +154,9 @@
         "slug": "etl",
         "name": "ETL",
         "uuid": "a86c1654-da80-46c9-aba5-a2eec3f66262",
-        "practices": [],
+        "practices": [
+          "string-dicts"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -138,7 +164,9 @@
         "slug": "grains",
         "name": "Grains",
         "uuid": "04948c47-34d1-4200-a6f0-5131f63c5600",
-        "practices": [],
+        "practices": [
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -146,7 +174,10 @@
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "731dcc09-a78c-4da4-a6c7-47bb0b6720f2",
-        "practices": [],
+        "practices": [
+          "comparisons",
+          "loops"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -162,7 +193,9 @@
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "8a71dfd1-01a6-485a-87b2-dcee0dd7b965",
-        "practices": [],
+        "practices": [
+          "data-definitions"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -170,7 +203,9 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "dff46c06-d8be-48e0-8158-4c6c484a3cbc",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -178,7 +213,10 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "c67175ca-9706-4aec-a45b-040a23ef25c7",
-        "practices": [],
+        "practices": [
+          "booleans",
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -186,7 +224,9 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "0a28e195-6f3c-46e2-a62c-1a7097583032",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -194,7 +234,9 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "9476a1c3-1775-453d-bb08-be919fd03bad",
-        "practices": [],
+        "practices": [
+          "loops"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -202,7 +244,9 @@
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "eef61f56-6dda-4389-b348-7c27835493b8",
-        "practices": [],
+        "practices": [
+          "loops"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -210,7 +254,10 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "437768f4-a4d4-4a87-bf8b-6fe403e34179",
-        "practices": [],
+        "practices": [
+          "loops",
+          "string-dicts"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -218,7 +265,9 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "ef2dc89f-a9d2-48f0-9bb5-4cafeb50c81c",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -226,7 +275,9 @@
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "dbf1655b-c3d3-4443-8862-db4e6c3136e4",
-        "practices": [],
+        "practices": [
+          "comparisons"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -234,7 +285,9 @@
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "dd3ab667-8743-4761-af2d-781fc80959f9",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -242,7 +295,10 @@
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
-        "practices": [],
+        "practices": [
+          "loops",
+          "string-dicts"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -250,7 +306,9 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "18946346-e04c-4032-b3dc-4abdb6c8f5a1",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -258,7 +316,9 @@
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "5a57c5fa-f4a2-460d-9dec-812834ae1cd4",
-        "practices": [],
+        "practices": [
+          "data-definitions"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -266,7 +326,9 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "8dcd513e-93f5-499b-a388-0a7f3c7898dd",
-        "practices": [],
+        "practices": [
+          "comparisons"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -274,7 +336,9 @@
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "57bc4302-4c4b-43a7-9abb-2378dd6ef70e",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -282,7 +346,9 @@
         "slug": "resistor-color-duo",
         "name": "Resistor Color Duo",
         "uuid": "3f897d66-6f49-49ca-a6ab-a168d6ef5e68",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -290,7 +356,9 @@
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "4e758c9f-3204-41cd-b8d1-8f978bd90809",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -298,7 +366,9 @@
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "69911771-a41a-4be9-b685-678def75e1b2",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 1
       },
@@ -306,7 +376,10 @@
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "00406c43-30c9-4756-a830-b110b6b53eb1",
-        "practices": [],
+        "practices": [
+          "comparisons",
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -314,7 +387,9 @@
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "1382711a-e980-4ff1-825a-a6373ae3d88f",
-        "practices": [],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -322,7 +397,9 @@
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "8b1cfd2f-0d25-4eec-9b8e-75c7a339fc6c",
-        "practices": [],
+        "practices": [
+          "string-dicts"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -330,7 +407,9 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "3a830edd-253c-4889-ad6b-9402fea4af97",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -338,6 +417,16 @@
         "slug": "series",
         "name": "Series",
         "uuid": "f58b5305-3bf2-4c15-8aac-339a97204d06",
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "c2529f83-00db-427c-a478-57a8c7512f12",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
@@ -346,7 +435,10 @@
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "fcdf45a2-a72c-4983-8271-ca9276467f98",
-        "practices": [],
+        "practices": [
+          "string-dicts",
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -354,7 +446,10 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
-        "practices": [],
+        "practices": [
+          "booleans",
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -362,7 +457,9 @@
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "351651f4-3e42-4392-8862-9a18f9acb70d",
-        "practices": [],
+        "practices": [
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 3
       },
@@ -370,7 +467,9 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "8a4f0fdd-831f-4e28-9cf9-391b725bcf69",
-        "practices": [],
+        "practices": [
+          "lists"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -378,7 +477,11 @@
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "df93be4e-a862-4636-bb1c-e51e0e294797",
-        "practices": [],
+        "practices": [
+          "strings",
+          "string-dicts",
+          "loops"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -386,7 +489,9 @@
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
-        "practices": [],
+        "practices": [
+          "function-arguments"
+        ],
         "prerequisites": [],
         "difficulty": 1
       }
@@ -397,7 +502,58 @@
       "lens-person"
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "uuid": "f4293a2d-6b59-4372-8764-2344afe3195a",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
+    {
+      "uuid": "596b676c-2118-4fa4-a8be-f0ded17a6294",
+      "slug": "comparisons",
+      "name": "Comparisons"
+    },
+    {
+      "uuid": "7ebdbbc7-68f8-40f1-bbe0-957d5cead31e",
+      "slug": "conditionals",
+      "name": "Conditionals"
+    },
+    {
+      "uuid": "f03bf87f-e3ef-4771-b3f0-b360a864d9a3",
+      "slug": "data-definitions",
+      "name": "Data Definitions"
+    },
+    {
+      "uuid": "1a5898a8-01f7-4b84-89ed-1cb2cb8dc8fe",
+      "slug": "function-arguments",
+      "name": "Function Arguments"
+    },
+    {
+      "uuid": "33dd5c32-e13f-4d61-bdce-cc976e86351e",
+      "slug": "lists",
+      "name": "Lists"
+    },
+    {
+      "uuid": "da0fd100-f1e1-4bc9-98fd-a2bb52962358",
+      "slug": "loops",
+      "name": "Loops"
+    },
+    {
+      "uuid": "e2284f76-9c87-4b29-9c84-4fb628a92f2d",
+      "slug": "numbers",
+      "name": "Numbers"
+    },
+    {
+      "uuid": "bec21c96-0c3d-48fb-ba7a-2b5f744a1d30",
+      "slug": "string-dicts",
+      "name": "StringDicts"
+    },
+    {
+      "uuid": "38486099-8bf7-4721-9c94-fd3b30c522a9",
+      "slug": "strings",
+      "name": "Strings"
+    }
+  ],
   "key_features": [
     {
       "title": "Simplified syntax",

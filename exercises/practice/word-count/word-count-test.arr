@@ -4,127 +4,186 @@ include file("word-count.arr")
 
 include string-dict
 
-check "count one word":
-  input = "word"
-  expected = [string-dict: "word", 1]
-  
-  word-count(input) is expected
+#|
+  When working offline, all tests except the first one are skipped by default.
+  Once you get the first test running, unskip the next one until all tests pass locally.
+  Check the block comment below for further details.
+|#
+
+fun count-one-word():
+  check "count one word":
+    input = "word"
+    expected = [string-dict: "word", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "count one of each word":
-  input = "one of each"
-  expected = [string-dict: "one", 1, "of", 1, "each", 1]
-  
-  word-count(input) is expected
+fun count-one-of-each-word():
+  check "count one of each word":
+    input = "one of each"
+    expected = [string-dict: "one", 1, "of", 1, "each", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "multiple occurrences of a word":
-  input = "one fish two fish red fish blue fish"
-  expected = [string-dict: "one", 1, "fish", 4, "two", 1, "red", 1, "blue", 1]
-  
-  word-count(input) is expected
+fun multiple-occurences-of-word():
+  check "multiple occurrences of a word":
+    input = "one fish two fish red fish blue fish"
+    expected = [string-dict: "one", 1, "fish", 4, "two", 1, "red", 1, "blue", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "handles cramped lists":
-  input = "one,two,three"
-  expected = [string-dict: "one", 1, "two", 1, "three", 1]
-  
-  word-count(input) is expected
+fun handle-cramped-lists():
+  check "handles cramped lists":
+    input = "one,two,three"
+    expected = [string-dict: "one", 1, "two", 1, "three", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "handles expanded lists":
-  input = "one,\ntwo,\nthree"
-  expected = [string-dict: "one", 1, "two", 1, "three", 1]
-  
-  word-count(input) is expected
+fun handle-expanded-lists():
+  check "handles expanded lists":
+    input = "one,\ntwo,\nthree"
+    expected = [string-dict: "one", 1, "two", 1, "three", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "ignore punctuation":
-  input = "car: carpet as java: javascript!!&@$%^&"
-  expected = [string-dict:
-   "car", 1,
-   "carpet", 1,
-   "as", 1,
-   "java", 1,
-   "javascript", 1]
-  
-  word-count(input) is expected
+fun ignore-punctuation():
+  check "ignore punctuation":
+    input = "car: carpet as java: javascript!!&@$%^&"
+    expected = [string-dict:
+      "car", 1,
+      "carpet", 1,
+      "as", 1,
+      "java", 1,
+      "javascript", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "include numbers":
-  input = "testing, 1, 2 testing"
-  expected = [string-dict: "testing", 2, "1", 1, "2", 1]
-  
-  word-count(input) is expected
+fun include-numbers():
+  check "include numbers":
+    input = "testing, 1, 2 testing"
+    expected = [string-dict: "testing", 2, "1", 1, "2", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "normalize case":
-  input = "go Go GO Stop stop"
-  expected = [string-dict: "go", 3, "stop", 2]
-  
-  word-count(input) is expected
+fun normalize-case():
+  check "normalize case":
+    input = "go Go GO Stop stop"
+    expected = [string-dict: "go", 3, "stop", 2]
+    
+    word-count(input) is expected
+  end
 end
 
-check "with apostrophes":
-  input = "'First: don't laugh. Then: don't cry. You're getting it.'"
-  expected = [string-dict: 
-    "first", 1,
-    "don't", 2,
-    "laugh", 1,
-    "then", 1,
-    "cry", 1,
-    "you're", 1,
-    "getting", 1,
-    "it", 1]
-  
-  word-count(input) is expected
+fun with-apostrophes():
+  check "with apostrophes":
+    input = "'First: don't laugh. Then: don't cry. You're getting it.'"
+    expected = [string-dict: 
+      "first", 1,
+      "don't", 2,
+      "laugh", 1,
+      "then", 1,
+      "cry", 1,
+      "you're", 1,
+      "getting", 1,
+      "it", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "with quotations":
-  input = "Joe can't tell between 'large' and large."
-  expected = [string-dict:
-    "joe", 1,
-    "can't", 1,
-    "tell", 1,
-    "between", 1,
-    "large", 2,
-    "and", 1]
-  
-  word-count(input) is expected
+fun with-quotations():
+  check "with quotations":
+    input = "Joe can't tell between 'large' and large."
+    expected = [string-dict:
+      "joe", 1,
+      "can't", 1,
+      "tell", 1,
+      "between", 1,
+      "large", 2,
+      "and", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "substrings from the beginning":
-  input = "Joe can't tell between app, apple and a."
-  expected = [string-dict:
-    "joe", 1,
-    "can't", 1,
-    "tell", 1,
-    "between", 1,
-    "app", 1,
-    "apple", 1,
-    "and", 1,
-    "a", 1]
-  
-  word-count(input) is expected
+fun substrings-from-the-beginning():
+  check "substrings from the beginning":
+    input = "Joe can't tell between app, apple and a."
+    expected = [string-dict:
+      "joe", 1,
+      "can't", 1,
+      "tell", 1,
+      "between", 1,
+      "app", 1,
+      "apple", 1,
+      "and", 1,
+      "a", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "multiple spaces not detected as a word":
-  input = " multiple   whitespaces"
-  expected = [string-dict: "multiple", 1, "whitespaces", 1]
-  
-  word-count(input) is expected
+fun multiple-spaces-not-a-word():
+  check "multiple spaces not detected as a word":
+    input = " multiple   whitespaces"
+    expected = [string-dict: "multiple", 1, "whitespaces", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "alternating word separators not detected as a word":
-  input = ",\n,one,\n ,two \n 'three'"
-  expected = [string-dict: "one", 1, "two", 1, "three", 1]
-  
-  word-count(input) is expected
+fun alternating-word-separators-not-a-word():
+  check "alternating word separators not detected as a word":
+    input = ",\n,one,\n ,two \n 'three'"
+    expected = [string-dict: "one", 1, "two", 1, "three", 1]
+    
+    word-count(input) is expected
+  end
 end
 
-check "quotation for word with apostrophe":
-  input = "can, can't, 'can't'"
-  expected = [string-dict: "can", 1, "can't", 2]
+fun quotation-for-word-with-apostrophe():
+  check "quotation for word with apostrophe":
+    input = "can, can't, 'can't'"
+    expected = [string-dict: "can", 1, "can't", 2]
 
-  word-count(input) is expected
+    word-count(input) is expected
+  end
 end
+
+#|
+  Code to run each test. Each line corresponds to a test above and whether it should be run.
+  To mark a test to be run, replace `false` with `true` on that same line after the comma.
+  test(test-a, true) will be run. test(test-a, false) will be skipped.
+|#
+
+data TestRun: test(run, active) end
+
+[list: 
+  test(count-one-word, true),
+  test(count-one-of-each-word, false),
+  test(multiple-occurences-of-word, false),
+  test(handle-cramped-lists, false),
+  test(handle-expanded-lists, false),
+  test(ignore-punctuation, false),
+  test(include-numbers, false),
+  test(normalize-case, false),
+  test(with-apostrophes, false),
+  test(with-quotations, false),
+  test(substrings-from-the-beginning, false),
+  test(multiple-spaces-not-a-word, false),
+  test(alternating-word-separators-not-a-word, false),
+  test(quotation-for-word-with-apostrophe, false)
+].each(lam(t): when t.active: t.run() end end)
