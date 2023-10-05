@@ -1,7 +1,7 @@
 {
-    "blurb": "TODO: add blurb for this concept",
+    "blurb": "Pyret provides a Boolean primitive with two distinct values: 'true' and 'false'.",
     "authors": [
-        "YourNameHere"
+        "BNAndras"
     ],
     "contributors": []
 }
