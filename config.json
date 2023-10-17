@@ -294,8 +294,10 @@
       {
         "slug": "pop-count",
         "name": "Pop Count",
-        "uuid": "dd3ab667-8743-4761-af2d-781fc80959f9",
-        "practices": [],
+        "uuid": "ebfaddfb-d094-4471-8771-fc09cf14274f",
+        "practices": [
+          "numbers"
+        ],
         "prerequisites": [],
         "difficulty": 2
       },
