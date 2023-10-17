@@ -292,6 +292,14 @@
         "difficulty": 3
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "dd3ab667-8743-4761-af2d-781fc80959f9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
