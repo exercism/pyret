@@ -5,7 +5,6 @@ provide-types *
 data Character:
   | blank-character() with:
     method randomize-stats(self) -> Character:
-      abilities = self.ability()
       strength = self.ability()
       dexterity = self.ability()
       constitution = self.ability()
