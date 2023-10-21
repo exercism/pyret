@@ -32,11 +32,7 @@
       ".meta/exemplar.arr"
     ]
   },
-  "approaches": {
-    "snippet_extension": "arr"
-  },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "acronym",
@@ -597,14 +593,14 @@
     }
   ],
   "tags": [
-      "execution_mode/compiled",
-      "paradigm/functional",
-      "typing/dynamic",
-      "platform/web",
-      "platform/mac",
-      "platform/linux",
-      "runtime/language_specific",
-      "used_for/scientific_calculations",
-      "used_for/scripts"
+    "execution_mode/compiled",
+    "paradigm/functional",
+    "platform/linux",
+    "platform/mac",
+    "platform/web",
+    "runtime/language_specific",
+    "typing/dynamic",
+    "used_for/scientific_calculations",
+    "used_for/scripts"
   ]
 }
