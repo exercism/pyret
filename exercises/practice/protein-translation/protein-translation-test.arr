@@ -171,9 +171,9 @@ fun non-existent-codon():
 end
 
 fun unknown-codon():
-check "Unknown amino acids, not part of a codon, can't translate":
-  proteins("XYZ") raises "Invalid codon"
-end
+  check "Unknown amino acids, not part of a codon, can't translate":
+    proteins("XYZ") raises "Invalid codon"
+  end
 end
 
 fun incomplete-sequence():
