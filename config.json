@@ -157,6 +157,14 @@
         "difficulty": 2
       },
       {
+        "slug": "flatten-array",
+        "name": "Flatten List",
+        "uuid": "23b5a864-186c-4a4d-ba32-83608b0d18f6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "04948c47-34d1-4200-a6f0-5131f63c5600",
