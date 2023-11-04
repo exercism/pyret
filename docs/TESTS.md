@@ -1,57 +1,58 @@
 
-# Tests In Brief
+# Testing on the Pyret track
 
-When working through the Exercism web editor, all tests defined in the test file will be run.
-When working offline, only the first test is enabled by default.
-To enable subsequent tests, find the corresponding `TestRun` value at the bottom of the file and change its `active` value from false to true.
-Rerunning `pyret example-test.arr` at this point will pick up and run the now-active tests.
+## Testing using the web editor
 
-# Testing Details
+To run tests, just click the "Run Tests" button and all the tests will run.
 
-When working locally (i.e. not within the Exercism web editor), first make sure [pyret-npm] is installed and accessible.
-Then execute the tests by passing `pyret` the location of the test file relative to your current working directory like
-`$ pyret relative/path/to/example-test.arr`.
+## Testing locally
 
-On this track, Pyret check blocks are wrapped in functions to delay detection and execution.
-Those functions are stored as a `TestRun` value with a field for the function and another field for whether it should be run.
-When working locally, this second field should be set to `true` instead of `false` if you want to run a specific test.
-On the Exercism website, all TestRun values are run regardless of that second field's contents so a solution passing locally may not pass on the website if all the local tests haven't been enabled.
+Before getting to work locally (i.e. not within the Exercism web editor), first make sure [pyret-npm] is installed and the `pyret` command works.
+See [installation] for details about installing Pyret locally.
 
-In the below example, the first TestRun value `test(foo, true)` has `true` for the `active` field so Pyret will invoke the stored function, evaluating the check block inside it.
-The second TestRun value `test(bar, false)` has `false` for the same field so Pyret won't invoke the bar function.
-As a consequence, Pyret will locally report the single test seen as passed
-However, when you submit your solution, the Exercism website runs both tests, and the second one will fail.
-To avoid this issue, enable each test as you work on your solution locally by changing the corresponding TestRun's active field to true.
-If all the tests are enabled locally and pass, so should the tests on the website once you submit the solution.
+Each exercise has multiple tests.
+When you first download the exercise, only one test will be enabled.
+The recommended workflow is to run the test (which should initially fail), the make changes to your code until that test passes.
+Then, enable the next test in the test file and repeat (modify the code, run tests, move on) until all the tests pass.
+Some people prefer to preemptively enable all the tests before working on the code; this can overwhelm some people with how many tests are failing and make it hard to figure out what to work on, but this workflow works well for others.
+
+### Running tests
+
+Each exercise will have a solution file and a test file.
+For instance, the Hello World exercise has a `hello-world.arr` file and a `hello-world-test.arr`.
+To run tests, execute the `pyret` command with the test file as an argument.
+For instance, running `pyret hello-world-test.arr` in the `hello-world` directory will run the Hello World exercises.
+
+### Enabling tests
+
+Every test file has one or more tests, each test wrapped in its own function.
+The test file has a `TestRun` near the bottom of the file with a list of tests.
+Each test in the list contains two values: the test function to run and an `active` value which controls if the test is executed.
+For instance, the `etl-test.arr` file contains four tests, with the first active and the rest inactive.
 
 ```pyret
-fun foo():
-  check "foo":
-    true is true
-  end
-end
-
-fun bar():
-  check "bar":
-    false is true
-  end
-end
-
 data TestRun: test(run, active) end
 
 [list: 
-  test(foo, true),
-  test(bar, false)
+  test(single-letter, true),
+  test(single-score-multiple-letters, false),
+  test(multiple-scores-multiple-letters, false),
+  test(multiple-scores-different-numbers-of-letters, false)
 ].each(lam(t): when t.active: t.run() end end)
 ```
 
-# Debugging
+To enable additional tests, change the `active` value from `false` to `true` then rerun the test file with the `pyret` command.
+
+Note: if you forget to enable all the tests, Pyret may report that all the (active) tests are passing locally but when you run your code on the website, Pyret may repor the tests are not passing (as it may be running additional tests which did not run locally).
+
+Note: when running tests on the website, all the tests will always run.
+
+## Debugging
 
 In many languages, there is a common idiom of printing text to the screen during code execution.
-This can trivially be done using the
-[print] function which prints its provided value and then returns it.
+This can trivially be done using the [print] function which prints the value passed to it and then returns that value.
 
-However, Pyret by default doesn't allow for multiple expressions in a code block so you can't do this:
+Pyret by default doesn't allow for multiple expressions in a code block so you can't do this:
 
 ```pyret
 fun add-two-numbers(number1, number2):
@@ -76,7 +77,7 @@ print(add-two-number(1, 2))
 ```
 
 A more convenient approach is to use a [spy statement] which prints the contents and line numbers of the passed values.
-It doesn't require the block keyword to be used.
+Spies can be used without the `block` keyword.
 
 ```pyret
 fun add-two-numbers(number1, number2):
@@ -91,7 +92,7 @@ Spying (at .../add-two-numbers.arr:2:2-2:27)
 3
 ```
 
-A label can also be used:
+You can also use a label with using `spy`:
 
 ```pyret
 fun add-two-numbers(number1, number2):
@@ -106,7 +107,7 @@ Spying "adding two" (at .../add-two-numbers.arr:2:2-2:27)
 3
 ```
 
-You can also use multiple spies:
+You can also use multiple spies together:
 
 ```pyret
 fun do-math(number1, number2):
@@ -129,7 +130,7 @@ Spying "subtracting" (at .../math.arr:6:2-6:35)
 true
 ```
 
-# Notes
+## Notes
 
 Tests on this track will `import` your file, allowing them access to anything explicitly exported from your code.
 
@@ -155,3 +156,4 @@ All exercise stubs will have either `provide` or `provide-types` statements set 
 [spy statement]: https://pyret.org/docs/latest/s_spies.html
 [provide statement]: https://pyret.org/docs/latest/Provide_Statements.html
 [shadowing]: https://pyret.org/docs/latest/Bindings.html#%28part._s~3ashadowing%29
+[installation]: https://exercism.org/docs/tracks/pyret/installation
