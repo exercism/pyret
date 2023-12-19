@@ -127,6 +127,6 @@ spy: a, b, c end
 #   c: 100
 ```
 
-[print]: "https://pyret.org/docs/latest/_global_.html#%28idx._%28gentag._57%29%29"
-[spy]: "https://pyret.org/docs/latest/s_spies.html"
-[data declarations]: "https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29"
+[print]: https://pyret.org/docs/latest/_global_.html#%28idx._%28gentag._57%29%29
+[spy]: https://pyret.org/docs/latest/s_spies.html
+[data declarations]: https://pyret.org/docs/latest/s_declarations.html#%28part._s~3adata-decl%29
