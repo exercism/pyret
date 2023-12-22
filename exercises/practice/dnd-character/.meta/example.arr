@@ -14,7 +14,7 @@ data Character:
       character(strength, dexterity, constitution, intelligence, wisdom, charisma)
     end
   | character(strength, dexterity, constitution, intelligence, wisdom, charisma) with:
-    method get-hitpoints(self):
+    method get-hitpoints(self) -> NumInteger:
       10 + self.modifier(self.constitution)
     end
 sharing:
