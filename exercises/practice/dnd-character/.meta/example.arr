@@ -19,7 +19,7 @@ data Character:
     end
 sharing:
   method ability(self) -> NumInteger:
-    roll-dice = lam(_): num-random(5) + 1 end
+    roll-dice = lam(_): num-random(6) + 1 end
     rolls = map(roll-dice, repeat(4, 0))
     rolls.sort().drop(1).foldl(lam(elt, acc): elt + acc end, 0)
   end,
