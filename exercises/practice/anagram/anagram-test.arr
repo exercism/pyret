@@ -100,7 +100,7 @@ end
 
 fun no-detect-anagram-for-repeating-word():
   check "does not detect an anagram if the original word is repeated":
-    candidates = [list: "go Go GO"]
+    candidates = [list: "goGoGO"]
     expected = [list: ]
 
     find-anagrams("go", candidates) is expected
