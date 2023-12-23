@@ -31,11 +31,11 @@ fun my-map(lst, f):
   raise("please implement the my-map function")
 end
 
-fun my-foldl(lst, initial, f):
+fun my-foldl(lst, f, initial):
   raise("please implement the my-foldl function")
 end
 
-fun my-foldr(lst, initial, f):
+fun my-foldr(lst, f, initial):
   raise("please implement the my-foldr function")
 end
 
