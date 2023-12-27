@@ -14,12 +14,12 @@ data Character:
       character(strength, dexterity, constitution, intelligence, wisdom, charisma)
     end
   | character(strength, dexterity, constitution, intelligence, wisdom, charisma) with:
-    method get-hitpoints(self):
+    method get-hitpoints(self) -> NumInteger:
       10 + self.modifier(self.constitution)
     end
 sharing:
   method ability(self) -> NumInteger:
-    roll-dice = lam(_): num-random(5) + 1 end
+    roll-dice = lam(_): num-random(6) + 1 end
     rolls = map(roll-dice, repeat(4, 0))
     rolls.sort().drop(1).foldl(lam(elt, acc): elt + acc end, 0)
   end,
