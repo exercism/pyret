@@ -10,16 +10,16 @@ include file("robot-simulator.arr")
 
 fun create-robot-at-origin-facing-north():
   check "Create robot at origin facing north":
-    robot-a = Robot(0, 0, 'north')
-    robot-b = Robot(0, 0, 'north')
-    robot-a is robot-b
+    robot = Robot(0, 0, 'north')
+    expected = Robot(0, 0, 'north')
+    robot is expected
   end
 end
 
 fun create-robot-at-negative-position-facing-south():
   check "Create robot at negative position facing south":
-    robot-a = Robot(-1, -1, 'south')
-    robot-b = Robot(-1, -1, 'south')
+    robot = Robot(-1, -1, 'south')
+    expected = Robot(-1, -1, 'south')
     robot is expected
   end
 end
