@@ -1,0 +1,18 @@
+{
+  "introduction": {
+    "authors": [
+      "BNAndras"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "2f53896f-b3e7-4c7d-be3a-a3342087826e",
+      "slug": "boolean-chain",
+      "title": "Boolean Chaining",
+      "blurb": "Use operators to check boolean values in a chain",
+      "authors": [
+        "BNAndras"
+      ]
+    }
+  ]
+}
