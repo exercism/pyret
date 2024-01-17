@@ -36,7 +36,7 @@ fun leap(year):
 end
 ```
 
-For more information, check the [if expressions approach][approach-if-else].
+For more information, check the [if expressions approach][approach-if-expressions].
 
 [num-modulo]: https://pyret.org/docs/latest/numbers.html#%28part._numbers_num-modulo%29
 [approach-boolean-chain]: https://exercism.org/tracks/pyret/exercises/leap/approaches/boolean-chain

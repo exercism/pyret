@@ -1,0 +1,8 @@
+fun leap(year):
+  if num-equal(num-modulo(year, 400), 0):
+    true
+  else if num-equal(num-modulo(year, 100), 0):
+    false
+  else if num-equal(num-modulo(year, 4), 0):
+    true
+# clipped for brevity
