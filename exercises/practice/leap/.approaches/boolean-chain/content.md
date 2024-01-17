@@ -10,7 +10,7 @@ fun leap(year):
 end
 ```
 
-This approach uses the Boolean operators `and` and `or` to chain together values from two Boolean expressions, creating a Boolean value.
+This approach uses a helper function `year-is-divisible-by` and the Boolean operators `and` and `or` to run each check (divisible by 4, not divisible by 100, and divisible by 400) in order, producing a single Boolean value at the end.
 The `and` operator returns `true` when both sides are true but `false` otherwise.
 The `or` operator returns `false` when both sides are false but `true` otherwise.
 
