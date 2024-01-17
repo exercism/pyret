@@ -21,5 +21,23 @@ end
 
 For more information, check the [Boolean chain approach][approach-boolean-chain].
 
+## Approach: If expressions
+
+```pyret
+fun leap(year):
+  if num-equal(num-modulo(year, 400), 0):
+    true
+  else if num-equal(num-modulo(year, 100), 0):
+    false
+  else if num-equal(num-modulo(year, 4), 0):
+    true
+  else:
+    false
+end
+```
+
+For more information, check the [if expressions approach][approach-if-else].
+
 [num-modulo]: https://pyret.org/docs/latest/numbers.html#%28part._numbers_num-modulo%29
 [approach-boolean-chain]: https://exercism.org/tracks/pyret/exercises/leap/approaches/boolean-chain
+[approach-if-expressions]: https://exercism.org/tracks/pyret/exercises/leap/approaches/if-expressions
