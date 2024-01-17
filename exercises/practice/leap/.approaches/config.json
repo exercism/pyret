@@ -9,7 +9,16 @@
       "uuid": "2f53896f-b3e7-4c7d-be3a-a3342087826e",
       "slug": "boolean-chain",
       "title": "Boolean Chaining",
-      "blurb": "Use operators to check boolean values in a chain",
+      "blurb": "Use operators to check Boolean values in a chain",
+      "authors": [
+        "BNAndras"
+      ]
+    },
+    {
+      "uuid": "19b192ea-7dbe-4c22-b29c-93df1127f7e0",
+      "slug": "if-expressions",
+      "title": "If Expressions",
+      "blurb": "Use if expressions to conditionally check a leap year",
       "authors": [
         "BNAndras"
       ]
