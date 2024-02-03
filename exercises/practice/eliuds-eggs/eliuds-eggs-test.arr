@@ -1,6 +1,6 @@
 use context essentials2020
 
-include file("pop-count.arr")
+include file("eliuds-eggs.arr")
 
 #|
   When working offline, all tests except the first one are skipped by default.
