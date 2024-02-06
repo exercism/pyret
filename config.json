@@ -93,7 +93,8 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 2,
+        "status": "deprecated"
       },
       {
         "slug": "bob",
