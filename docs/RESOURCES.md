@@ -1,12 +1,13 @@
 # Resources
 
-* [Official Pyret Documentation]
-* [Official Pyret Online Editor]
-* [Pyret Discuss on Google Groups]
-* [Pyret Twitter]
-* Pyret Discord - Latest invite URL can be found on the above Twitter profile
+* [Official Documentation][official-docs]
+* [Code.pyret.org Editor][online-editor]
+* [Pyret Discuss (Google Groups)][google-groups]
+* [@PyretLang][pyret-twitter]
+* [The Pyret Programming Discord][pyret-discord]
 
-[Official Pyret Documentation]: https://pyret.org/docs/latest/
-[Official Pyret Online Editor]: https://code.pyret.org/editor
-[Pyret Discuss on Google Groups]: https://groups.google.com/g/pyret-discuss
-[Pyret Twitter]: https://twitter.com/pyretlang
+[official-docs]: https://pyret.org/docs/latest/
+[online-editor]: https://code.pyret.org/editor
+[google-groups]: https://groups.google.com/g/pyret-discuss
+[pyret-twitter]: https://twitter.com/pyretlang
+[pyret-discord]: https://discord.com/invite/7aFMB3b6Mt

@@ -1,6 +1,6 @@
 # Learning
 
-Besides Exercism's exercises and mentoring, here are some other resources from the PLT group at Brown University and academics around the world.
+The Programming Languages Team at Brown University and other academics have provided several resources for learning Pyret.
 
 * [A Data-Centric Introduction to Computing]
 * [Programming and Programming Languages]
