@@ -2,12 +2,12 @@
 
 Below are some resources for getting help if you run into trouble:
 
-* [Official Pyret Documentation]
-* [Pyret Discuss on Google Groups]
-* [Pyret Discord]
-* [Pyret Twitter]
+* [Official Documentation][official-docs]
+* [Pyret Discuss (Google Groups)][google-groups]
+* [@PyretLang][pyret-twitter]
+* [The Pyret Programming Discord][pyret-discord]
 
-[Official Pyret Documentation]: https://pyret.org/docs/latest/
-[Pyret Discuss on Google Groups]: https://groups.google.com/g/pyret-discuss
-[Pyret Discord]: https://discord.gg/9nFHuaBp
-[Pyret Twitter]: https://twitter.com/pyretlang
+[official-docs]: https://pyret.org/docs/latest/
+[google-groups]: https://groups.google.com/g/pyret-discuss
+[pyret-twitter]: https://twitter.com/pyretlang
+[pyret-discord]: https://discord.com/invite/7aFMB3b6Mt
