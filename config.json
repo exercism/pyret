@@ -519,7 +519,8 @@
     "foregone": [
       "error-handling",
       "gigasecond",
-      "lens-person"
+      "lens-person",
+      "parallel-letter-frequency"
     ]
   },
   "concepts": [
