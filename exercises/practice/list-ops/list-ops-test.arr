@@ -152,7 +152,7 @@ fun foldl-empty():
   end
 end
 
-fun foldl-direction-independet():
+fun foldl-direction-independent():
   check "folds (reduces) the given list from the left with a function -> direction independent function applied to non-empty list":
     input = [list: 1, 2, 3, 4]
     f = lam(elt, acc): elt + acc end
@@ -265,7 +265,7 @@ data TestRun: test(run, active) end
   test(map-empty, false),
   test(map-list, false),
   test(foldl-empty, false),
-  test(foldl-direction-independet, false),
+  test(foldl-direction-independent, false),
   test(foldl-direction-dependent, false),
   test(foldr-empty, false),
   test(foldr-direction-independent, false),
