@@ -71,8 +71,8 @@ end
 data TestRun: test(run, active) end
 
 [list: 
-  test(foo true),
-  test(bar, false),
+  test(foo-returns-1, true),
+  test(bar-returns-2, false),
 ].each(lam(t): when t.active: t.run() end end)
 ```
 
