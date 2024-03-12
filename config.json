@@ -104,6 +104,14 @@
         "difficulty": 2
       },
       {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "512d263f-b3ce-4f5a-ba43-6b05a2b5c0f5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "clock",
         "name": "Clock",
         "uuid": "1adaf7d8-7154-4ab9-8db3-7c120f52338c",
