@@ -1,33 +1,38 @@
 use context essentials2020 # Don't delete this line when using Pyret on Exercism 
 
-data CircularBuffer:
-  | buffer(capacity :: Number, size :: Number, elements, read-index :: Number, write-index :: Number)
+provide-types *
+provide: make-buffer end
+
+import arrays as arr
+
+data CircularBuffer<T>: | buffer(capacity :: Number, size :: Number, elements :: arr.Array<T>, read-index :: Number, write-index :: Number)
     with:
-    method write(self, value :: Number) block:
-      when self.size == self.capacity:
-        raise(“full buffer”)
+    method write(self, value :: T) block:
+      when self.size >= self.capacity:
+        raise("full buffer")
       end
       self.elements.set-now(self.write-index, value)
-      buffer(self.capacity,
+      
+      buffer<T>(self.capacity,
         self.size + 1,
         self.elements,
         self.read-index,
-        num-modulo(self.read-index + 1, self.capacity))
+        num-modulo(self.write-index + 1, self.capacity))
     end,
-    method read(self) block:
+    method read(self) -> {T;CircularBuffer<T>} block:
       when self.size == 0:
-        raise(“empty buffer”)
+        raise("empty buffer")
       end
       val = self.elements.get-now(self.read-index)
-      updated = buffer(self.capacity,
+      updated = buffer<T>(self.capacity,
         self.size - 1,
         self.elements,
         num-modulo(self.read-index + 1, self.capacity),
         self.write-index)
     {val;updated}
     end,
-    method overwrite(self, value :: Number) block:
-      buff = if self.size == self.capacity:
+    method overwrite(self, value :: T) block:
+      buff :: CircularBuffer<T> = if self.size == self.capacity:
         self.read().{1}
       else:
         self
@@ -38,6 +43,7 @@ data CircularBuffer:
       make-buffer(self.capacity)
     end
 end
-fun make-buffer(capacity :: Number):
-    buffer(capacity, 0, array-of(none, capacity), 0, 0)
+
+fun make-buffer(capacity :: Number) -> CircularBuffer<Number>:
+  buffer<Number>(capacity, 0, array-of(-1, capacity), 0, 0)
 end
