@@ -72,7 +72,7 @@
           "conditionals"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "bank-account",
@@ -82,7 +82,7 @@
           "data-definitions"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "binary-search",
@@ -104,22 +104,6 @@
         "difficulty": 2
       },
       {
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
-        "uuid": "512d263f-b3ce-4f5a-ba43-6b05a2b5c0f5",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "clock",
-        "name": "Clock",
-        "uuid": "1adaf7d8-7154-4ab9-8db3-7c120f52338c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "00a0a185-0b05-4f83-a840-80070635255a",
@@ -127,7 +111,7 @@
           "numbers"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "darts",
@@ -137,7 +121,7 @@
           "comparisons"
         ],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "difference-of-squares",
@@ -148,17 +132,7 @@
           "loops"
         ],
         "prerequisites": [],
-        "difficulty": 3
-      },
-      {
-        "slug": "dnd-character",
-        "name": "D&D Character",
-        "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
-        "practices": [
-          "data-definitions"
-        ],
-        "prerequisites": [],
-        "difficulty": 5
+        "difficulty": 2
       },
       {
         "slug": "etl",
@@ -186,7 +160,7 @@
           "numbers"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "hamming",
@@ -205,7 +179,7 @@
         "uuid": "21cb7132-eb7a-41cc-b100-4655288c3c98",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "high-scores",
@@ -225,7 +199,7 @@
           "strings"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "leap",
@@ -236,7 +210,7 @@
           "numbers"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "list-ops",
@@ -246,7 +220,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "luhn",
@@ -256,7 +230,7 @@
           "loops"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "matrix",
@@ -266,7 +240,7 @@
           "loops"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "nucleotide-count",
@@ -277,7 +251,7 @@
           "string-dicts"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "pangram",
@@ -287,7 +261,7 @@
           "strings"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "perfect-numbers",
@@ -297,7 +271,7 @@
           "comparisons"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "phone-number",
@@ -307,7 +281,7 @@
           "strings"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "eliuds-eggs",
@@ -328,7 +302,7 @@
           "string-dicts"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "proverb",
@@ -338,7 +312,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "queen-attack",
@@ -348,7 +322,7 @@
           "data-definitions"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "raindrops",
@@ -358,7 +332,7 @@
           "comparisons"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "resistor-color",
@@ -378,7 +352,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "resistor-color-trio",
@@ -388,7 +362,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "reverse-string",
@@ -398,7 +372,7 @@
           "strings"
         ],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "rna-transcription",
@@ -412,16 +386,6 @@
         "difficulty": 2
       },
       {
-        "slug": "robot-simulator",
-        "name": "Robot Simulator",
-        "uuid": "e81a517a-16be-4760-980a-21ee549c24ea",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "1382711a-e980-4ff1-825a-a6373ae3d88f",
@@ -429,7 +393,7 @@
           "strings"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "scrabble-score",
@@ -449,7 +413,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "series",
@@ -459,7 +423,7 @@
           "lists"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "simple-linked-list",
@@ -467,7 +431,7 @@
         "uuid": "c2529f83-00db-427c-a478-57a8c7512f12",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "space-age",
@@ -489,7 +453,7 @@
           "numbers"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "square-root",
@@ -499,7 +463,7 @@
           "numbers"
         ],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "strain",
@@ -531,7 +495,43 @@
           "function-arguments"
         ],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "512d263f-b3ce-4f5a-ba43-6b05a2b5c0f5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "1adaf7d8-7154-4ab9-8db3-7c120f52338c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
+        "practices": [
+          "data-definitions"
+        ],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "e81a517a-16be-4760-980a-21ee549c24ea",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ],
     "foregone": [
