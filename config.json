@@ -46,6 +46,14 @@
         "difficulty": 2
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "069b2f75-079e-4c9e-a80f-15e8482151b3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "52e3290f-b78f-423f-a1cf-d727edc9fa73",
@@ -410,6 +418,16 @@
         ],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "e81a517a-16be-4760-980a-21ee549c24ea",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "roman-numerals",
