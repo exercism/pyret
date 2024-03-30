@@ -540,6 +540,14 @@
         ],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "5f29c607-3d50-476b-967a-5c54b65402aa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ],
     "foregone": [
