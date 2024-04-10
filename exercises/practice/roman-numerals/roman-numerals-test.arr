@@ -158,6 +158,12 @@ fun MMMI():
   end
 end
 
+fun MMMDCCCLXXXVIII():
+  check "3888 is MMMDCCCLXXXVIII":
+    to-roman(3888) is "MMMDCCCLXXXVIII"
+  end
+end
+
 fun MMMCMXCIX():
   check "3999 is MMMCMXCIX":
     to-roman(3999) is "MMMCMXCIX"
@@ -199,5 +205,6 @@ data TestRun: test(run, active) end
   test(MDCLXVI, false),
   test(MMM, false),
   test(MMMI, false),
+  test(MMMDCCCLXXXVIII, false),
   test(MMMCMXCIX, false)
 ].each(lam(t): when t.active: t.run() end end)
