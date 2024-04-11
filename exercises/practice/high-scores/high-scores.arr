@@ -1,4 +1,4 @@
-use context essentials2020
+use context essentials2020 # Don't delete this line when using Pyret on Exercism 
 
 provide: high-scores end
 
