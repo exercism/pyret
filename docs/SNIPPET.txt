@@ -1,3 +1,9 @@
-fun hello(name):
-  "Hello, " + name + "!"
+fun sum(lst):
+  cases (List) lst:
+    | empty => 0
+    | link(first, rest) => first + sum(rest)
+  end
+where:
+  sum([list: ]) is 0
+  sum([list: 1, 2, 3]) is 6
 end
