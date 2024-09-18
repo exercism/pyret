@@ -164,9 +164,9 @@ fun stop-in-middle-of-six-codons():
   end
 end
 
-fun non-existent-codon():
-  check "Non-existing codon can't translate":
-    proteins("AAA") raises "Invalid codon"
+fun sequence-of-two-non-stop-codons():
+  check "Sequence of two non-STOP codons does not translate to a STOP codon":
+    proteins("AUGAUG") is [list: "Methionine", "Methionine"]
   end
 end
 
@@ -223,7 +223,7 @@ data TestRun: test(run, active) end
   test(stop-at-end-of-three-codons, false),
   test(stop-in-middle-of-three-codons, false),
   test(stop-in-middle-of-six-codons, false),
-  test(non-existent-codon, false),
+  test(sequence-of-two-non-stop-codon, false),
   test(unknown-codon, false),
   test(incomplete-sequence, false),
   test(incomplete-sequence-with-stop, false)
