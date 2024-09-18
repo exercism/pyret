@@ -223,7 +223,7 @@ data TestRun: test(run, active) end
   test(stop-at-end-of-three-codons, false),
   test(stop-in-middle-of-three-codons, false),
   test(stop-in-middle-of-six-codons, false),
-  test(sequence-of-two-non-stop-codon, false),
+  test(sequence-of-two-non-stop-codons, false),
   test(unknown-codon, false),
   test(incomplete-sequence, false),
   test(incomplete-sequence-with-stop, false)
