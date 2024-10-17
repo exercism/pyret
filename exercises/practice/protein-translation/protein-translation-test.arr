@@ -228,3 +228,9 @@ data TestRun: test(run, active) end
   test(incomplete-sequence, false),
   test(incomplete-sequence-with-stop, false)
 ].each(lam(t): when t.active: t.run() end end)
+
+fun ignore-this-trying-to-trigger-important-files():
+  check "Incomplete RNA sequence can translate if valid until a STOP codon":
+    proteins("UUCUUCUAAUGGU") is [list: "Phenylalanine", "Phenylalanine"]
+  end
+end
