@@ -106,3 +106,5 @@ Basic linting finished successfully:
 - Required track docs are present
 - Required shared exercise docs are present
 ```
+
+Not an important file for testing
