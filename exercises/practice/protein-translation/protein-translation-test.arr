@@ -170,6 +170,12 @@ fun sequence-of-two-non-stop-codons():
   end
 end
 
+fun non-existent-codon():
+  check "Non-existing codon can't translate":
+    proteins("AAA") raises "Invalid codon"
+  end
+end
+
 fun unknown-codon():
   check "Unknown amino acids, not part of a codon, can't translate":
     proteins("XYZ") raises "Invalid codon"
@@ -224,6 +230,7 @@ data TestRun: test(run, active) end
   test(stop-in-middle-of-three-codons, false),
   test(stop-in-middle-of-six-codons, false),
   test(sequence-of-two-non-stop-codons, false),
+  test(non-existent-codon, false),
   test(unknown-codon, false),
   test(incomplete-sequence, false),
   test(incomplete-sequence-with-stop, false)
