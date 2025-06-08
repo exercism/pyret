@@ -190,8 +190,8 @@ end
 
 fun multiple-line-question():
   check "multiple line question":
-    input = "\nDoes this cryogenic chamber make me look fat?\nNo."
-    expected = "Whatever."
+    input = "\nDoes this cryogenic chamber make\n me look fat?"
+    expected = "Sure."
 
     response(input) is expected
   end
