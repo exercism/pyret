@@ -8,7 +8,7 @@ include file("flatten-array.arr")
   Check the block comment below for further details.
 |#
 
-fun empty-list():
+fun empty-array():
   check "empty":
     input = [list: ]
 
@@ -28,8 +28,8 @@ fun no-nesting():
   end
 end
 
-fun nested-list():
-  check "flattens a nested list":
+fun nested-array():
+  check "flattens a nested array":
     input = [list: [list: ]]
 
     expected = [list: ]
@@ -38,8 +38,8 @@ fun nested-list():
   end
 end
 
-fun numeric-list():
-  check "flattens list with just integers present":
+fun numeric-array():
+  check "flattens array with just integers present":
     input = [list: 1, [list: 2, 3, 4, 5, 6, 7], 8]
 
     expected = [list: 1, 2, 3, 4, 5, 6, 7, 8]
@@ -117,7 +117,7 @@ fun omit-a-nothing():
 end
 
 fun omit-nothings-from-beginning():
-  check "consecutive nothing values at the front of the list are omitted from the final result":
+  check "consecutive nothing values at the front of the array are omitted from the final result":
     input = [list: nothing, nothing, 3]
 
     expected = [list: 3]
@@ -127,7 +127,7 @@ fun omit-nothings-from-beginning():
 end
 
 fun omit-nothings-from-middle():
-  check "consecutive nothing values in the middle of the list are omitted from the final result":
+  check "consecutive nothing values in the middle of the array are omitted from the final result":
     input = [list: 1, nothing, nothing, 4]
 
     expected = [list: 1, 4]
@@ -137,7 +137,7 @@ fun omit-nothings-from-middle():
 end
 
 fun six-levels-with-nothings():
-  check "6 level nest list with nothing values":
+  check "6 level nest array with nothing values":
     input = [list:
       0,
       2,
@@ -163,7 +163,7 @@ fun six-levels-with-nothings():
 end
 
 fun all-nothings():
-  check "all values in nested list are nothing":
+  check "all values in nested array are nothing":
     input = [list:
       nothing,
       [list:
@@ -193,10 +193,10 @@ end
 data TestRun: test(run, active) end
 
 [list: 
-  test(empty-list, true),
+  test(empty-array, true),
   test(no-nesting, false),
-  test(nested-list, false),
-  test(numeric-list, false),
+  test(nested-array, false),
+  test(numeric-array, false),
   test(five-levels, false),
   test(six-levels, false),
   test(omit-a-nothing, false),
