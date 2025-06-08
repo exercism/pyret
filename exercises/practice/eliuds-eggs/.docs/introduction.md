@@ -15,6 +15,9 @@ The position information encoding is calculated as follows:
 ## Example 1
 
 ![Seven individual nest boxes arranged in a row whose first, third, fourth and seventh nests each have a single egg.](https://assets.exercism.org/images/exercises/eliuds-eggs/example-1-coop.svg)
+## Example 1
+
+![Seven individual nest boxes arranged in a row whose first, third, fourth and seventh nests each have a single egg.](https://assets.exercism.org/images/exercises/eliuds-eggs/example-1-coop.svg)
 
 ```text
  _ _ _ _ _ _ _
@@ -58,7 +61,7 @@ The position information encoding is calculated as follows:
 
 ### Decimal number on the display
 
-16
+8
 
 ### Actual eggs in the coop
 
