@@ -302,6 +302,14 @@
         "difficulty": 2
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "c3691abc-0732-4487-bf91-bcbfd55f22ca",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "29563d5a-a703-43c8-953e-3fde7daae3b0",
