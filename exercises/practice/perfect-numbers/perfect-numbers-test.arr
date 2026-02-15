@@ -44,10 +44,16 @@ fun large-abundant():
   end
 end
 
-fun smallest-prime-deficient():
-check "Deficient numbers -> Smallest prime deficient number is classified correctly":
-  classify(2) is "deficient"
+fun perfect-square-abundant():
+  check "Abundant numbers -> Perfect square abundant number is classified correctly":
+    classify(196) is "abundant"
+  end
 end
+
+fun smallest-prime-deficient():
+  check "Deficient numbers -> Smallest prime deficient number is classified correctly":
+    classify(2) is "deficient"
+  end
 end
 
 fun smallest-non-prime-deficient():
@@ -101,6 +107,7 @@ data TestRun: test(run, active) end
   test(smallest-abundant, false),
   test(medium-abundant, false),
   test(large-abundant, false),
+  test(perfect-square-abundant, false),
   test(smallest-prime-deficient, false),
   test(smallest-non-prime-deficient, false),
   test(medium-deficient, false),
