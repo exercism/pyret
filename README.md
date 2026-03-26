@@ -9,7 +9,7 @@ Exercism exercises in Pyret.
 If you're solving Exercism exercises offline, you'll need a recent copy of [pyret-npm](https://www.npmjs.com/package/pyret-npm) (0.0.27+).
 Currently, pyret-npm works on Linux and MacOS platforms although Windows users can run it via the [WSL](https://learn.microsoft.com/en-us/windows/wsl/).
 However, you can also use [Pyret's online IDE](https://code.pyret.org/).
-In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `essentials2020` supported by pyret-npm.
+In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `starter2024` supported by pyret-npm.
 
 ## Support
 
@@ -28,52 +28,22 @@ This command will iterate over all exercises and check to see if their exemplar/
 
 Please see [Exercism's contributing guide](https://exercism.org/docs/building).
 
-At the moment, there's not a generator for Pyret exercises.
-
-Here's the basic template for an `exercise-slug-test`.arr.
-Each `check` block corresponds to a single test case, and the string label is reported to the student.
-Each `check` block is wrapped inside a no-parameter function which is then stored inside the `run` field of a `test` value of the `TestRun` datatype.
-This `test` value also contains an `active` field which indicates whether a test should be run (`true`) or not (`false`).
-All `test` values go inside a list that Pyret iterates over at runtime, executing the functions within each `test` value marked as active.
-
-A contributor is responsible for copying this template, adding the appropriate functions and `check` blocks, and populating the list at the bottom.
+Here's the basic template for an `<slug>-test.arr`.
+Each `check` block corresponds to a single test case, and its label is reported to the student.
 
 ```pyret
 
-use context essentials2020
+use context starter2024
 
-include file("exercise-slug.arr")
+include file("<slug>.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
-fun foo-returns-1():
-  check "foo returns 1":
-    foo() is 1
-  end
+check "foo returns 1":
+  foo() is 1
 end
 
-fun bar-returns-2():
-  check "bar returns 2":
-    bar() is 2
-  end
+check "bar returns 2":
+  bar() is 2
 end
-
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(foo-returns-1, true),
-  test(bar-returns-2, false),
-].each(lam(t): when t.active: t.run() end end)
 ```
 
 ## Track linting

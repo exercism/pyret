@@ -1,7 +1,7 @@
-use context essentials2020 # Don't delete this line when using Pyret on Exercism 
+use context starter2024
 
-provide: translate end
+provide: my-translate end
 
-fun translate(legacy):
-  raise("Please implement the translate function")
+fun my-translate(legacy):
+  raise("Please implement the my-translate function")
 end

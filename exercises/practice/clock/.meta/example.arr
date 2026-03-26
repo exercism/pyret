@@ -1,8 +1,8 @@
-use context essentials2020 # Don't delete this line when using Pyret on Exercism 
+use context starter2024
 
 provide-types *
 
-import equality as E
+import equality as EQ
 
 data Clock:
   | clock(hours :: Number, minutes :: Number)
@@ -34,14 +34,14 @@ sharing:
         self
     end
   end,
-  method _equals(self, other :: Clock, _) -> E.EqualityResult:
+  method _equals(self, other :: Clock, _) -> EQ.EqualityResult:
     left = self.normalize()
     right = other.normalize()
 
     if (left.hours == right.hours) and (left.minutes == right.minutes):
-      E.Equal
+      EQ.Equal
     else:
-      E.NotEqual("Clocks represent different periods in time", self, other)
+      EQ.NotEqual("Clocks represent different periods in time", self, other)
     end
   end,
   method to-string(self) -> String:
