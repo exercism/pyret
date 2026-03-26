@@ -4,12 +4,6 @@ include file("simple-linked-list.arr")
 
 # No canonical data available for this exercise so these have been ported from Python and F#
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun empty-list-length-zero():
   check "empty list has length zero":
     empty-list.length() is 0

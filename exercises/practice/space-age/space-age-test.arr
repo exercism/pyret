@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("space-age.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun around(delta :: Number) -> (Number, Number -> Boolean):
   doc: "provides a predicate that returns true if the absolute values of two numbers are less than or equal to the specified delta"
   lam(actual, target):

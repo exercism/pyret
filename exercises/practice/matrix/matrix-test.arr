@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("matrix.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun extract-row-from-one-row-matrix():
   check "extract row from one number matrix":
     m = matrix("1")

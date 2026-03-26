@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("bank-account.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun open-account-zero-balance():
   check "Newly opened account has zero balance":
     account().open().get-balance() is 0

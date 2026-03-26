@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("phone-number.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun clean-number():
   check "cleans the number":
     clean("(223) 456-7890") is "2234567890"

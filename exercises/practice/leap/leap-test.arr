@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("leap.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun not-divisible-by-4():
   check "year not divisible by 4 in common year":
     leap(2015) is false

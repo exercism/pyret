@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("difference-of-squares.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun square-of-sum-1():
   check "Square the sum of the numbers up to the given number -> square of sum 1":
     square-of-sum(1) is 1

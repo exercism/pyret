@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("high-scores.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun list-of-scores():
   check "List of scores":
     scores = [list: 30, 50, 20, 70]

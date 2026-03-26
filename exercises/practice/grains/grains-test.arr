@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("grains.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun on-square-1():
   check "returns the number of grains on the square -> grains on square 1":
     on-square(1) is 1

@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("list-ops.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun append-empty-to-empty():
   check "append entries to a list and return the new list -> empty lists":
     list1 = [list: ]
