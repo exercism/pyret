@@ -2,263 +2,178 @@ use context starter2024
 
 include file("bob.arr")
 
-fun stating-something():
-  check "stating something":
-    input = "Tom-ay-to, tom-aaaah-to."
-    expected = "Whatever."
+check "stating something":
+  input = "Tom-ay-to, tom-aaaah-to."
+  expected = "Whatever."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun shouting():
-  check "shouting":
-    input = "WATCH OUT!"
-    expected = "Whoa, chill out!"
-    
-    response(input) is expected
-  end
+check "shouting":
+  input = "WATCH OUT!"
+  expected = "Whoa, chill out!"
+  
+  response(input) is expected
 end
 
-fun shouting-gibberish():
-  check "shouting gibberish":
-    input = "FCECDFCAAB"
-    expected = "Whoa, chill out!"
-    
-    response(input) is expected
-  end
+check "shouting gibberish":
+  input = "FCECDFCAAB"
+  expected = "Whoa, chill out!"
+  
+  response(input) is expected
 end
 
-fun asking-a-question():
-  check "asking a question":
-    input = "Does this cryogenic chamber make me look fat?"
-    expected = "Sure."
-    
-    response(input) is expected
-  end
+check "asking a question":
+  input = "Does this cryogenic chamber make me look fat?"
+  expected = "Sure."
+  
+  response(input) is expected
 end
 
-fun asking-numeric-question():
-  check "asking a numeric question":
-    input = "You are, what, like 15?"
-    expected = "Sure."
-    
-    response(input) is expected
-  end
+check "asking a numeric question":
+  input = "You are, what, like 15?"
+  expected = "Sure."
+  
+  response(input) is expected
 end
 
-fun asking-gibberish():
-  check "asking gibberish":
-    input = "fffbbcbeab?"
-    expected = "Sure."
-    
-    response(input) is expected
-  end
+check "asking gibberish":
+  input = "fffbbcbeab?"
+  expected = "Sure."
+  
+  response(input) is expected
 end
 
-fun talking-forcefully():
-  check "talking forcefully":
-    input = "Hi there!"
-    expected = "Whatever."
-    
-    response(input) is expected
-  end
+check "talking forcefully":
+  input = "Hi there!"
+  expected = "Whatever."
+  
+  response(input) is expected
 end
 
-fun using-acronyms():
-  check "using acronyms in regular speech":
-    input = "It's OK if you don't want to go work for NASA."
-    expected = "Whatever."
-    
-    response(input) is expected
-  end
+check "using acronyms in regular speech":
+  input = "It's OK if you don't want to go work for NASA."
+  expected = "Whatever."
+  
+  response(input) is expected
 end
 
-fun forceful-question():
-  check "forceful question":
-    input = "WHAT'S GOING ON?"
-    expected = "Calm down, I know what I'm doing!"
-    
-    response(input) is expected
-  end
+check "forceful question":
+  input = "WHAT'S GOING ON?"
+  expected = "Calm down, I know what I'm doing!"
+  
+  response(input) is expected
 end
 
-fun shouting-numbers():
-  check "shouting numbers":
-    input = "1, 2, 3 GO!"
-    expected = "Whoa, chill out!"
+check "shouting numbers":
+  input = "1, 2, 3 GO!"
+  expected = "Whoa, chill out!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun no-letters():
-  check "no letters":
-    input = "1, 2, 3"
-    expected = "Whatever."
+check "no letters":
+  input = "1, 2, 3"
+  expected = "Whatever."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun question-with-no-letters():
-  check "question with no letters":
-    input = "4?"
-    expected = "Sure."
+check "question with no letters":
+  input = "4?"
+  expected = "Sure."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun shouting-with-special-characters():
-  check "shouting with special characters":
-    input = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
-    expected = "Whoa, chill out!"
+check "shouting with special characters":
+  input = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+  expected = "Whoa, chill out!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun shouting-with-no-exclamation-mark():
-  check "shouting with no exclamation mark":
-    input = "I HATE THE DENTIST"
-    expected = "Whoa, chill out!"
+check "shouting with no exclamation mark":
+  input = "I HATE THE DENTIST"
+  expected = "Whoa, chill out!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun statement-with-question-mark():
-  check "statement containing question mark":
-    input = "Ending with ? means a question."
-    expected = "Whatever."
+check "statement containing question mark":
+  input = "Ending with ? means a question."
+  expected = "Whatever."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun non-letters-with-question():
-  check "non-letters with question":
-    input = ":) ?"
-    expected = "Sure."
+check "non-letters with question":
+  input = ":) ?"
+  expected = "Sure."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun prattling-on():
-  check "prattling on":
-    input = "Wait! Hang on. Are you going to be OK?"
-    expected = "Sure."
+check "prattling on":
+  input = "Wait! Hang on. Are you going to be OK?"
+  expected = "Sure."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun silence():
-  check "silence":
-    input = ""
-    expected = "Fine. Be that way!"
+check "silence":
+  input = ""
+  expected = "Fine. Be that way!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun prolonged-silence():
-  check "prolonged silence":
-    input = "          "
-    expected = "Fine. Be that way!"
+check "prolonged silence":
+  input = "          "
+  expected = "Fine. Be that way!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun alternate-silence():
-  check "alternate silence":
-    input = "\t\t\t\t\t\t\t\t\t\t"
-    expected = "Fine. Be that way!"
+check "alternate silence":
+  input = "\t\t\t\t\t\t\t\t\t\t"
+  expected = "Fine. Be that way!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun multiple-line-question():
-  check "multiple line question":
-    input = "\nDoes this cryogenic chamber make\n me look fat?"
-    expected = "Sure."
+check "multiple line question":
+  input = "\nDoes this cryogenic chamber make\n me look fat?"
+  expected = "Sure."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun starting-with-whitespace():
-  check "starting with whitespace":
-    input = "         hmmmmmmm..."
-    expected = "Whatever."
+check "starting with whitespace":
+  input = "         hmmmmmmm..."
+  expected = "Whatever."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun ending-with-whitespace():
-  check "ending with whitespace":
-    input = "Okay if like my  spacebar  quite a bit?   "
-    expected = "Sure."
+check "ending with whitespace":
+  input = "Okay if like my  spacebar  quite a bit?   "
+  expected = "Sure."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun other-whitespace():
-  check "other whitespace":
-    input = "\n\r \t"
-    expected = "Fine. Be that way!"
+check "other whitespace":
+  input = "\n\r \t"
+  expected = "Fine. Be that way!"
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-fun non-question-ending-with-whitespace():
-  check "non-question ending with whitespace":
-    input = "This is a statement ending with whitespace      "
-    expected = "Whatever."
+check "non-question ending with whitespace":
+  input = "This is a statement ending with whitespace      "
+  expected = "Whatever."
 
-    response(input) is expected
-  end
+  response(input) is expected
 end
 
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(stating-something, true),
-  test(shouting, false),
-  test(shouting-gibberish, false),
-  test(asking-a-question, false),
-  test(asking-numeric-question, false),
-  test(asking-gibberish, false),
-  test(talking-forcefully, false),
-  test(using-acronyms, false),
-  test(forceful-question, false),
-  test(shouting-numbers, false),
-  test(no-letters, false),
-  test(question-with-no-letters, false),
-  test(shouting-with-special-characters, false),
-  test(shouting-with-no-exclamation-mark, false),
-  test(statement-with-question-mark, false),
-  test(non-letters-with-question, false),
-  test(prattling-on, false),
-  test(silence, false),
-  test(prolonged-silence, false),
-  test(alternate-silence, false),
-  test(multiple-line-question, false),
-  test(starting-with-whitespace, false),
-  test(ending-with-whitespace, false),
-  test(other-whitespace, false),
-  test(non-question-ending-with-whitespace, false)
-].each(lam(t): when t.active: t.run() end end)

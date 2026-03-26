@@ -2,90 +2,47 @@ use context starter2024
 
 include file("scrabble-score.arr")
 
-fun lowercase-letter():
-  check "lowercase letter":
-    score("a") is 1
-  end
+check "lowercase letter":
+  score("a") is 1
 end
 
-fun uppercase-letter():
-  check "uppercase letter":
-    score("A") is 1
-  end
+check "uppercase letter":
+  score("A") is 1
 end
 
-fun valuable-letter():
-  check "valuable letter":
-    score("f") is 4
-  end
+check "valuable letter":
+  score("f") is 4
 end
 
-fun short-word():
-  check "short word":
-    score("at") is 2
-  end
+check "short word":
+  score("at") is 2
 end
 
-fun short-valuable-word():
-  check "short, valuable word":
-    score("zoo") is 12
-  end
+check "short, valuable word":
+  score("zoo") is 12
 end
 
-fun medium-word():
-  check "medium word":
-    score("street") is 6
-  end
+check "medium word":
+  score("street") is 6
 end
 
-fun medium-valuable-word():
-  check "medium, valuable word":
-    score("quirky") is 22
-  end
+check "medium, valuable word":
+  score("quirky") is 22
 end
 
-fun long-mixed-case-word():
-  check "long, mixed-case word":
-    score("OxyphenButazone") is 41
-  end
+check "long, mixed-case word":
+  score("OxyphenButazone") is 41
 end
 
-fun english-like-word():
-  check "english-like word":
-    score("pinata") is 8
-  end
+check "english-like word":
+  score("pinata") is 8
 end
 
-fun empty-input():
-  check "empty input":
-    score("") is 0
-  end
+check "empty input":
+  score("") is 0
 end
 
-fun entire-alphabet():
-  check "entire alphabet available":
-    score("abcdefghijklmnopqrstuvwxyz") is 87
-  end
+check "entire alphabet available":
+  score("abcdefghijklmnopqrstuvwxyz") is 87
 end
 
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(lowercase-letter, true),
-  test(uppercase-letter, false),
-  test(valuable-letter, false),
-  test(short-word, false),
-  test(short-valuable-word, false),
-  test(medium-word, false),
-  test(medium-valuable-word, false),
-  test(long-mixed-case-word, false),
-  test(english-like-word, false),
-  test(empty-input, false),
-  test(entire-alphabet, false)
-].each(lam(t): when t.active: t.run() end end)
