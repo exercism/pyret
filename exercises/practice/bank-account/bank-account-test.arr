@@ -8,7 +8,7 @@ end
 
 check "Single deposit":
   account().open().deposit(100).get-balance() is 100
-nd
+end
 
 check "Multiple deposits":
   account().open().deposit(100).deposit(50).get-balance() is 150
@@ -72,4 +72,3 @@ end
 check "Cannot deposit negative":
   account().open().deposit(-50) raises "amount must be greater than 0"
 end
-
