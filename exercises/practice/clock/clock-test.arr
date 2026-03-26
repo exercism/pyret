@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("clock.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun create-clock-on-hour():
   check "Create a new clock with an initial time -> on the hour":
     clock(8, 0).normalize().to-string() is "08:00"

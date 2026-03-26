@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("resistor-color-trio.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun orange-orange-black():
   check "Orange and orange and black":
     colors = [list: "orange", "orange", "black"]

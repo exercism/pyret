@@ -4,12 +4,6 @@ include file("nucleotide-count.arr")
 
 include string-dict
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun empty-strand():
   check "empty strand":
     input = ""

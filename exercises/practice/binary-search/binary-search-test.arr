@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("binary-search.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun value-in-list-of-one():
   check "finds a value in a list with one element":
     binary-search([list: 6], 6) is 0

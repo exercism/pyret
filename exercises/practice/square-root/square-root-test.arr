@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("square-root.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun root-of-one():
   check "root of 1":
     square-root(1) is 1

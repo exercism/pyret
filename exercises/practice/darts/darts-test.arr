@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("darts.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun missed-target():
   check "Missed target":
     score(-9, 9) is 0

@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("perfect-numbers.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun smallest-perfect():
   check "Perfect numbers -> Smallest perfect number is classified correctly":
     classify(6) is "perfect"

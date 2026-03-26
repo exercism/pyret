@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("triangle.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun equilateral-all-equal-sides():
   check "equilateral triangle -> all sides are equal":
     equilateral([list: 2, 2, 2]) is true

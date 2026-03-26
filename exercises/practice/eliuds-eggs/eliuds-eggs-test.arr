@@ -2,12 +2,6 @@ use context essentials2020
 
 include file("eliuds-eggs.arr")
 
-#|
-  When working offline, all tests except the first one are skipped by default.
-  Once you get the first test running, unskip the next one until all tests pass locally.
-  Check the block comment below for further details.
-|#
-
 fun zero-eggs():
   check "0 eggs":
     egg-count(0) is 0
