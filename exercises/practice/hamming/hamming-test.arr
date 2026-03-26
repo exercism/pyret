@@ -2,76 +2,39 @@ use context starter2024
 
 include file("hamming.arr")
 
-fun empty-strands():
-  check "empty strands":
-    distance("", "") is 0
-  end
+check "empty strands":
+  distance("", "") is 0
 end
 
-fun single-letter-identical-strands():
-  check "single letter identical strands":
-    distance("A", "A") is 0
-  end
+check "single letter identical strands":
+  distance("A", "A") is 0
 end
 
-fun single-letter-different-strands():
-  check "single letter different strands":
-    distance("G", "T") is 1
-  end
+check "single letter different strands":
+  distance("G", "T") is 1
 end
 
-fun long-identical-strands():
-  check "long identical strands":
-    distance("GGACTGAAATCTG", "GGACTGAAATCTG") is 0
-  end
+check "long identical strands":
+  distance("GGACTGAAATCTG", "GGACTGAAATCTG") is 0
 end
 
-fun long-different-strands():
-  check "long different strands":
-    distance("GGACGGATTCTG", "AGGACGGATTCT") is 9
-  end
+check "long different strands":
+  distance("GGACGGATTCTG", "AGGACGGATTCT") is 9
 end
 
-fun disallow-first-strand-longer():
-  check "disallow first strand longer":
-    distance("AATG", "AAA") raises "Strands must be of equal length."
-  end
+check "disallow first strand longer":
+  distance("AATG", "AAA") raises "Strands must be of equal length."
 end
 
-fun disallow-second-strand-longer():
-  check "disallow second strand longer":
-    distance("ATA", "AGTG") raises "Strands must be of equal length."
-  end
+check "disallow second strand longer":
+  distance("ATA", "AGTG") raises "Strands must be of equal length."
 end
 
-fun disallow-empty-first-strand():
-  check "disallow empty first strand":
-    distance("", "G") raises "Strands must be of equal length."
-  end
+check "disallow empty first strand":
+  distance("", "G") raises "Strands must be of equal length."
 end
 
-fun disallow-empty-second-strand():
-  check "disallow empty second strand":
-    distance("G", "") raises "Strands must be of equal length."
-  end
+check "disallow empty second strand":
+  distance("G", "") raises "Strands must be of equal length."
 end
 
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(empty-strands, true),
-  test(single-letter-identical-strands, false),
-  test(single-letter-different-strands, false),
-  test(long-identical-strands, false),
-  test(long-different-strands, false),
-  test(disallow-first-strand-longer, false),
-  test(disallow-second-strand-longer, false),
-  test(disallow-empty-first-strand, false),
-  test(disallow-empty-second-strand, false)
-].each(lam(t): when t.active: t.run() end end)

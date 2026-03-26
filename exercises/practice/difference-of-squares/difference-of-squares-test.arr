@@ -2,76 +2,39 @@ use context starter2024
 
 include file("difference-of-squares.arr")
 
-fun square-of-sum-1():
-  check "Square the sum of the numbers up to the given number -> square of sum 1":
-    square-of-sum(1) is 1
-  end
+check "Square the sum of the numbers up to the given number -> square of sum 1":
+  square-of-sum(1) is 1
 end
 
-fun square-of-sum-5():
-  check "Square the sum of the numbers up to the given number -> square of sum 5":
-    square-of-sum(5) is 225
-  end
+check "Square the sum of the numbers up to the given number -> square of sum 5":
+  square-of-sum(5) is 225
 end
 
-fun square-of-sum-100():
-  check "Square the sum of the numbers up to the given number -> square of sum 100":
-    square-of-sum(100) is 25502500
-  end
+check "Square the sum of the numbers up to the given number -> square of sum 100":
+  square-of-sum(100) is 25502500
 end
 
-fun sum-of-squares-1():
-  check "Sum the squares of the numbers up to the given number -> sum of squares 1":
-    sum-of-squares(1) is 1
-  end
+check "Sum the squares of the numbers up to the given number -> sum of squares 1":
+  sum-of-squares(1) is 1
 end
 
-fun sum-of-squares-5():
-  check "Sum the squares of the numbers up to the given number -> sum of squares 5":
-    sum-of-squares(5) is 55
-  end
+check "Sum the squares of the numbers up to the given number -> sum of squares 5":
+  sum-of-squares(5) is 55
 end
 
-fun sum-of-squares-100():
-  check "Sum the squares of the numbers up to the given number -> sum of squares 100":
-    sum-of-squares(100) is 338350
-  end
+check "Sum the squares of the numbers up to the given number -> sum of squares 100":
+  sum-of-squares(100) is 338350
 end
 
-fun difference-of-squares-1():
-  check "Subtract sum of squares from square of sums -> difference of squares 1":
-    difference-of-squares(1) is 0
-  end
+check "Subtract sum of squares from square of sums -> difference of squares 1":
+  difference-of-squares(1) is 0
 end
 
-fun difference-of-squares-5():
-  check "Subtract sum of squares from square of sums -> difference of squares 5":
-    difference-of-squares(5) is 170
-  end
+check "Subtract sum of squares from square of sums -> difference of squares 5":
+  difference-of-squares(5) is 170
 end
 
-fun dfference-of-squares-100():
-  check "Subtract sum of squares from square of sums -> difference of squares 100":
-    difference-of-squares(100) is 25164150
-  end
+check "Subtract sum of squares from square of sums -> difference of squares 100":
+  difference-of-squares(100) is 25164150
 end
 
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(square-of-sum-1, true),
-  test(square-of-sum-5, false),
-  test(square-of-sum-100, false),
-  test(sum-of-squares-1, false),
-  test(sum-of-squares-5, false),
-  test(sum-of-squares-100, false),
-  test(difference-of-squares-1, false),
-  test(difference-of-squares-5, false),
-  test(dfference-of-squares-100, false)
-].each(lam(t): when t.active: t.run() end end)

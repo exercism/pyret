@@ -2,111 +2,59 @@ use context starter2024
 
 include file("isogram.arr")
 
-fun empty-string():
-  check "empty string":
-    is-isogram("") is true
-  end
+check "empty string":
+  is-isogram("") is true
 end
 
-fun only-lowercase():
-  check "isogram with only lower case characters":
-    is-isogram("isogram") is true
-  end
+check "isogram with only lower case characters":
+  is-isogram("isogram") is true
 end
 
-fun duplicated-character():
-  check "word with one duplicated character":
-    is-isogram("eleven") is false
-  end
+check "word with one duplicated character":
+  is-isogram("eleven") is false
 end
 
-fun duplicate-character-from-end-of-alphabet():
-  check "word with one duplicated character from the end of the alphabet":
-    is-isogram("zzyzx") is false
-  end
+check "word with one duplicated character from the end of the alphabet":
+  is-isogram("zzyzx") is false
 end
 
-fun longest-reported-isogram():
-  check "longest reported english isogram":
-    is-isogram("subdermatoglyphic") is true
-  end
+check "longest reported english isogram":
+  is-isogram("subdermatoglyphic") is true
 end
 
-fun duplicate-character-mixed-case():
-  check "word with duplicated character in mixed case":
-    is-isogram("Alphabet") is false
-  end
+check "word with duplicated character in mixed case":
+  is-isogram("Alphabet") is false
 end
 
-fun duplicated-character-mixed-case-lowercase-first():
-  check "word with duplicated character in mixed case, lowercase first":
-    is-isogram("alphAbet") is false
-  end
+check "word with duplicated character in mixed case, lowercase first":
+  is-isogram("alphAbet") is false
 end
 
-fun isogram-with-hyphen():
-  check "hypothetical isogrammic word with hyphen":
-    is-isogram("thumbscrew-japingly") is true
-  end
+check "hypothetical isogrammic word with hyphen":
+  is-isogram("thumbscrew-japingly") is true
 end
 
-fun isogram-with-hyphen-and-duplicate-character():
-  check "hypothetical word with duplicated character following hyphen":
-    is-isogram("thumbscrew-jappingly") is false
-  end
+check "hypothetical word with duplicated character following hyphen":
+  is-isogram("thumbscrew-jappingly") is false
 end
 
-fun isogram-with-duplicated-hyphen():
-  check "isogram with duplicated hyphen":
-    is-isogram("six-year-old") is true
-  end
+check "isogram with duplicated hyphen":
+  is-isogram("six-year-old") is true
 end
 
-fun made-up-name():
-  check "made-up name that is an isogram":
-    is-isogram("Emily Jung Schwartzkopf") is true
-  end
+check "made-up name that is an isogram":
+  is-isogram("Emily Jung Schwartzkopf") is true
 end
 
-fun duplicate-character-in-middle():
-  check "duplicated character in the middle":
-    is-isogram("accentor") is false
-  end
+check "duplicated character in the middle":
+  is-isogram("accentor") is false
 end
 
-fun duplicate-character-on-ends():
-  check "same first and last characters":
-    is-isogram("angola") is false
-  end
+check "same first and last characters":
+  is-isogram("angola") is false
 end
 
-fun duplicate-character-and-hyphens():
-  check "word with duplicated character and with two hyphens":
-    is-isogram("up-to-date") is false
-  end
+check "word with duplicated character and with two hyphens":
+  is-isogram("up-to-date") is false
 end
 
-#|
-  Code to run each test. Each line corresponds to a test above and whether it should be run.
-  To mark a test to be run, replace `false` with `true` on that same line after the comma.
-  test(test-a, true) will be run. test(test-a, false) will be skipped.
-|#
-
-data TestRun: test(run, active) end
-
-[list: 
-  test(empty-string, true),
-  test(only-lowercase, false),
-  test(duplicated-character, false),
-  test(duplicate-character-from-end-of-alphabet, false),
-  test(longest-reported-isogram, false),
-  test(duplicate-character-mixed-case, false),
-  test(duplicated-character-mixed-case-lowercase-first, false),
-  test(isogram-with-hyphen, false),
-  test(isogram-with-hyphen-and-duplicate-character, false),
-  test(isogram-with-duplicated-hyphen, false),
-  test(made-up-name, false),
-  test(duplicate-character-in-middle, false),
-  test(duplicate-character-on-ends, false),
-  test(duplicate-character-and-hyphens, false)
-].each(lam(t): when t.active: t.run() end end)
