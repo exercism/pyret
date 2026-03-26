@@ -9,7 +9,7 @@ Exercism exercises in Pyret.
 If you're solving Exercism exercises offline, you'll need a recent copy of [pyret-npm](https://www.npmjs.com/package/pyret-npm) (0.0.27+).
 Currently, pyret-npm works on Linux and MacOS platforms although Windows users can run it via the [WSL](https://learn.microsoft.com/en-us/windows/wsl/).
 However, you can also use [Pyret's online IDE](https://code.pyret.org/).
-In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `essentials2020` supported by pyret-npm.
+In that case, you'll need to switch from the IDE's default `essentials2021` namespace to the older `starter2024` supported by pyret-npm.
 
 ## Support
 
@@ -40,7 +40,7 @@ A contributor is responsible for copying this template, adding the appropriate f
 
 ```pyret
 
-use context essentials2020
+use context starter2024
 
 include file("exercise-slug.arr")
 
