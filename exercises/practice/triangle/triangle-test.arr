@@ -85,4 +85,3 @@ end
 check "scalene triangle -> sides may be decimals":
   scalene([list: 0.5, 0.4, 0.6]) is true
 end
-

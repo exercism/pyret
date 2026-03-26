@@ -17,4 +17,3 @@ end
 check "13 eggs":
   egg-count(2000000000) is 13
 end
-

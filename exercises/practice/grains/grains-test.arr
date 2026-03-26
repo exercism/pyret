@@ -45,4 +45,3 @@ end
 check "returns the total number of grains on the board":
   total() is 18446744073709551615
 end
-

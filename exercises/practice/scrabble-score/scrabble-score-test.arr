@@ -45,4 +45,3 @@ end
 check "entire alphabet available":
   score("abcdefghijklmnopqrstuvwxyz") is 87
 end
-

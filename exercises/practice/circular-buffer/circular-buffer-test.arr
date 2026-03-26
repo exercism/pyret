@@ -169,4 +169,3 @@ check "initial clear does not affect wrapping around":
   buff := results.{1}
   buff.read() raises "empty buffer"
 end
-

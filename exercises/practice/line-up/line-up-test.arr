@@ -77,4 +77,3 @@ end
 check "format exceptional ordinal numeral 123":
   format-message("Yma", 123) is "Yma, you are the 123rd customer we serve today. Thank you!"
 end
-

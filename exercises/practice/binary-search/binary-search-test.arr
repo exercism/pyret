@@ -45,4 +45,3 @@ end
 check "nothing is found when the left and right bounds cross":
   binary-search([list: 1, 2], 0) raises "value not in list"
 end
-

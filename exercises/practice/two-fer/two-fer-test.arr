@@ -13,4 +13,3 @@ end
 check "another name given":
   two-fer("Bob") is "One for Bob, one for me."
 end
-

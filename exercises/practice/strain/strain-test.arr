@@ -138,4 +138,3 @@ check "discards lists":
 
   discard(input, predicate) is expected
 end
-

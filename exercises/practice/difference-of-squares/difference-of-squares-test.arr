@@ -37,4 +37,3 @@ end
 check "Subtract sum of squares from square of sums -> difference of squares 100":
   difference-of-squares(100) is 25164150
 end
-

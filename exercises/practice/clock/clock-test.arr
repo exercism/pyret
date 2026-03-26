@@ -209,4 +209,3 @@ end
 check "Compare two clocks for equality -> full clock and zeroed clock":
   clock(24, 0) is clock(0, 0)
 end
-

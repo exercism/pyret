@@ -113,4 +113,3 @@ check "words other than themselves can be anagrams":
 
   find-anagrams("LISTEN", candidates) is expected
 end
-

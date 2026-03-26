@@ -71,4 +71,3 @@ check "Ignore extra colors":
 
   label(colors) is expected
 end
-

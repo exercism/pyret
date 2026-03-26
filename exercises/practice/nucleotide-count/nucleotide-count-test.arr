@@ -37,4 +37,3 @@ check "strand with invalid nucleotides":
 
   nucleotide-counts(input) raises "Invalid nucleotide in strand"
 end
-

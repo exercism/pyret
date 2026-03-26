@@ -155,4 +155,3 @@ check "all values in nested array are nothing":
 
   flatten(input) is expected
 end
-

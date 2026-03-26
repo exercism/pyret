@@ -176,4 +176,3 @@ check "non-question ending with whitespace":
 
   response(input) is expected
 end
-

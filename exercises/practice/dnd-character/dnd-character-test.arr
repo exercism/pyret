@@ -94,4 +94,3 @@ check "random character is valid":
   expected = 10 + new-character.modifier(new-character.constitution)
   new-character.get-hitpoints() is expected
 end
-

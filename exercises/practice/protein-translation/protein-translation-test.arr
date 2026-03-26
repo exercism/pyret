@@ -121,4 +121,3 @@ end
 check "Incomplete RNA sequence can translate if valid until a STOP codon":
   proteins("UUCUUCUAAUGGU") is [list: "Phenylalanine", "Phenylalanine"]
 end
-

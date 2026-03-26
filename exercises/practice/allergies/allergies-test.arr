@@ -289,4 +289,3 @@ check "list when no allergen score parts without highest valid score":
   allergens = allergies(257)
   allergens.list() is [list: "eggs"]
 end
-

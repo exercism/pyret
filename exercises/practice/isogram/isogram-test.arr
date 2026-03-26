@@ -57,4 +57,3 @@ end
 check "word with duplicated character and with two hyphens":
   is-isogram("up-to-date") is false
 end
-

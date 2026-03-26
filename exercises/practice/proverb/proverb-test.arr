@@ -52,4 +52,3 @@ check "four pieces modernized":
 
   recite(input) is expected
 end
-

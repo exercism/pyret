@@ -89,4 +89,3 @@ end
 check "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed":
   is-valid("59%59") is false
 end
-

@@ -99,4 +99,3 @@ check "decode -> decode with no spaces":
   
   decode(input) is expected
 end
-

@@ -25,4 +25,3 @@ end
 check "negative value is an error":
   steps(-15) raises "Only positive numbers are allowed"
 end
-

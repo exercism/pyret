@@ -45,4 +45,3 @@ end
 check "do nothing for zero":
   commands("00000") is [list: ]
 end
-

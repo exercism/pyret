@@ -73,4 +73,3 @@ end
 check "invalid if exchange code starts with 1 on valid 11-digit number":
   clean("1 (223) 156-7890") raises "exchange code cannot start with one"
 end
-

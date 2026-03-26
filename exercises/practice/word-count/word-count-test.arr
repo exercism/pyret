@@ -128,4 +128,3 @@ check "quotation for word with apostrophe":
 
   word-count(input) is expected
 end
-

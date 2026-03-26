@@ -51,4 +51,3 @@ check "a-m and A-M are 26 different characters but not a pangram":
   input = "abcdefghijklm ABCDEFGHIJKLM"
   is-pangram(input) is false
 end
-

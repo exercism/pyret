@@ -45,4 +45,3 @@ end
 check "empty series is invalid":
   slices("", 1) raises "series cannot be empty"
 end
-

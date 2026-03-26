@@ -25,4 +25,3 @@ end
 check "root of 65025":
   square-root(65025) is 255
 end
-

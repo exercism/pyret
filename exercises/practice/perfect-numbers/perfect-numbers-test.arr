@@ -57,4 +57,3 @@ end
 check "Invalid inputs -> Negative integer is rejected (as it is not a positive integer)":
   classify(-1) raises "Classification is only possible for positive integers."
 end
-

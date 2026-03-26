@@ -25,4 +25,3 @@ end
 check "an even-sized word":
   reversed("drawer") is "reward"
 end
-

@@ -112,4 +112,3 @@ check "reverse non-empty list":
 
   result.reversed().to-list() is [list: 1, 2, 3]
 end
-

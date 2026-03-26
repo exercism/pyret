@@ -45,4 +45,3 @@ end
 check "The largest and last Armstrong number":
   is-armstrong-number(115132219018763992565095597973971522401) is true
 end
-

@@ -41,4 +41,3 @@ check "extract column where numbers have different widths":
   m = matrix("89 1903 3\n18 3 1\n9 4 800")
   m.column(2) is [list: 1903, 3, 4]
 end
-

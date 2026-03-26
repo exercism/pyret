@@ -25,4 +25,3 @@ end
 check "RNA complement":
   to-rna("ACGTGGTCTTAA") is "UGCACCAGAAUU"
 end
-

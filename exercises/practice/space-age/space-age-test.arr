@@ -42,4 +42,3 @@ end
 check "invalid planet causes error":
   on-planet("Sun", 680804807) raises "not a planet"
 end
-

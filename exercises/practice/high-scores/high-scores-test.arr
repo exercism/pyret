@@ -57,4 +57,3 @@ check "Top 3 scores -> Personal top when there is only one":
   
   high-scores(scores).personal-top-three() is expected
 end
-

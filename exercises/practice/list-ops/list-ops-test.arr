@@ -191,4 +191,3 @@ check "reverse the elements of the list -> list of lists is not flattened":
 
   my-reverse(input) is expected
 end
-

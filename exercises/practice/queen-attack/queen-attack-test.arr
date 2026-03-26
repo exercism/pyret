@@ -53,4 +53,3 @@ end
 check "Test the ability of one queen to attack another -> cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal":
   queen(4, 1).can-attack(queen(2, 5)) is false
 end
-

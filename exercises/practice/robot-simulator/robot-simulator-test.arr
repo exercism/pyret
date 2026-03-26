@@ -109,4 +109,3 @@ check "Follow series of directions moving east and north":
   expected = robot(11, 5, 'north')
   r.move('LAAARRRALLLL') is expected
 end
-

@@ -53,4 +53,3 @@ end
 check "Asymmetric position between the inner and middle circles":
   score(0.5, -4) is 5
 end
-

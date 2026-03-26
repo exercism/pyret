@@ -28,4 +28,3 @@ check "Colors":
     "white",
     ]
 end
-

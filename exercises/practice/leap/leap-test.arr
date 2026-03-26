@@ -37,4 +37,3 @@ end
 check "year divisible by 200, not divisible by 400 in common year":
   leap(1800) is false
 end
-

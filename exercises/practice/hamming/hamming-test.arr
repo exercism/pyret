@@ -37,4 +37,3 @@ end
 check "disallow empty second strand":
   distance("G", "") raises "Strands must be of equal length."
 end
-

@@ -29,4 +29,3 @@ end
 check "Black and brown, one-digit":
   color-code([list: "black", "brown"]) is 1
 end
-

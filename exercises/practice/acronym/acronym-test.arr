@@ -37,4 +37,3 @@ end
 check "underscore emphasis":
   abbreviate("The Road _Not_ Taken") is "TRNT"
 end
-
