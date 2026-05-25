@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 The tests for this exercise expect that your clock will be implemented using a `data declaration` in Pyret.
 If you are unfamiliar with data declarations, [the official documentation][data-declaration] is a good place to start.
 
