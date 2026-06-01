@@ -1,0 +1,4 @@
+.pyret/
+*.jarr
+node_modules
+
