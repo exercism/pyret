@@ -143,6 +143,16 @@
         "difficulty": 2
       },
       {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "ebfaddfb-d094-4471-8771-fc09cf14274f",
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "etl",
         "name": "ETL",
         "uuid": "a86c1654-da80-46c9-aba5-a2eec3f66262",
@@ -221,6 +231,14 @@
         "difficulty": 2
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "c3691abc-0732-4487-bf91-bcbfd55f22ca",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "0a28e195-6f3c-46e2-a62c-1a7097583032",
@@ -288,24 +306,6 @@
         "practices": [
           "strings"
         ],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "eliuds-eggs",
-        "name": "Eliud's Eggs",
-        "uuid": "ebfaddfb-d094-4471-8771-fc09cf14274f",
-        "practices": [
-          "numbers"
-        ],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "line-up",
-        "name": "Line Up",
-        "uuid": "c3691abc-0732-4487-bf91-bcbfd55f22ca",
-        "practices": [],
         "prerequisites": [],
         "difficulty": 2
       },
@@ -469,17 +469,6 @@
         "difficulty": 2
       },
       {
-        "slug": "triangle",
-        "name": "Triangle",
-        "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
-        "practices": [
-          "booleans",
-          "numbers"
-        ],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "351651f4-3e42-4392-8862-9a18f9acb70d",
@@ -500,13 +489,12 @@
         "difficulty": 2
       },
       {
-        "slug": "word-count",
-        "name": "Word Count",
-        "uuid": "df93be4e-a862-4636-bb1c-e51e0e294797",
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "aab55f24-e31a-4e99-8c6c-12e69de7ce7c",
         "practices": [
-          "strings",
-          "string-dicts",
-          "loops"
+          "booleans",
+          "numbers"
         ],
         "prerequisites": [],
         "difficulty": 2
@@ -517,6 +505,18 @@
         "uuid": "198c1176-536a-49db-828b-0dc1655d7da9",
         "practices": [
           "function-arguments"
+        ],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "df93be4e-a862-4636-bb1c-e51e0e294797",
+        "practices": [
+          "strings",
+          "string-dicts",
+          "loops"
         ],
         "prerequisites": [],
         "difficulty": 2
