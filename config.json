@@ -554,20 +554,20 @@
         "difficulty": 5
       },
       {
-        "slug": "diamond",
-        "name": "Diamond",
-        "uuid": "09e1873b-65de-4352-b10d-1ee7de9c08ec",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "2401de1d-0a63-49b2-ad22-3807cd76778f",
         "practices": [
           "data-definitions"
         ],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "09e1873b-65de-4352-b10d-1ee7de9c08ec",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 5
       },
