@@ -538,6 +538,14 @@
         "difficulty": 2
       },
       {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "ff4558eb-3976-4912-945f-78856ca93972",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "camicia",
         "name": "Camicia",
         "uuid": "628a2084-47b5-4e32-a07f-e5b77a73ce75",
