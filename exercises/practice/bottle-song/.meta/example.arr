@@ -17,7 +17,7 @@ counts = [list:
   "nine",
   "ten"]
 
-fun recite(start-bottles, take-down)
+fun recite(start-bottles, take-down):
   L.range(0, take-down)
     ^ map(lam(i): verse(start-bottles - i) end, _)
     ^ _.join-str("\n\n")
