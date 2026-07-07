@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "game-of-life.arr"
+    ],
+    "test": [
+      "game-of-life-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ]
+  },
+  "blurb": "Implement Conway's Game of Life.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+}
