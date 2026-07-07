@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "flower-field.arr"
+    ],
+    "test": [
+      "flower-field-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
