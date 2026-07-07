@@ -2,6 +2,8 @@ use context starter2024
 
 provide: simulate-game end
 
+include string-dict
+
 fun simulate-game(player-a, player-b):
   play(
     initial-state(
@@ -25,7 +27,7 @@ fun initial-state(hand-a, hand-b):
     hand-b: hand-b,
     active-player: "A",
     pile: [list: ],
-    seen: [list: ],
+    seen: [mutable-string-dict: ],
     tricks: 0,
     cards: 0,
     debt: 0
@@ -34,24 +36,35 @@ end
 
 fun play(current):
   if current.pile.length() == 0:
-    position = {
-      hand-a: current.hand-a,
-      hand-b: current.hand-b,
-      active-player: current.active-player
-    }
+    position = position-key(current)
 
-    if current.seen.member(position):
-      game-result("loop", current)
-    else:
-      take-turn(with-seen-position(current, position))
+    cases(Option) current.seen.get-now(position):
+      | some(_) => game-result("loop", current)
+      | none =>
+        block:
+          current.seen.set-now(position, true)
+          take-turn(current)
+        end
     end
   else:
     take-turn(current)
   end
 end
 
-fun with-seen-position(current, position):
-  current.{ seen: current.seen.push(position) }
+fun position-key(current):
+  current.hand-a.map(encode-card).join-str("") + "|" +
+  current.hand-b.map(encode-card).join-str("") + "|" +
+  current.active-player
+end
+
+fun encode-card(card):
+  ask:
+    | card == 0 then: "0"
+    | card == 1 then: "1"
+    | card == 2 then: "2"
+    | card == 3 then: "3"
+    | otherwise: "4"
+  end
 end
 
 fun take-turn(current):
@@ -80,7 +93,7 @@ end
 
 fun play-card(card, current):
   after-card = current.{
-    pile: current.pile + [list: card],
+    pile: current.pile.push(card),
     cards: current.cards + 1
   }
 
@@ -107,9 +120,11 @@ fun with-debt(debt, current):
 end
 
 fun award-pile-to-opponent(current):
+  won-pile = current.pile.reverse()
+
   if current.active-player == "A":
     next = current.{
-      hand-b: current.hand-b + current.pile,
+      hand-b: current.hand-b + won-pile,
       active-player: "B",
       pile: [list: ],
       tricks: current.tricks + 1,
@@ -118,7 +133,7 @@ fun award-pile-to-opponent(current):
     finish-or-start-next-trick(next)
   else:
     next = current.{
-      hand-a: current.hand-a + current.pile,
+      hand-a: current.hand-a + won-pile,
       active-player: "A",
       pile: [list: ],
       tricks: current.tricks + 1,
