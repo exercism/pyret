@@ -636,7 +636,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      },
+      }
     ],
     "foregone": [
       "error-handling",
