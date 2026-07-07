@@ -604,6 +604,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "8e084d50-932d-4a6f-913f-ef77699c4484",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "e81a517a-16be-4760-980a-21ee549c24ea",
