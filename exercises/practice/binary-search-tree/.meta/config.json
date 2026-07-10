@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "binary-search-tree.arr"
+    ],
+    "test": [
+      "binary-search-tree-test.arr"
+    ],
+    "example": [
+      ".meta/example.arr"
+    ]
+  },
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "source": "Josh Cheek"
+}
