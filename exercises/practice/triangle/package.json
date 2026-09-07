@@ -15,7 +15,7 @@
     "test": "pyret *-test.arr"
   },
   "dependencies": {
-    "pyret-npm": "0.0.90"
+    "pyret-npm": "0.1.26"
   },
   "packageManager": "npm@11.13.0"
 }
