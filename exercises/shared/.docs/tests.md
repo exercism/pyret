@@ -7,6 +7,8 @@ Linux/MacOS
 
 ```bash
 $ cd {path/to/exercise-folder-location}
+$ npm install
+$ PATH="./node_modules/.bin:$PATH"
 $ pyret {exercise-test.arr}
 2/2 modules compiled ({exercise-test.arr})
 Cleaning up and generating standalone...

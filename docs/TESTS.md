@@ -1,9 +1,31 @@
 
 # Testing on the Pyret track
 
+## Installing Prerequisites
+
+After you successfully download an exercise, you will need to install the Node.js modules to run the tests:
+
+```sh
+cd /path/to/exercise
+npm install
+```
+
+Then add the directory containing the `pyret` command line tool to your $PATH
+
+```sh
+# bash
+PATH="./node_modules/.bin:$PATH"
+
+# zsh
+path=(./node_modules/.bin $path)
+
+# fish
+fish_add_path ./node_modules/.bin
+```
+
 ## Getting Started
 
-After you successfully download an exercise, there will be several files inside, but the most two important are your solution and test files.
+There will be several files inside the exercise directory, but the most two important are your solution and test files.
 In the following example, we've downloaded the Leap exercise.
 
 ```bash
@@ -22,7 +44,7 @@ Tests on this track will import your file, allowing access to anything explicitl
 
 To export variables, you need to add a [provide statement][provide-statement] at the beginning of your file.
 
-The following snippets are three valid ways to export `a`, `b`, and `c`.
+The following snippets are two valid ways to export `a`, `b`, and `c`.
 
 ```pyret
 # using a list of bindings
@@ -39,7 +61,7 @@ provide {
 end
 ```
 
-`provide *` is a shorthand for exporting all the top-level bindings except for custom data types
+A third method, `provide *`, is a shorthand for exporting all the top-level bindings except for custom data types
 However, it's generally not recommended because Pyret is strict about not allowing [shadowing][shadowing].
 
 ## provide-types
