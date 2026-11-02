@@ -49,6 +49,7 @@ for practice_exercise_dir in ./exercises/practice/*/; do
 
             if [[ $test_success -le 0 ]]; then
                 echo "FAILURE: $exercise"
+                echo "${test_output}"
                 SUCCESS=1
             fi
         fi
