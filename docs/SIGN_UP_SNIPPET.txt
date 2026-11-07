@@ -1,0 +1,11 @@
+fun most-common-word(text :: String) -> String:
+  counts = [mutable-string-dict: ]
+  var best = ""
+  for each(word from string-split-all(string-to-lower(text), " ")):
+    counts.set-now(word, counts.get-now(word).or-else(0) + 1)
+    when counts.get-value-now(word) > counts.get-now(best).or-else(0):
+      best := word
+    end
+  end
+  "\"" + best + "\" appears " + num-to-string(counts.get-value-now(best)) + " times"
+end
