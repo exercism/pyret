@@ -39,7 +39,7 @@ check "Just within the middle circle":
 end
 
 check "Just outside the middle circle":
-  score(-3.6, 3.6) is 1
+  score(-3.6, -3.6) is 1
 end
 
 check "Just within the outer circle":
