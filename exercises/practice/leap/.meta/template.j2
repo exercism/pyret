@@ -1,0 +1,11 @@
+
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+  leap({{ case.given | quote }}) is {{ case.expected | quote }}
+end
+{%- endfor %}
