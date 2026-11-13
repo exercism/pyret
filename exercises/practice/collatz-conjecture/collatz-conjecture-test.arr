@@ -3,7 +3,7 @@ use context starter2024
 include file("collatz-conjecture.arr")
 
 check "zero steps for one":
-    steps(1) is 0
+  steps(1) is 0
 end
 
 check "divide if even":
@@ -19,9 +19,9 @@ check "large number of even and odd steps":
 end
 
 check "zero is an error":
-  steps(0) raises "Only positive numbers are allowed"
+  steps(0) raises "Only positive integers are allowed"
 end
 
 check "negative value is an error":
-  steps(-15) raises "Only positive numbers are allowed"
+  steps(-15) raises "Only positive integers are allowed"
 end

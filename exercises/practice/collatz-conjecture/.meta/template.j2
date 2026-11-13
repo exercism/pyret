@@ -1,0 +1,14 @@
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+{%- if not case.expect_error %}
+  steps({{ case.given | quote }}) is {{ case.expected | quote }}
+{%- else %}
+  steps({{ case.given | quote }}) raises {{ case.expect_error_msg | quote }}
+{%- endif %}
+end
+{%- endfor %}
