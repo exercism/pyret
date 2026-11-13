@@ -1,0 +1,13 @@
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+  input = {{ case.given | quote }}
+  expected = {{ case.expected | quote }}
+
+  response(input) is expected
+end
+{%- endfor %}
