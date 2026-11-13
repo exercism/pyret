@@ -6,7 +6,7 @@ fun steps(n):
   if n > 0:
     steps-recurse(n, 0)
   else:
-    raise("Only positive numbers are allowed")
+    raise("Only positive integers are allowed")
   end
 end
 
