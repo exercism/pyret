@@ -7,7 +7,7 @@ check "Create a new clock with an initial time -> on the hour":
 end
 
 check "Create a new clock with an initial time -> past the hour":
-  clock(11, 09).normalize().to-string() is "11:09"
+  clock(11, 9).normalize().to-string() is "11:09"
 end
 
 check "Create a new clock with an initial time -> midnight is zero hours":
