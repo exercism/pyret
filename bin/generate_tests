@@ -90,12 +90,23 @@ def camel_to_kebab(name: str) -> str:
     return re.sub(r"([a-z])([A-Z])", (lambda m: f"{m.group(1)}-{m.group(2).lower()}"), name)
 
 
+def assert_raises(case: dict) -> str:
+    """Filter `assert_raises` that converts a test case to a raises statement, with a formatted message."""
+    assert "error" in case["expected"]
+    msg = case["expected"]["error"]
+    # The first letter is upppercase. The message ends in a period.
+    msg = msg[0].upper() + msg[1:]
+    msg = msg.removesuffix(".") + "."
+    return f'raises "{msg}"'
+
+
 def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     """Return a configured Jinja env with filters added."""
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(exercise / ".meta"))
     # C quoting of arbitrary data objects.
     env.filters["quote"] = quote
     env.filters["camel_to_kebab"] = camel_to_kebab
+    env.filters["assert_raises"] = assert_raises
     return env
 
 
