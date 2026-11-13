@@ -1,0 +1,33 @@
+{%- macro call(case) -%}
+  {%- if case.property == "create" -%}
+    clock({{ case.input.hour }}, {{ case.input.minute }}).normalize().to-string()
+  {%- elif case.property in ["add", "subtract"] -%}
+    clock({{ case.input.hour }}, {{ case.input.minute }}).{{ case.property }}({{ case.input.value }}).to-string()
+  {%- elif case.property == "equal" -%}
+    clock({{ case.input.clock1.hour }}, {{ case.input.clock1.minute }})
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro check(case) -%}
+  {%- if not case.expect_error -%}
+    {%- if case.property == "equal" -%}
+      {%- if case.expected -%}is {% else -%}is-not {% endif -%}
+      clock({{ case.input.clock2.hour }}, {{ case.input.clock2.minute }})
+    {%- else -%}
+      is {{ case.expected | quote }}
+    {%- endif -%}
+  {%- else -%}
+    raises {{ case.expect_error_msg | quote }}
+  {%- endif -%}
+{%- endmacro -%}
+
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  {{ call(case) }} {{ check(case) }}
+end
+{%- endfor %}
