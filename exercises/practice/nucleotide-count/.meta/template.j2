@@ -1,0 +1,29 @@
+{%- macro call(case) -%}
+  {{ case.property_function }}(input)
+{%- endmacro -%}
+
+{%- macro check(case) -%}
+  {%- if not case.expect_error -%}
+    is expected
+  {%- else -%}
+    raises {{ case.expect_error_msg | quote }}
+  {%- endif -%}
+{%- endmacro -%}
+
+use context starter2024
+
+{{ include_solution }}
+
+include string-dict
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  input = {{ case.given | quote }}
+{%- if not case.expect_error %}
+  expected = {{ case.expected | quote }}
+{%- endif %}
+
+  {{ call(case) }} {{ check(case) }}
+end
+{%- endfor %}
