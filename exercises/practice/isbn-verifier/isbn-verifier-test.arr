@@ -85,4 +85,3 @@ end
 check "input is too long but contains a valid isbn":
   is-valid("98245726788") is false
 end
-
