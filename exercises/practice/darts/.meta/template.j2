@@ -1,0 +1,10 @@
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+  {{ case.property }}({{ case.input.x }}, {{ case.input.y }}) is {{ case.expected }}
+end
+{%- endfor %}
