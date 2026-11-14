@@ -1,0 +1,27 @@
+{%- macro call(case) -%}
+  {{ case.property_function }}({{ case.given | quote }})
+{%- endmacro -%}
+
+{%- macro check(case) -%}
+  {%- if case.expected | length < 10 -%}
+    is {{ case.expected | quote }}
+  {%- else -%}
+    is [list:
+    {%- for i in case.expected | batch(14) %}
+      {{ i | join(", ") }}
+      {%- if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+  {%- endif -%}
+{%- endmacro -%}
+
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  {{ call(case) }} {{ check(case) }}
+end
+{%- endfor %}
