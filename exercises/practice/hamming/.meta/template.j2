@@ -1,0 +1,22 @@
+{%- macro call(case) -%}
+  {{ case.property_function }}({{ case.input.strand1 | quote }}, {{ case.input.strand2 | quote }})
+{%- endmacro -%}
+
+{%- macro check(case) -%}
+  {%- if not case.expect_error -%}
+    is {{ case.expected | quote }}
+  {%- else -%}
+    {{ case | assert_raises }}
+  {%- endif -%}
+{%- endmacro -%}
+
+use context starter2024
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  {{ call(case) }} {{ check(case) }}
+end
+{%- endfor %}
