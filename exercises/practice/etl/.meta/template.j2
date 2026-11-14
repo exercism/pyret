@@ -1,0 +1,18 @@
+use context starter2024
+
+{{ include_solution }}
+
+include string-dict
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  input = {{ case.given | quote }}
+  expected = [string-dict:
+  {%- for k, v in case.expected.items() %}
+             "{{ k }}", "{{ v }}"
+  {%- if loop.last -%}]{% else %},{% endif %}
+  {%- endfor %}
+  my-translate(input) is expected
+end
+{%- endfor %}

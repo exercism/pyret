@@ -81,7 +81,7 @@ def quote(obj) -> str:
     if isinstance(obj, list):
         return "[list: " + ", ".join(quote(i) for i in obj) + "]"
     if isinstance(obj, dict):
-        return "[string-dict: " + ", ".join(f"{quote(k)}, {v}" for k, v in obj.items()) + "]"
+        return "[string-dict: " + ", ".join(f"{quote(k)}, {quote(v)}" for k, v in obj.items()) + "]"
     return TypeError(f"quote for type {type(obj)} not supported")
 
 
