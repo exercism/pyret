@@ -25,21 +25,19 @@ def problem_spec_dir() -> pathlib.Path:
     raise LookupError("Could not find problem specs")
 
 
-def flatten_cases(cases: list[dict]) -> list[tuple[list[str], dict]]:
+def flatten_cases(cases: list[dict], included: list[str]) -> list[tuple[list[str], dict]]:
     """Recursive flatten test cases, returning individual cases with parent descriptions."""
     for case_or_group in cases:
         if "cases" in case_or_group:
-            for groups, child_case in flatten_cases(case_or_group["cases"]):
+            for groups, child_case in flatten_cases(case_or_group["cases"], included):
                 yield ([case_or_group["description"]] + groups, child_case)
         else:
-            yield ([], case_or_group)
+            if case_or_group["uuid"] in included:
+                yield ([], case_or_group)
 
 
-def get_cases(specs: pathlib.Path, exercise: pathlib.Path) -> list[dict]:
-    """Return flattened, filtered cases with additional metadata attached."""
-    canonical_path = specs / "exercises" / exercise.name / "canonical-data.json"
-    with open(canonical_path, "r", encoding="utf-8") as f:
-        canonical = json.load(f)
+def get_test_uuids(exercise: pathlib.Path) -> list[str]:
+    """Return UUIDs of included test cases from tests.toml."""
     with open(exercise / ".meta" / "tests.toml", "rb") as f:
         tests = tomllib.load(f)
 
@@ -48,24 +46,62 @@ def get_cases(specs: pathlib.Path, exercise: pathlib.Path) -> list[dict]:
         for test in tests.values()
         if test.get("include", True) and "reimplements" in test
     }
+
+    return [
+        uuid for uuid, details in tests.items()
+        if details.get("include", True) and uuid not in reimplemented
+    ]
+
+
+def update_test_case(case: dict, groups: list[str]) -> None:
+    """Update test case data in place for use by the templates."""
+    case["descriptions"] = groups + [case["description"]]
+    case["expect_error"] = isinstance(case["expected"], dict) and "error" in case["expected"]
+    if case["expect_error"]:
+        case["expect_error_msg"] = case["expected"]["error"]
+
+    if len(case.get("input", {}).values()) == 1:
+        case["given"] = list(case["input"].values())[0]
+
+    translation = str.maketrans({i: "_" for i in string.punctuation + " "})
+    case["test_function"] = "test_" + re.sub("_+", "_", case["description"].lower().translate(translation).strip("_"))
+    case["property_function"] = camel_to_kebab(case["property"])
+    if len(case.get("input", {}).values()) == 1:
+        case["given"] = list(case["input"].values())[0]
+
+
+def get_cases(specs: pathlib.Path, exercise: pathlib.Path) -> list[dict]:
+    """Return flattened, filtered cases with additional metadata attached."""
+    canonical_path = specs / "exercises" / exercise.name / "canonical-data.json"
+    with open(canonical_path, "r", encoding="utf-8") as f:
+        canonical = json.load(f)
+
     cases = []
-    for groups, case in flatten_cases(canonical["cases"]):
-        # Filter out test cases with include=false or not listed.
-        if case["uuid"] not in tests or case["uuid"] in reimplemented:
-            continue
-        if not tests[case["uuid"]].get("include", True):
-            continue
-        # Add metadata.
-        case["descriptions"] = groups + [case["description"]]
-        case["expect_error"] = isinstance(case["expected"], dict) and "error" in case["expected"]
-        if case["expect_error"]:
-            case["expect_error_msg"] = case["expected"]["error"]
+    for groups, case in flatten_cases(canonical["cases"], get_test_uuids(exercise)):
+        update_test_case(case, groups)
         cases.append(case)
     return cases
 
 
+def get_grouped_cases(specs: pathlib.Path, exercise: pathlib.Path) -> list[dict]:
+    """Return filtered cases, in the original nested hierarchy, with additional metadata attached."""
+    canonical_path = specs / "exercises" / exercise.name / "canonical-data.json"
+    with open(canonical_path, "r", encoding="utf-8") as f:
+        canonical = json.load(f)
+
+    cases = canonical["cases"]
+    for groups, case in flatten_cases(cases, get_test_uuids(exercise)):
+        update_test_case(case, groups)
+    return cases
+
+
+def camel_to_kebab(name: str) -> str:
+    """Filter `camel_to_kebab` that converts a camel case string to kebab case."""
+    return re.sub(r"([a-z])([A-Z])", (lambda m: f"{m.group(1)}-{m.group(2).lower()}"), name)
+
+
 def quote(obj) -> str:
-    """Filter `quote` that converts an arbitrary object to the C version."""
+    """Filter `quote` that converts an arbitrary object to the native version."""
     if obj is True:
         return "true"
     if obj is False:
@@ -85,11 +121,6 @@ def quote(obj) -> str:
     return TypeError(f"quote for type {type(obj)} not supported")
 
 
-def camel_to_kebab(name: str) -> str:
-    """Filter `camel_to_kebab` that converts a camel case string to kebab case."""
-    return re.sub(r"([a-z])([A-Z])", (lambda m: f"{m.group(1)}-{m.group(2).lower()}"), name)
-
-
 def assert_raises(case: dict) -> str:
     """Filter `assert_raises` that converts a test case to a raises statement, with a formatted message."""
     assert "error" in case["expected"]
@@ -102,8 +133,8 @@ def assert_raises(case: dict) -> str:
 
 def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     """Return a configured Jinja env with filters added."""
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader(exercise / ".meta"))
-    # C quoting of arbitrary data objects.
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader(["bin", exercise / ".meta"]))
+    # Quoting of arbitrary data objects.
     env.filters["quote"] = quote
     env.filters["camel_to_kebab"] = camel_to_kebab
     env.filters["assert_raises"] = assert_raises
@@ -112,17 +143,9 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
 
 def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
     """Generate and write test file for a given spec and exercise."""
-    cases = get_cases(specs, exercise)
-    translation = str.maketrans({i: "_" for i in string.punctuation + " "})
-    for case in cases:
-        case["test_function"] = "test_" + re.sub("_+", "_", case["description"].lower().translate(translation).strip("_"))
-        case["property_function"] = camel_to_kebab(case["property"])
-        if len(case.get("input", {}).values()) == 1:
-            case["given"] = list(case["input"].values())[0]
-
     config = json.loads((exercise / ".meta/config.json").read_text())
     data = {
-        "cases": cases,
+        "cases": get_cases(specs, exercise),
         "include_solution": f'include file("{config["files"]["solution"][0]}")',
     }
 
@@ -164,10 +187,10 @@ def main():
     exercises = args.exercises
     # Generate all exercises with templates if none are specified as args.
     if not exercises:
-        exercises = [
+        exercises = sorted(
             i.parent.parent
             for i in pathlib.Path("exercises/practice").glob("*/.meta/template.j2")
-        ]
+        )
     else:
         # Turn strings to paths and make them relative to the practice exercises.
         out = []
