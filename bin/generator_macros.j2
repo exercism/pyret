@@ -1,0 +1,60 @@
+{%- macro header() -%}
+use context starter2024
+{%- endmacro -%}
+
+
+{%- macro check(case, expect_var=False) -%}
+  {%- if not case.expect_error -%}
+    {%- if expect_var -%}
+      is expected
+    {%- else -%}
+      is {{ case.expected | quote }}
+    {%- endif -%}
+  {%- else -%}
+    raises {{ case.expect_error_msg | quote }}
+  {%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro call_with(func, params) -%}
+  {{ func }}(
+    {%- for param in params -%}
+      {{ param }}
+      {%- if not loop.last %}, {% endif %}{% endfor -%}
+  )
+{%- endmacro -%}
+
+
+{%- macro generic_test(case, description, call, check, set_vars=None) -%}
+check {{ description | quote }}:
+  {%- if set_vars %}
+    {%- for var in set_vars %}
+      {%- if var == "expected" %}
+  {{ var }} = {{ case.expected | quote }}
+      {%- else %}
+  {{ var }} = {{ case.input[var] | quote }}
+      {%- endif %}
+    {%- endfor %}
+{% endif %}
+  {{ call }} {{ check }}
+end
+{%- endmacro %}
+
+
+{%- macro generic_suite(include, cases, func=None, vars=False) -%}
+{{ header() }}
+
+{{ include }}
+
+{%- for case in cases %}
+
+{{
+  generic_test(
+    case,
+    case.descriptions | join(" -> "),
+    call_with(func or case.property_function, case.input.values() | map("quote")),
+    check(case),
+  )
+}}
+{%- endfor %}
+{%- endmacro %}

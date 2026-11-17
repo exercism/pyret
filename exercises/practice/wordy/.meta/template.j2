@@ -1,22 +1,3 @@
-{%- macro call(case) -%}
-  {{ case.property_function }}({{ case.given | quote }})
-{%- endmacro -%}
+{%- import "generator_macros.j2" as macros -%}
 
-{%- macro check(case) -%}
-  {%- if not case.expect_error -%}
-    is {{ case.expected | quote }}
-  {%- else -%}
-    raises {{ case.expect_error_msg | quote }}
-  {%- endif -%}
-{%- endmacro -%}
-
-use context starter2024
-
-{{ include_solution }}
-
-{%- for case in cases %}
-
-check {{ case.descriptions | join(" -> ") | quote }}:
-  {{ call(case) }} {{ check(case) }}
-end
-{%- endfor %}
+{{ macros.generic_suite(include_solution, cases) }}

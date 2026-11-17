@@ -1,10 +1,3 @@
-use context starter2024
+{%- import "generator_macros.j2" as macros -%}
 
-{{ include_solution }}
-
-{%- for case in cases %}
-
-check {{ case.description | quote }}:
-  {{ case.property }}({{ case.input.x }}, {{ case.input.y }}) is {{ case.expected }}
-end
-{%- endfor %}
+{{ macros.generic_suite(include_solution, cases) }}
