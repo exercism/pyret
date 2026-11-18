@@ -147,6 +147,7 @@ def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
     data = {
         "cases": get_cases(specs, exercise),
         "include_solution": f'include file("{config["files"]["solution"][0]}")',
+        "slug": exercise.name,
     }
 
     # Render the template.

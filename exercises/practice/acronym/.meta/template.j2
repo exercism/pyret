@@ -1,10 +1,3 @@
-use context starter2024
+{%- import "generator_macros.j2" as macros -%}
 
-{{ include_solution }}
-
-{%- for case in cases %}
-
-check {{ case.description | quote }}:
-  abbreviate({{ case.given | quote }}) is {{ case.expected | quote }}
-end
-{%- endfor %}
+{{ macros.generic_suite(include_solution, cases) }}
