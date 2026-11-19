@@ -31,11 +31,13 @@ check "invalid credit card":
 end
 
 check "invalid long number with an even remainder":
-  is-valid("1 2345 6789 1234 5678 9012") is false
+  value = "1 2345 6789 1234 5678 9012"
+  is-valid(value) is false
 end
 
 check "invalid long number with a remainder divisible by 5":
-  is-valid("1 2345 6789 1234 5678 9013") is false
+  value = "1 2345 6789 1234 5678 9013"
+  is-valid(value) is false
 end
 
 check "valid number with an even number of digits":
@@ -71,7 +73,9 @@ check "input digit 9 is correctly converted to output digit 9":
 end
 
 check "very long input is valid":
-  is-valid("9999999999 9999999999 9999999999 9999999999") is true
+  value = "9999999999 9999999999 9999999999 9999999999"
+
+  is-valid(value) is true
 end
 
 check "valid luhn with an odd number of digits and non zero first digit":

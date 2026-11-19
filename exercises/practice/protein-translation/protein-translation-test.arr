@@ -83,7 +83,9 @@ check "Sequence of two different protein codons translates into proteins":
 end
 
 check "Translate RNA strand into correct protein list":
-  proteins("AUGUUUUGG") is [list: "Methionine", "Phenylalanine", "Tryptophan"]
+  expected = [list: "Methionine", "Phenylalanine", "Tryptophan"]
+
+  proteins("AUGUUUUGG") is expected
 end
 
 check "Translation stops if STOP codon at beginning of sequence":

@@ -3,7 +3,8 @@ use context starter2024
 include file("acronym.arr")
 
 check "basic":
-  abbreviate("Portable Network Graphics") is "PNG"
+  phrase = "Portable Network Graphics"
+  abbreviate(phrase) is "PNG"
 end
 
 check "lowercase words":
@@ -15,19 +16,27 @@ check "punctuation":
 end
 
 check "all caps word":
-  abbreviate("GNU Image Manipulation Program") is "GIMP"
+  phrase = "GNU Image Manipulation Program"
+
+  abbreviate(phrase) is "GIMP"
 end
 
 check "punctuation without whitespace":
-  abbreviate("Complementary metal-oxide semiconductor") is "CMOS"
+  phrase = "Complementary metal-oxide semiconductor"
+
+  abbreviate(phrase) is "CMOS"
 end
 
 check "very long abbreviation":
-  abbreviate("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me") is "ROTFLSHTMDCOALM"
+  phrase = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+
+  abbreviate(phrase) is "ROTFLSHTMDCOALM"
 end
 
 check "consecutive delimiters":
-  abbreviate("Something - I made up from thin air") is "SIMUFTA"
+  phrase = "Something - I made up from thin air"
+
+  abbreviate(phrase) is "SIMUFTA"
 end
 
 check "apostrophes":

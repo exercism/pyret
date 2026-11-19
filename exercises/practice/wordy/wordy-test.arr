@@ -43,11 +43,13 @@ check "subtraction":
 end
 
 check "multiplication":
-  answer("What is -3 multiplied by 25?") is -75
+  question = "What is -3 multiplied by 25?"
+  answer(question) is -75
 end
 
 check "division":
-  answer("What is 33 divided by -3?") is -11
+  question = "What is 33 divided by -3?"
+  answer(question) is -11
 end
 
 check "multiple additions":
@@ -55,27 +57,36 @@ check "multiple additions":
 end
 
 check "addition and subtraction":
-  answer("What is 1 plus 5 minus -2?") is 8
+  question = "What is 1 plus 5 minus -2?"
+  answer(question) is 8
 end
 
 check "multiple subtraction":
-  answer("What is 20 minus 4 minus 13?") is 3
+  question = "What is 20 minus 4 minus 13?"
+  answer(question) is 3
 end
 
 check "subtraction then addition":
-  answer("What is 17 minus 6 plus 3?") is 14
+  question = "What is 17 minus 6 plus 3?"
+  answer(question) is 14
 end
 
 check "multiple multiplication":
-  answer("What is 2 multiplied by -2 multiplied by 3?") is -12
+  question = "What is 2 multiplied by -2 multiplied by 3?"
+
+  answer(question) is -12
 end
 
 check "addition and multiplication":
-  answer("What is -3 plus 7 multiplied by -2?") is -8
+  question = "What is -3 plus 7 multiplied by -2?"
+
+  answer(question) is -8
 end
 
 check "multiple division":
-  answer("What is -12 divided by 2 divided by -3?") is 2
+  question = "What is -12 divided by 2 divided by -3?"
+
+  answer(question) is 2
 end
 
 check "unknown operation":
@@ -83,7 +94,9 @@ check "unknown operation":
 end
 
 check "Non math question":
-  answer("Who is the President of the United States?") raises "unknown operation"
+  question = "Who is the President of the United States?"
+
+  answer(question) raises "unknown operation"
 end
 
 check "reject problem missing an operand":

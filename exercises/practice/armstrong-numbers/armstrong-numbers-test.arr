@@ -39,9 +39,13 @@ check "Seven-digit number that is not an Armstrong number":
 end
 
 check "Armstrong number containing seven zeroes":
-  is-armstrong-number(186709961001538790100634132976990) is true
+  number = 186709961001538790100634132976990
+
+  is-armstrong-number(number) is true
 end
 
 check "The largest and last Armstrong number":
-  is-armstrong-number(115132219018763992565095597973971522401) is true
+  number = 115132219018763992565095597973971522401
+
+  is-armstrong-number(number) is true
 end

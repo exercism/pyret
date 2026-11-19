@@ -3,41 +3,47 @@ use context starter2024
 {%- endmacro -%}
 
 
-{%- macro check(case, expect_var=False) -%}
-  {%- if not case.expect_error -%}
-    {%- if expect_var -%}
-      is expected
-    {%- else -%}
-      is {{ case.expected | quote }}
-    {%- endif -%}
-  {%- else -%}
-    raises {{ case.expect_error_msg | quote }}
+{%- macro write_vars(case) -%}
+  {%- for var, value in case.input.items() %}{% if (value | quote) is exceeds(30) %}
+  {{ var }} = {{ value | quote }}
+  {%- endif -%}{%- endfor %}
+  {%- if not case.expect_error and case.expected | quote | length > 50 %}
+  expected = {{ case.expected | quote }}
   {%- endif -%}
-{%- endmacro -%}
+  {%- if (not case.expect_error and case.expected | quote | length > 50) or (case.input.values() | select("exceeds", 30) | join("")) -%}{{ "\n" }}{%- endif %}
+{%- endmacro %}
 
 
-{%- macro call_with(func, params) -%}
+{%- macro call_func_with_vars(func, case) -%}
   {{ func }}(
-    {%- for param in params -%}
-      {{ param }}
-      {%- if not loop.last %}, {% endif %}{% endfor -%}
+    {%- for var, value in case.input.items() -%}
+      {%- if (value | quote) is exceeds(30) -%}
+        {{- var -}}
+      {%- else -%}
+        {{- value | quote -}}
+      {%- endif -%}
+      {%- if not loop.last -%}, {% endif %}
+    {%- endfor -%}
   )
-{%- endmacro -%}
+{%- endmacro %}
 
 
-{%- macro generic_test(case, description, call, check, set_vars=None) -%}
-check {{ description | quote }}:
-  {%- if set_vars %}
-    {%- for var in set_vars %}
-      {%- if var == "expected" %}
-  {{ var }} = {{ case.expected | quote }}
-      {%- else %}
-  {{ var }} = {{ case.input[var] | quote }}
-      {%- endif %}
-    {%- endfor %}
-{% endif %}
-  {{ call }} {{ check }}
+{%- macro check_result(case) -%}
+  {%- if case.expect_error -%}
+    raises {{ case.expect_error_msg | quote }}
+  {%- elif case.expected | quote | length > 50 -%}
+      is expected
+  {%- else -%}
+    is {{ case.expected | quote }}
+  {%- endif %}
 end
+{%- endmacro %}
+
+
+{%- macro generic_test_case(case, description, func) -%}
+check {{ description | quote }}:
+  {{- write_vars(case) }}
+  {{ call_func_with_vars(func, case) }} {{ check_result(case) }}
 {%- endmacro %}
 
 
@@ -49,11 +55,10 @@ end
 {%- for case in cases %}
 
 {{
-  generic_test(
+  generic_test_case(
     case,
     case.descriptions | join(" -> "),
-    call_with(func or case.property_function, case.input.values() | map("quote")),
-    check(case),
+    func or case.property_function,
   )
 }}
 {%- endfor %}
