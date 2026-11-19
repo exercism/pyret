@@ -3,123 +3,209 @@ use context starter2024
 include file("protein-translation.arr")
 
 check "Empty RNA sequence results in no proteins":
-  proteins("") is [list: ]
+  strand = ""
+  expected = [list: ]
+
+  proteins(strand) is expected
 end
 
 check "Methionine RNA sequence":
-  proteins("AUG") is [list: "Methionine"]
+  strand = "AUG"
+  expected = [list: "Methionine"]
+
+  proteins(strand) is expected
 end
 
 check "Phenylalanine RNA sequence 1":
-  proteins("UUU") is [list: "Phenylalanine"]
+  strand = "UUU"
+  expected = [list: "Phenylalanine"]
+
+  proteins(strand) is expected
 end
 
 check "Phenylalanine RNA sequence 2":
-  proteins("UUC") is [list: "Phenylalanine"]
+  strand = "UUC"
+  expected = [list: "Phenylalanine"]
+
+  proteins(strand) is expected
 end
 
 check "Leucine RNA sequence 1":
-  proteins("UUA") is [list: "Leucine"]
+  strand = "UUA"
+  expected = [list: "Leucine"]
+
+  proteins(strand) is expected
 end
 
 check "Leucine RNA sequence 2":
-  proteins("UUG") is [list: "Leucine"]
+  strand = "UUG"
+  expected = [list: "Leucine"]
+
+  proteins(strand) is expected
 end
 
 check "Serine RNA sequence 1":
-  proteins("UCU") is [list: "Serine"]
+  strand = "UCU"
+  expected = [list: "Serine"]
+
+  proteins(strand) is expected
 end
 
 check "Serine RNA sequence 2":
-  proteins("UCC") is [list: "Serine"]
+  strand = "UCC"
+  expected = [list: "Serine"]
+
+  proteins(strand) is expected
 end
 
 check "Serine RNA sequence 3":
-  proteins("UCA") is [list: "Serine"]
+  strand = "UCA"
+  expected = [list: "Serine"]
+
+  proteins(strand) is expected
 end
 
 check "Serine RNA sequence 4":
-  proteins("UCG") is [list: "Serine"]
+  strand = "UCG"
+  expected = [list: "Serine"]
+
+  proteins(strand) is expected
 end
 
 check "Tyrosine RNA sequence 1":
-  proteins("UAU") is [list: "Tyrosine"]
+  strand = "UAU"
+  expected = [list: "Tyrosine"]
+
+  proteins(strand) is expected
 end
 
 check "Tyrosine RNA sequence 2":
-  proteins("UAC") is [list: "Tyrosine"]
+  strand = "UAC"
+  expected = [list: "Tyrosine"]
+
+  proteins(strand) is expected
 end
 
 check "Cysteine RNA sequence 1":
-  proteins("UGU") is [list: "Cysteine"]
+  strand = "UGU"
+  expected = [list: "Cysteine"]
+
+  proteins(strand) is expected
 end
 
 check "Cysteine RNA sequence 2":
-  proteins("UGC") is [list: "Cysteine"]
+  strand = "UGC"
+  expected = [list: "Cysteine"]
+
+  proteins(strand) is expected
 end
 
 check "Tryptophan RNA sequence":
-  proteins("UGG") is [list: "Tryptophan"]
+  strand = "UGG"
+  expected = [list: "Tryptophan"]
+
+  proteins(strand) is expected
 end
 
 check "STOP codon RNA sequence 1":
-  proteins("UAA") is [list: ]
+  strand = "UAA"
+  expected = [list: ]
+
+  proteins(strand) is expected
 end
 
 check "STOP codon RNA sequence 2":
-  proteins("UAG") is [list: ]
+  strand = "UAG"
+  expected = [list: ]
+
+  proteins(strand) is expected
 end
 
 check "STOP codon RNA sequence 3":
-  proteins("UGA") is [list: ]
+  strand = "UGA"
+  expected = [list: ]
+
+  proteins(strand) is expected
 end
 
 check "Sequence of two protein codons translates into proteins":
-  proteins("UUUUUU") is [list: "Phenylalanine", "Phenylalanine"]
+  strand = "UUUUUU"
+  expected = [list: "Phenylalanine", "Phenylalanine"]
+
+  proteins(strand) is expected
 end
 
 check "Sequence of two different protein codons translates into proteins":
-  proteins("UUAUUG") is [list: "Leucine", "Leucine"]
+  strand = "UUAUUG"
+  expected = [list: "Leucine", "Leucine"]
+
+  proteins(strand) is expected
 end
 
 check "Translate RNA strand into correct protein list":
+  strand = "AUGUUUUGG"
   expected = [list: "Methionine", "Phenylalanine", "Tryptophan"]
 
-  proteins("AUGUUUUGG") is expected
+  proteins(strand) is expected
 end
 
 check "Translation stops if STOP codon at beginning of sequence":
-  proteins("UAGUGG") is [list: ]
+  strand = "UAGUGG"
+  expected = [list: ]
+
+  proteins(strand) is expected
 end
 
 check "Translation stops if STOP codon at end of two-codon sequence":
-  proteins("UGGUAG") is [list: "Tryptophan"]
+  strand = "UGGUAG"
+  expected = [list: "Tryptophan"]
+
+  proteins(strand) is expected
 end
 
 check "Translation stops if STOP codon at end of three-codon sequence":
-  proteins("AUGUUUUAA") is [list: "Methionine", "Phenylalanine"]
+  strand = "AUGUUUUAA"
+  expected = [list: "Methionine", "Phenylalanine"]
+
+  proteins(strand) is expected
 end
 
 check "Translation stops if STOP codon in middle of three-codon sequence":
-  proteins("UGGUAGUGG") is [list: "Tryptophan"]
+  strand = "UGGUAGUGG"
+  expected = [list: "Tryptophan"]
+
+  proteins(strand) is expected
 end
 
 check "Translation stops if STOP codon in middle of six-codon sequence":
-  proteins("UGGUGUUAUUAAUGGUUU") is [list: "Tryptophan", "Cysteine", "Tyrosine"]
+  strand = "UGGUGUUAUUAAUGGUUU"
+  expected = [list: "Tryptophan", "Cysteine", "Tyrosine"]
+
+  proteins(strand) is expected
 end
 
 check "Sequence of two non-STOP codons does not translate to a STOP codon":
-  proteins("AUGAUG") is [list: "Methionine", "Methionine"]
+  strand = "AUGAUG"
+  expected = [list: "Methionine", "Methionine"]
+
+  proteins(strand) is expected
 end
 
 check "Unknown amino acids, not part of a codon, can't translate":
-  proteins("XYZ") raises "Invalid codon"
+  strand = "XYZ"
+
+  proteins(strand) raises "Invalid codon"
 end
 
 check "Incomplete RNA sequence can't translate":
-  proteins("AUGU") raises "Invalid codon"
+  strand = "AUGU"
+
+  proteins(strand) raises "Invalid codon"
 end
 
 check "Incomplete RNA sequence can translate if valid until a STOP codon":
-  proteins("UUCUUCUAAUGGU") is [list: "Phenylalanine", "Phenylalanine"]
+  strand = "UUCUUCUAAUGGU"
+  expected = [list: "Phenylalanine", "Phenylalanine"]
+
+  proteins(strand) is expected
 end

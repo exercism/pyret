@@ -3,53 +3,105 @@ use context starter2024
 include file("darts.arr")
 
 check "Missed target":
-  score(-9, 9) is 0
+  x = -9
+  y = 9
+  expected = 0
+
+  score(x, y) is expected
 end
 
 check "On the outer circle":
-  score(0, 10) is 1
+  x = 0
+  y = 10
+  expected = 1
+
+  score(x, y) is expected
 end
 
 check "On the middle circle":
-  score(-5, 0) is 5
+  x = -5
+  y = 0
+  expected = 5
+
+  score(x, y) is expected
 end
 
 check "On the inner circle":
-  score(0, -1) is 10
+  x = 0
+  y = -1
+  expected = 10
+
+  score(x, y) is expected
 end
 
 check "Exactly on center":
-  score(0, 0) is 10
+  x = 0
+  y = 0
+  expected = 10
+
+  score(x, y) is expected
 end
 
 check "Near the center":
-  score(-0.1, -0.1) is 10
+  x = -0.1
+  y = -0.1
+  expected = 10
+
+  score(x, y) is expected
 end
 
 check "Just within the inner circle":
-  score(0.7, 0.7) is 10
+  x = 0.7
+  y = 0.7
+  expected = 10
+
+  score(x, y) is expected
 end
 
 check "Just outside the inner circle":
-  score(0.8, -0.8) is 5
+  x = 0.8
+  y = -0.8
+  expected = 5
+
+  score(x, y) is expected
 end
 
 check "Just within the middle circle":
-  score(-3.5, 3.5) is 5
+  x = -3.5
+  y = 3.5
+  expected = 5
+
+  score(x, y) is expected
 end
 
 check "Just outside the middle circle":
-  score(-3.6, -3.6) is 1
+  x = -3.6
+  y = -3.6
+  expected = 1
+
+  score(x, y) is expected
 end
 
 check "Just within the outer circle":
-  score(-7.0, 7.0) is 1
+  x = -7.0
+  y = 7.0
+  expected = 1
+
+  score(x, y) is expected
 end
 
 check "Just outside the outer circle":
-  score(7.1, -7.1) is 0
+  x = 7.1
+  y = -7.1
+  expected = 0
+
+  score(x, y) is expected
 end
 
 check "Asymmetric position between the inner and middle circles":
-  score(0.5, -4) is 5
+  x = 0.5
+  y = -4
+  expected = 5
+
+  score(x, y) is expected
 end

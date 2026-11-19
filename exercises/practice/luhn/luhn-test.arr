@@ -3,93 +3,155 @@ use context starter2024
 include file("luhn.arr")
 
 check "single digit strings can not be valid":
-  is-valid("1") is false
+  value = "1"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "a single zero is invalid":
-  is-valid("0") is false
+  value = "0"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "a simple valid SIN that remains valid if reversed":
-  is-valid("059") is true
+  value = "059"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "a simple valid SIN that becomes invalid if reversed":
-  is-valid("59") is true
+  value = "59"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "a valid Canadian SIN":
-  is-valid("055 444 285") is true
+  value = "055 444 285"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "invalid Canadian SIN":
-  is-valid("055 444 286") is false
+  value = "055 444 286"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "invalid credit card":
-  is-valid("8273 1232 7352 0569") is false
+  value = "8273 1232 7352 0569"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "invalid long number with an even remainder":
   value = "1 2345 6789 1234 5678 9012"
-  is-valid(value) is false
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "invalid long number with a remainder divisible by 5":
   value = "1 2345 6789 1234 5678 9013"
-  is-valid(value) is false
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "valid number with an even number of digits":
-  is-valid("095 245 88") is true
+  value = "095 245 88"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "valid number with an odd number of spaces":
-  is-valid("234 567 891 234") is true
+  value = "234 567 891 234"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "valid strings with a non-digit added at the end become invalid":
-  is-valid("059a") is false
+  value = "059a"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "valid strings with punctuation included become invalid":
-  is-valid("055-444-285") is false
+  value = "055-444-285"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "valid strings with symbols included become invalid":
-  is-valid("055# 444$ 285") is false
+  value = "055# 444$ 285"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "single zero with space is invalid":
-  is-valid(" 0") is false
+  value = " 0"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "more than a single zero is valid":
-  is-valid("0000 0") is true
+  value = "0000 0"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "input digit 9 is correctly converted to output digit 9":
-  is-valid("091") is true
+  value = "091"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "very long input is valid":
   value = "9999999999 9999999999 9999999999 9999999999"
+  expected = true
 
-  is-valid(value) is true
+  is-valid(value) is expected
 end
 
 check "valid luhn with an odd number of digits and non zero first digit":
-  is-valid("109") is true
+  value = "109"
+  expected = true
+
+  is-valid(value) is expected
 end
 
 check "using ascii value for non-doubled non-digit isn't allowed":
-  is-valid("055b 444 285") is false
+  value = "055b 444 285"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "using ascii value for doubled non-digit isn't allowed":
-  is-valid(":9") is false
+  value = ":9"
+  expected = false
+
+  is-valid(value) is expected
 end
 
 check "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed":
-  is-valid("59%59") is false
+  value = "59%59"
+  expected = false
+
+  is-valid(value) is expected
 end

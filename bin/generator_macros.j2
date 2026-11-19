@@ -4,24 +4,20 @@ use context starter2024
 
 
 {%- macro write_vars(case) -%}
-  {%- for var, value in case.input.items() %}{% if (value | quote) is exceeds(30) %}
-  {{ var }} = {{ value | quote }}
-  {%- endif -%}{%- endfor %}
-  {%- if not case.expect_error and case.expected | quote | length > 50 %}
+  {%- for var, value in case.input.items() %}
+  {{ var | camel_to_kebab }} = {{ value | quote }}
+  {%- endfor %}
+  {%- if not case.expect_error %}
   expected = {{ case.expected | quote }}
-  {%- endif -%}
-  {%- if (not case.expect_error and case.expected | quote | length > 50) or (case.input.values() | select("exceeds", 30) | join("")) -%}{{ "\n" }}{%- endif %}
-{%- endmacro %}
+  {%- endif %}
+  {%- if case.input or not case.expect_error %}{{ "\n" }}{% endif %}
+{%- endmacro -%}
 
 
 {%- macro call_func_with_vars(func, case) -%}
   {{ func }}(
     {%- for var, value in case.input.items() -%}
-      {%- if (value | quote) is exceeds(30) -%}
-        {{- var -}}
-      {%- else -%}
-        {{- value | quote -}}
-      {%- endif -%}
+      {{- var | camel_to_kebab -}}
       {%- if not loop.last -%}, {% endif %}
     {%- endfor -%}
   )
@@ -31,10 +27,8 @@ use context starter2024
 {%- macro check_result(case) -%}
   {%- if case.expect_error -%}
     raises {{ case.expect_error_msg | quote }}
-  {%- elif case.expected | quote | length > 50 -%}
-      is expected
   {%- else -%}
-    is {{ case.expected | quote }}
+      is expected
   {%- endif %}
 end
 {%- endmacro %}

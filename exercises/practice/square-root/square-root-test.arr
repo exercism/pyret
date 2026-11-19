@@ -3,25 +3,43 @@ use context starter2024
 include file("square-root.arr")
 
 check "root of 1":
-  square-root(1) is 1
+  radicand = 1
+  expected = 1
+
+  square-root(radicand) is expected
 end
 
 check "root of 4":
-  square-root(4) is 2
+  radicand = 4
+  expected = 2
+
+  square-root(radicand) is expected
 end
 
 check "root of 25":
-  square-root(25) is 5
+  radicand = 25
+  expected = 5
+
+  square-root(radicand) is expected
 end
 
 check "root of 81":
-  square-root(81) is 9
+  radicand = 81
+  expected = 9
+
+  square-root(radicand) is expected
 end
 
 check "root of 196":
-  square-root(196) is 14
+  radicand = 196
+  expected = 14
+
+  square-root(radicand) is expected
 end
 
 check "root of 65025":
-  square-root(65025) is 255
+  radicand = 65025
+  expected = 255
+
+  square-root(radicand) is expected
 end

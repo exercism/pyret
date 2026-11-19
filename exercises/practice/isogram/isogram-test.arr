@@ -3,57 +3,99 @@ use context starter2024
 include file("isogram.arr")
 
 check "empty string":
-  is-isogram("") is true
+  phrase = ""
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "isogram with only lower case characters":
-  is-isogram("isogram") is true
+  phrase = "isogram"
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "word with one duplicated character":
-  is-isogram("eleven") is false
+  phrase = "eleven"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "word with one duplicated character from the end of the alphabet":
-  is-isogram("zzyzx") is false
+  phrase = "zzyzx"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "longest reported english isogram":
-  is-isogram("subdermatoglyphic") is true
+  phrase = "subdermatoglyphic"
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "word with duplicated character in mixed case":
-  is-isogram("Alphabet") is false
+  phrase = "Alphabet"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "word with duplicated character in mixed case, lowercase first":
-  is-isogram("alphAbet") is false
+  phrase = "alphAbet"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "hypothetical isogrammic word with hyphen":
-  is-isogram("thumbscrew-japingly") is true
+  phrase = "thumbscrew-japingly"
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "hypothetical word with duplicated character following hyphen":
-  is-isogram("thumbscrew-jappingly") is false
+  phrase = "thumbscrew-jappingly"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "isogram with duplicated hyphen":
-  is-isogram("six-year-old") is true
+  phrase = "six-year-old"
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "made-up name that is an isogram":
-  is-isogram("Emily Jung Schwartzkopf") is true
+  phrase = "Emily Jung Schwartzkopf"
+  expected = true
+
+  is-isogram(phrase) is expected
 end
 
 check "duplicated character in the middle":
-  is-isogram("accentor") is false
+  phrase = "accentor"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "same first and last characters":
-  is-isogram("angola") is false
+  phrase = "angola"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
 
 check "word with duplicated character and with two hyphens":
-  is-isogram("up-to-date") is false
+  phrase = "up-to-date"
+  expected = false
+
+  is-isogram(phrase) is expected
 end
