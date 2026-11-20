@@ -138,6 +138,7 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     env.filters["quote"] = quote
     env.filters["camel_to_kebab"] = camel_to_kebab
     env.filters["assert_raises"] = assert_raises
+    env.tests["exceeds"] = lambda obj, size: len(quote(obj)) > size
     return env
 
 

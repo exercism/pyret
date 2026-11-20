@@ -3,25 +3,43 @@ use context starter2024
 include file("rna-transcription.arr")
 
 check "Empty RNA sequence":
-  to-rna("") is ""
+  dna = ""
+  expected = ""
+
+  to-rna(dna) is expected
 end
 
 check "RNA complement of cytosine is guanine":
-  to-rna("C") is "G"
+  dna = "C"
+  expected = "G"
+
+  to-rna(dna) is expected
 end
 
 check "RNA complement of guanine is cytosine":
-  to-rna("G") is "C"
+  dna = "G"
+  expected = "C"
+
+  to-rna(dna) is expected
 end
 
 check "RNA complement of thymine is adenine":
-  to-rna("T") is "A"
+  dna = "T"
+  expected = "A"
+
+  to-rna(dna) is expected
 end
 
 check "RNA complement of adenine is uracil":
-  to-rna("A") is "U"
+  dna = "A"
+  expected = "U"
+
+  to-rna(dna) is expected
 end
 
 check "RNA complement":
-  to-rna("ACGTGGTCTTAA") is "UGCACCAGAAUU"
+  dna = "ACGTGGTCTTAA"
+  expected = "UGCACCAGAAUU"
+
+  to-rna(dna) is expected
 end

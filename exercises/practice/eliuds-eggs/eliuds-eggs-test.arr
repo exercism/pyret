@@ -3,17 +3,29 @@ use context starter2024
 include file("eliuds-eggs.arr")
 
 check "0 eggs":
-  egg-count(0) is 0
+  number = 0
+  expected = 0
+
+  egg-count(number) is expected
 end
 
 check "1 egg":
-  egg-count(16) is 1
+  number = 16
+  expected = 1
+
+  egg-count(number) is expected
 end
 
 check "4 eggs":
-  egg-count(89) is 4
+  number = 89
+  expected = 4
+
+  egg-count(number) is expected
 end
 
 check "13 eggs":
-  egg-count(2000000000) is 13
+  number = 2000000000
+  expected = 13
+
+  egg-count(number) is expected
 end

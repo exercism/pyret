@@ -3,25 +3,41 @@ use context starter2024
 include file("collatz-conjecture.arr")
 
 check "zero steps for one":
-  steps(1) is 0
+  number = 1
+  expected = 0
+
+  steps(number) is expected
 end
 
 check "divide if even":
-  steps(16) is 4
+  number = 16
+  expected = 4
+
+  steps(number) is expected
 end
 
 check "even and odd steps":
-  steps(12) is 9
+  number = 12
+  expected = 9
+
+  steps(number) is expected
 end
 
 check "large number of even and odd steps":
-  steps(1000000) is 152
+  number = 1000000
+  expected = 152
+
+  steps(number) is expected
 end
 
 check "zero is an error":
-  steps(0) raises "Only positive integers are allowed"
+  number = 0
+
+  steps(number) raises "Only positive integers are allowed"
 end
 
 check "negative value is an error":
-  steps(-15) raises "Only positive integers are allowed"
+  number = -15
+
+  steps(number) raises "Only positive integers are allowed"
 end

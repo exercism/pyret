@@ -3,73 +3,127 @@ use context starter2024
 include file("raindrops.arr")
 
 check "the sound for 1 is 1":
-  convert(1) is "1"
+  number = 1
+  expected = "1"
+
+  convert(number) is expected
 end
 
 check "the sound for 3 is Pling":
-  convert(3) is "Pling"
+  number = 3
+  expected = "Pling"
+
+  convert(number) is expected
 end
 
 check "the sound for 5 is Plang":
-  convert(5) is "Plang"
+  number = 5
+  expected = "Plang"
+
+  convert(number) is expected
 end
 
 check "the sound for 7 is Plong":
-  convert(7) is "Plong"
+  number = 7
+  expected = "Plong"
+
+  convert(number) is expected
 end
 
 check "the sound for 6 is Pling as it has a factor 3":
-  convert(6) is "Pling"
+  number = 6
+  expected = "Pling"
+
+  convert(number) is expected
 end
 
 check "2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base":
-  convert(8) is "8"
+  number = 8
+  expected = "8"
+
+  convert(number) is expected
 end
 
 check "the sound for 9 is Pling as it has a factor 3":
-  convert(9) is "Pling"
+  number = 9
+  expected = "Pling"
+
+  convert(number) is expected
 end
 
 check "the sound for 10 is Plang as it has a factor 5":
-  convert(10) is "Plang"
+  number = 10
+  expected = "Plang"
+
+  convert(number) is expected
 end
 
 check "the sound for 14 is Plong as it has a factor of 7":
-  convert(14) is "Plong"
+  number = 14
+  expected = "Plong"
+
+  convert(number) is expected
 end
 
 check "the sound for 15 is PlingPlang as it has factors 3 and 5":
-  convert(15) is "PlingPlang"
+  number = 15
+  expected = "PlingPlang"
+
+  convert(number) is expected
 end
 
 check "the sound for 21 is PlingPlong as it has factors 3 and 7":
-  convert(21) is "PlingPlong"
+  number = 21
+  expected = "PlingPlong"
+
+  convert(number) is expected
 end
 
 check "the sound for 25 is Plang as it has a factor 5":
-  convert(25) is "Plang"
+  number = 25
+  expected = "Plang"
+
+  convert(number) is expected
 end
 
 check "the sound for 27 is Pling as it has a factor 3":
-  convert(27) is "Pling"
+  number = 27
+  expected = "Pling"
+
+  convert(number) is expected
 end
 
 check "the sound for 35 is PlangPlong as it has factors 5 and 7":
-  convert(35) is "PlangPlong"
+  number = 35
+  expected = "PlangPlong"
+
+  convert(number) is expected
 end
 
 check "the sound for 49 is Plong as it has a factor 7":
-  convert(49) is "Plong"
+  number = 49
+  expected = "Plong"
+
+  convert(number) is expected
 end
 
 check "the sound for 52 is 52":
-  convert(52) is "52"
+  number = 52
+  expected = "52"
+
+  convert(number) is expected
 end
 
 check "the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7":
-  convert(105) is "PlingPlangPlong"
+  number = 105
+  expected = "PlingPlangPlong"
+
+  convert(number) is expected
 end
 
 check "the sound for 3125 is Plang as it has a factor 5":
-  convert(3125) is "Plang"
+  number = 3125
+  expected = "Plang"
+
+  convert(number) is expected
 end

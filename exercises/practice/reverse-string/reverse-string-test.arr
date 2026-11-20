@@ -3,25 +3,43 @@ use context starter2024
 include file("reverse-string.arr")
 
 check "an empty string":
-  reversed("") is ""
+  value = ""
+  expected = ""
+
+  reversed(value) is expected
 end
 
 check "a word":
-  reversed("robot") is "tobor"
+  value = "robot"
+  expected = "tobor"
+
+  reversed(value) is expected
 end
 
 check "a capitalized word":
-  reversed("Ramen") is "nemaR"
+  value = "Ramen"
+  expected = "nemaR"
+
+  reversed(value) is expected
 end
 
 check "a sentence with punctuation":
-  reversed("I'm hungry!") is "!yrgnuh m'I"
+  value = "I'm hungry!"
+  expected = "!yrgnuh m'I"
+
+  reversed(value) is expected
 end
 
 check "a palindrome":
-  reversed("racecar") is "racecar"
+  value = "racecar"
+  expected = "racecar"
+
+  reversed(value) is expected
 end
 
 check "an even-sized word":
-  reversed("drawer") is "reward"
+  value = "drawer"
+  expected = "reward"
+
+  reversed(value) is expected
 end

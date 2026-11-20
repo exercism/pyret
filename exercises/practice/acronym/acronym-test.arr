@@ -3,37 +3,64 @@ use context starter2024
 include file("acronym.arr")
 
 check "basic":
-  abbreviate("Portable Network Graphics") is "PNG"
+  phrase = "Portable Network Graphics"
+  expected = "PNG"
+
+  abbreviate(phrase) is expected
 end
 
 check "lowercase words":
-  abbreviate("Ruby on Rails") is "ROR"
+  phrase = "Ruby on Rails"
+  expected = "ROR"
+
+  abbreviate(phrase) is expected
 end
 
 check "punctuation":
-  abbreviate("First In, First Out") is "FIFO"
+  phrase = "First In, First Out"
+  expected = "FIFO"
+
+  abbreviate(phrase) is expected
 end
 
 check "all caps word":
-  abbreviate("GNU Image Manipulation Program") is "GIMP"
+  phrase = "GNU Image Manipulation Program"
+  expected = "GIMP"
+
+  abbreviate(phrase) is expected
 end
 
 check "punctuation without whitespace":
-  abbreviate("Complementary metal-oxide semiconductor") is "CMOS"
+  phrase = "Complementary metal-oxide semiconductor"
+  expected = "CMOS"
+
+  abbreviate(phrase) is expected
 end
 
 check "very long abbreviation":
-  abbreviate("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me") is "ROTFLSHTMDCOALM"
+  phrase = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+  expected = "ROTFLSHTMDCOALM"
+
+  abbreviate(phrase) is expected
 end
 
 check "consecutive delimiters":
-  abbreviate("Something - I made up from thin air") is "SIMUFTA"
+  phrase = "Something - I made up from thin air"
+  expected = "SIMUFTA"
+
+  abbreviate(phrase) is expected
 end
 
 check "apostrophes":
-  abbreviate("Halley's Comet") is "HC"
+  phrase = "Halley's Comet"
+  expected = "HC"
+
+  abbreviate(phrase) is expected
 end
 
 check "underscore emphasis":
-  abbreviate("The Road _Not_ Taken") is "TRNT"
+  phrase = "The Road _Not_ Taken"
+  expected = "TRNT"
+
+  abbreviate(phrase) is expected
 end

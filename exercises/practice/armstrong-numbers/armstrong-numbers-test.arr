@@ -3,45 +3,78 @@ use context starter2024
 include file("armstrong-numbers.arr")
 
 check "Zero is an Armstrong number":
-  is-armstrong-number(0) is true
+  number = 0
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "Single-digit numbers are Armstrong numbers":
-  is-armstrong-number(5) is true
+  number = 5
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "There are no two-digit Armstrong numbers":
-  is-armstrong-number(10) is false
+  number = 10
+  expected = false
+
+  is-armstrong-number(number) is expected
 end
 
 check "Three-digit number that is an Armstrong number":
-  is-armstrong-number(153) is true
+  number = 153
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "Three-digit number that is not an Armstrong number":
-  is-armstrong-number(100) is false
+  number = 100
+  expected = false
+
+  is-armstrong-number(number) is expected
 end
 
 check "Four-digit number that is an Armstrong number":
-  is-armstrong-number(9474) is true
+  number = 9474
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "Four-digit number that is not an Armstrong number":
-  is-armstrong-number(9475) is false
+  number = 9475
+  expected = false
+
+  is-armstrong-number(number) is expected
 end
 
 check "Seven-digit number that is an Armstrong number":
-  is-armstrong-number(9926315) is true
+  number = 9926315
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "Seven-digit number that is not an Armstrong number":
-  is-armstrong-number(9926314) is false
+  number = 9926314
+  expected = false
+
+  is-armstrong-number(number) is expected
 end
 
 check "Armstrong number containing seven zeroes":
-  is-armstrong-number(186709961001538790100634132976990) is true
+  number = 186709961001538790100634132976990
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
 
 check "The largest and last Armstrong number":
-  is-armstrong-number(115132219018763992565095597973971522401) is true
+  number = 115132219018763992565095597973971522401
+  expected = true
+
+  is-armstrong-number(number) is expected
 end
