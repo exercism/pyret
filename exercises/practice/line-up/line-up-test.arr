@@ -114,10 +114,50 @@ check "format exceptional ordinal numeral 21":
   format-message(name, number) is expected
 end
 
+check "format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11":
+  name = "Ingrid"
+  number = 22
+  expected = "Ingrid, you are the 22nd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
+check "format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11":
+  name = "Mario"
+  number = 33
+  expected = "Mario, you are the 33rd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
+check "format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13":
+  name = "Quentin"
+  number = 52
+  expected = "Quentin, you are the 52nd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
 check "format exceptional ordinal numeral 62":
   name = "Nayra"
   number = 62
   expected = "Nayra, you are the 62nd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
+check "format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12":
+  name = "Ugo"
+  number = 72
+  expected = "Ugo, you are the 72nd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
+check "format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13":
+  name = "Boris"
+  number = 91
+  expected = "Boris, you are the 91st customer we serve today. Thank you!"
 
   format-message(name, number) is expected
 end
@@ -150,6 +190,14 @@ check "format exceptional ordinal numeral 123":
   name = "Yma"
   number = 123
   expected = "Yma, you are the 123rd customer we serve today. Thank you!"
+
+  format-message(name, number) is expected
+end
+
+check "format large number 972 ending in nd even though it is a multiple of 12":
+  name = "Elias"
+  number = 972
+  expected = "Elias, you are the 972nd customer we serve today. Thank you!"
 
   format-message(name, number) is expected
 end
