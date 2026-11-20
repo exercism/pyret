@@ -3,41 +3,81 @@ use context starter2024
 include file("rotational-cipher.arr")
 
 check "rotate a by 0, same output as input":
-  my-rotate("a", 0) is "a"
+  plaintext = "a"
+  shift-key = 0
+  expected = "a"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate a by 1":
-  my-rotate("a", 1) is "b"
+  plaintext = "a"
+  shift-key = 1
+  expected = "b"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate a by 26, same output as input":
-  my-rotate("a", 26) is "a"
+  plaintext = "a"
+  shift-key = 26
+  expected = "a"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate m by 13":
-  my-rotate("m", 13) is "z"
+  plaintext = "m"
+  shift-key = 13
+  expected = "z"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate n by 13 with wrap around alphabet":
-  my-rotate("n", 13) is "a"
+  plaintext = "n"
+  shift-key = 13
+  expected = "a"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate capital letters":
-  my-rotate("OMG", 5) is "TRL"
+  plaintext = "OMG"
+  shift-key = 5
+  expected = "TRL"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate spaces":
-  my-rotate("O M G", 5) is "T R L"
+  plaintext = "O M G"
+  shift-key = 5
+  expected = "T R L"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate numbers":
-  my-rotate("Testing 1 2 3 testing", 4) is "Xiwxmrk 1 2 3 xiwxmrk"
+  plaintext = "Testing 1 2 3 testing"
+  shift-key = 4
+  expected = "Xiwxmrk 1 2 3 xiwxmrk"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate punctuation":
-  my-rotate("Let's eat, Grandma!", 21) is "Gzo'n zvo, Bmviyhv!"
+  plaintext = "Let's eat, Grandma!"
+  shift-key = 21
+  expected = "Gzo'n zvo, Bmviyhv!"
+
+  my-rotate(plaintext, shift-key) is expected
 end
 
 check "rotate all letters":
-  my-rotate("The quick brown fox jumps over the lazy dog.", 13) is "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+  plaintext = "The quick brown fox jumps over the lazy dog."
+  shift-key = 13
+  expected = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+
+  my-rotate(plaintext, shift-key) is expected
 end
