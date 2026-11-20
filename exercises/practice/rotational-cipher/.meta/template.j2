@@ -1,0 +1,3 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{{ macros.generic_suite(include_solution, cases, func="my-rotate", name_map={"text": "plaintext"}) }}
