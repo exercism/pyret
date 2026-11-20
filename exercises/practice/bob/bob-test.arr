@@ -93,6 +93,13 @@ check "shouting gibberish":
   response(input) is expected
 end
 
+check "shouting a statement containing a question mark":
+  input = "DO LIONS EAT PEOPLE? AHHHHH."
+  expected = "Whoa, chill out!"
+
+  response(input) is expected
+end
+
 check "shouting numbers":
   input = "1, 2, 3 GO!"
   expected = "Whoa, chill out!"
