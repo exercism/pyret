@@ -1,0 +1,9 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro includes() -%}
+{{ include_solution }}
+
+include string-dict
+{%- endmacro -%}
+
+{{ macros.generic_suite(includes(), cases, func="word-count") }}
