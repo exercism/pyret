@@ -3,45 +3,78 @@ use context starter2024
 include file("secret-handshake.arr")
 
 check "wink for 1":
-  commands("00001") is [list: "wink"]
+  number = "00001"
+  expected = [list: "wink"]
+
+  commands(number) is expected
 end
 
 check "double blink for 10":
-  commands("00010") is [list: "double blink"]
+  number = "00010"
+  expected = [list: "double blink"]
+
+  commands(number) is expected
 end
 
 check "close your eyes for 100":
-  commands("00100") is [list: "close your eyes"]
+  number = "00100"
+  expected = [list: "close your eyes"]
+
+  commands(number) is expected
 end
 
 check "jump for 1000":
-  commands("01000") is [list: "jump"]
+  number = "01000"
+  expected = [list: "jump"]
+
+  commands(number) is expected
 end
 
 check "combine two actions":
-  commands("00011") is [list: "wink", "double blink"]
+  number = "00011"
+  expected = [list: "wink", "double blink"]
+
+  commands(number) is expected
 end
 
 check "reverse two actions":
-  commands("10011") is [list: "double blink", "wink"]
+  number = "10011"
+  expected = [list: "double blink", "wink"]
+
+  commands(number) is expected
 end
 
 check "reversing one action gives the same action":
-  commands("11000") is [list: "jump"]
+  number = "11000"
+  expected = [list: "jump"]
+
+  commands(number) is expected
 end
 
 check "reversing no actions still gives no actions":
-  commands("10000") is [list: ]
+  number = "10000"
+  expected = [list: ]
+
+  commands(number) is expected
 end
 
 check "all possible actions":
-  commands("01111") is [list: "wink", "double blink", "close your eyes", "jump"]
+  number = "01111"
+  expected = [list: "wink", "double blink", "close your eyes", "jump"]
+
+  commands(number) is expected
 end
 
 check "reverse all possible actions":
-  commands("11111") is [list: "jump", "close your eyes", "double blink", "wink"]
+  number = "11111"
+  expected = [list: "jump", "close your eyes", "double blink", "wink"]
+
+  commands(number) is expected
 end
 
 check "do nothing for zero":
-  commands("00000") is [list: ]
+  number = "00000"
+  expected = [list: ]
+
+  commands(number) is expected
 end
