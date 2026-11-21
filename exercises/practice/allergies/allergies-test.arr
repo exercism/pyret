@@ -2,290 +2,442 @@ use context starter2024
 
 include file("allergies.arr")
 
-# Eggs
+check "testing for eggs allergy -> not allergic to anything":
+  item = "eggs"
+  score = 0
+  expected = false
 
-check "Eggs allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("eggs") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "Eggs allergy - allergic only to eggs":
-  allergens = allergies(1)
-  allergens.allergicTo("eggs") is true
+check "testing for eggs allergy -> allergic only to eggs":
+  item = "eggs"
+  score = 1
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "Eggs allergy - allergic to eggs and something else":
-  allergens = allergies(3)
-  allergens.allergicTo("eggs") is true
+check "testing for eggs allergy -> allergic to eggs and something else":
+  item = "eggs"
+  score = 3
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "Eggs allergy - allergic to something, but not eggs":
-  allergens = allergies(2)
-  allergens.allergicTo("eggs") is false
+check "testing for eggs allergy -> allergic to something, but not eggs":
+  item = "eggs"
+  score = 2
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "Eggs allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("eggs") is true
+check "testing for eggs allergy -> allergic to everything":
+  item = "eggs"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Peanuts
+check "testing for peanuts allergy -> not allergic to anything":
+  item = "peanuts"
+  score = 0
+  expected = false
 
-check "peanuts allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("peanuts") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "peanuts allergy - allergic only to peanuts":
-  allergens = allergies(2)
-  allergens.allergicTo("peanuts") is true
+check "testing for peanuts allergy -> allergic only to peanuts":
+  item = "peanuts"
+  score = 2
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "peanuts allergy - allergic to peanuts and something else":
-  allergens = allergies(7)
-  allergens.allergicTo("peanuts") is true
+check "testing for peanuts allergy -> allergic to peanuts and something else":
+  item = "peanuts"
+  score = 7
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "peanuts allergy - allergic to something, but not peanuts":
-  allergens = allergies(5)
-  allergens.allergicTo("peanuts") is false
+check "testing for peanuts allergy -> allergic to something, but not peanuts":
+  item = "peanuts"
+  score = 5
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "peanuts allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("peanuts") is true
+check "testing for peanuts allergy -> allergic to everything":
+  item = "peanuts"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Shellfish
+check "testing for shellfish allergy -> not allergic to anything":
+  item = "shellfish"
+  score = 0
+  expected = false
 
-check "shellfish allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("shellfish") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "shellfish allergy - allergic only to shellfish":
-  allergens = allergies(4)
-  allergens.allergicTo("shellfish") is true
+check "testing for shellfish allergy -> allergic only to shellfish":
+  item = "shellfish"
+  score = 4
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "shellfish allergy - allergic to shellfish and something else":
-  allergens = allergies(14)
-  allergens.allergicTo("shellfish") is true
+check "testing for shellfish allergy -> allergic to shellfish and something else":
+  item = "shellfish"
+  score = 14
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "shellfish allergy - allergic to something, but not shellfish":
-  allergens = allergies(10)
-  allergens.allergicTo("shellfish") is false
+check "testing for shellfish allergy -> allergic to something, but not shellfish":
+  item = "shellfish"
+  score = 10
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "shellfish allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("shellfish") is true
+check "testing for shellfish allergy -> allergic to everything":
+  item = "shellfish"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Strawberries
+check "testing for strawberries allergy -> not allergic to anything":
+  item = "strawberries"
+  score = 0
+  expected = false
 
-check "strawberries allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("strawberries") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "strawberries allergy - allergic only to strawberries":
-  allergens = allergies(8)
-  allergens.allergicTo("strawberries") is true
+check "testing for strawberries allergy -> allergic only to strawberries":
+  item = "strawberries"
+  score = 8
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "strawberries allergy - allergic to strawberries and something else":
-  allergens = allergies(28)
-  allergens.allergicTo("strawberries") is true
+check "testing for strawberries allergy -> allergic to strawberries and something else":
+  item = "strawberries"
+  score = 28
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "strawberries allergy - allergic to something, but not strawberries":
-  allergens = allergies(20)
-  allergens.allergicTo("strawberries") is false
+check "testing for strawberries allergy -> allergic to something, but not strawberries":
+  item = "strawberries"
+  score = 20
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "strawberries allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("strawberries") is true
+check "testing for strawberries allergy -> allergic to everything":
+  item = "strawberries"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Tomatoes
+check "testing for tomatoes allergy -> not allergic to anything":
+  item = "tomatoes"
+  score = 0
+  expected = false
 
-check "tomatoes allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("tomatoes") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "tomatoes allergy - allergic only to tomatoes":
-  allergens = allergies(16)
-  allergens.allergicTo("tomatoes") is true
+check "testing for tomatoes allergy -> allergic only to tomatoes":
+  item = "tomatoes"
+  score = 16
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "tomatoes allergy - allergic to tomatoes and something else":
-  allergens = allergies(56)
-  allergens.allergicTo("tomatoes") is true
+check "testing for tomatoes allergy -> allergic to tomatoes and something else":
+  item = "tomatoes"
+  score = 56
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "tomatoes allergy - allergic to something, but not tomatoes":
-  allergens = allergies(40)
-  allergens.allergicTo("tomatoes") is false
+check "testing for tomatoes allergy -> allergic to something, but not tomatoes":
+  item = "tomatoes"
+  score = 40
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "tomatoes allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("tomatoes") is true
+check "testing for tomatoes allergy -> allergic to everything":
+  item = "tomatoes"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Chocolate
+check "testing for chocolate allergy -> not allergic to anything":
+  item = "chocolate"
+  score = 0
+  expected = false
 
-check "chocolate allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("chocolate") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "chocolate allergy - allergic only to chocolate":
-  allergens = allergies(32)
-  allergens.allergicTo("chocolate") is true
+check "testing for chocolate allergy -> allergic only to chocolate":
+  item = "chocolate"
+  score = 32
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "chocolate allergy - allergic to chocolate and something else":
-  allergens = allergies(112)
-  allergens.allergicTo("chocolate") is true
+check "testing for chocolate allergy -> allergic to chocolate and something else":
+  item = "chocolate"
+  score = 112
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "chocolate allergy - allergic to something, but not chocolate":
-  allergens = allergies(80)
-  allergens.allergicTo("chocolate") is false
+check "testing for chocolate allergy -> allergic to something, but not chocolate":
+  item = "chocolate"
+  score = 80
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "chocolate allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("chocolate") is true
+check "testing for chocolate allergy -> allergic to everything":
+  item = "chocolate"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Pollen
+check "testing for pollen allergy -> not allergic to anything":
+  item = "pollen"
+  score = 0
+  expected = false
 
-check "pollen allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("pollen") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "pollen allergy - allergic only to pollen":
-  allergens = allergies(64)
-  allergens.allergicTo("pollen") is true
+check "testing for pollen allergy -> allergic only to pollen":
+  item = "pollen"
+  score = 64
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "pollen allergy - allergic to pollen and something else":
-  allergens = allergies(224)
-  allergens.allergicTo("pollen") is true
+check "testing for pollen allergy -> allergic to pollen and something else":
+  item = "pollen"
+  score = 224
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "pollen allergy - allergic to something, but not pollen":
-  allergens = allergies(160)
-  allergens.allergicTo("pollen") is false
+check "testing for pollen allergy -> allergic to something, but not pollen":
+  item = "pollen"
+  score = 160
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "pollen allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("pollen") is true
+check "testing for pollen allergy -> allergic to everything":
+  item = "pollen"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# Cats
+check "testing for cats allergy -> not allergic to anything":
+  item = "cats"
+  score = 0
+  expected = false
 
-check "cats allergy - not allergic to anything":
-  allergens = allergies(0)
-  allergens.allergicTo("cats") is false
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "cats allergy - allergic only to cats":
-  allergens = allergies(128)
-  allergens.allergicTo("cats") is true
+check "testing for cats allergy -> allergic only to cats":
+  item = "cats"
+  score = 128
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "cats allergy - allergic to cats and something else":
-  allergens = allergies(192)
-  allergens.allergicTo("cats") is true
+check "testing for cats allergy -> allergic to cats and something else":
+  item = "cats"
+  score = 192
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "cats allergy - allergic to something, but not cats":
-  allergens = allergies(64)
-  allergens.allergicTo("cats") is false
+check "testing for cats allergy -> allergic to something, but not cats":
+  item = "cats"
+  score = 64
+  expected = false
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-check "cats allergy - allergic to everything":
-  allergens = allergies(255)
-  allergens.allergicTo("cats") is true
+check "testing for cats allergy -> allergic to everything":
+  item = "cats"
+  score = 255
+  expected = true
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
 end
 
-# List
+check "list -> no allergies":
+  score = 0
+  expected = [list: ]
 
-check "list when no allergies":
-  allergens = allergies(0)
-  allergens.list() is [list: ]
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when just eggs":
-  allergens = allergies(1)
-  allergens.list() is [list: "eggs"]
+check "list -> just eggs":
+  score = 1
+  expected = [list: "eggs"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when just peanuts":
-  allergens = allergies(2)
-  allergens.list() is [list: "peanuts"]
+check "list -> just peanuts":
+  score = 2
+  expected = [list: "peanuts"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when just strawberries":
-  allergens = allergies(8)
-  allergens.list() is [list: "strawberries"]
+check "list -> just strawberries":
+  score = 8
+  expected = [list: "strawberries"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when eggs and peanuts":
-  allergens = allergies(3)
-  allergens.list() is [list: "eggs", "peanuts"]
+check "list -> eggs and peanuts":
+  score = 3
+  expected = [list: "eggs", "peanuts"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when more than eggs but not peanuts":
-  allergens = allergies(5)
-  allergens.list() is [list: "eggs", "shellfish"]
+check "list -> more than eggs but not peanuts":
+  score = 5
+  expected = [list: "eggs", "shellfish"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when lots of stuff":
-  allergens = allergies(248)
-  allergens.list() is [list: 
-      "strawberries",
-      "tomatoes",
-      "chocolate",
-      "pollen",
-      "cats"]
+check "list -> lots of stuff":
+  score = 248
+  expected = [list: "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when everything":
-  allergens = allergies(255)
-  allergens.list() is [list: 
-      "eggs",
-      "peanuts",
-      "shellfish",
-      "strawberries",
-      "tomatoes",
-      "chocolate",
-      "pollen",
-      "cats"]
+check "list -> everything":
+  score = 255
+  expected = [list: "eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when no allergen score parts":
-  allergens = allergies(509)
-  allergens.list() is [list: 
-      "eggs", 
-      "shellfish", 
-      "strawberries", 
-      "tomatoes", 
-      "chocolate", 
-      "pollen", 
-      "cats"]
+check "list -> no allergen score parts":
+  score = 509
+  expected = [list: "eggs", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end
 
-check "list when no allergen score parts without highest valid score":
-  allergens = allergies(257)
-  allergens.list() is [list: "eggs"]
+check "list -> no allergen score parts without highest valid score":
+  score = 257
+  expected = [list: "eggs"]
+
+  allergens = allergies(score)
+  allergens.list() is expected
 end

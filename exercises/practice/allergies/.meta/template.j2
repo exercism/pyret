@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | replace("when: ", "") |quote }}:
+{%- if case.property == "allergicTo" %}
+  item = {{ case.input.item | quote }}
+  score = {{ case.input.score | quote }}
+  expected = {{ case.expected | quote }}
+
+  allergens = allergies(score)
+  allergens.allergicTo(item) is expected
+{%- else %}
+  score = {{ case.input.score | quote }}
+  expected = {{ case.expected | quote }}
+
+  allergens = allergies(score)
+  allergens.list() is expected
+{%- endif %}
+end
+{%- endfor %}
