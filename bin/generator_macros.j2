@@ -34,7 +34,7 @@ end
 {%- endmacro %}
 
 
-{%- macro generic_test_case(case, description, func, name_map={}, var_writer) -%}
+{%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars) -%}
 check {{ description | quote }}:
   {{- var_writer(case, name_map) }}
   {{ call_func_with_vars(func, case, name_map) }} {{ check_result(case) }}

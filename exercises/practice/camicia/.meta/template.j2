@@ -1,0 +1,19 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_vars(case, name_map) %}
+  player-a = [list:
+    {%- for cards in case.input.playerA | batch(10) %}
+      {{ cards | map("quote") | join(", ") }}
+      {%- if not loop.last%},{% endif %}
+    {%- endfor %}
+    ]
+  player-b = [list:
+    {%- for cards in case.input.playerB | batch(10) %}
+      {{ cards | map("quote") | join(", ") }}
+      {%- if not loop.last%},{% endif %}
+    {%- endfor %}
+    ]
+  expected = { status: {{ case.expected.status | quote }}, cards: {{ case.expected.cards }}, tricks: {{ case.expected.tricks }} }
+{% endmacro -%}
+
+{{ macros.generic_suite(include_solution, cases, var_writer=write_vars) }}
