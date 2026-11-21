@@ -1,6 +1,6 @@
 {%- import "generator_macros.j2" as macros -%}
 
-{%- macro write_vars(case, name_map) %}
+{%- macro write_vars(case, name_map, multiline=[]) %}
   {%- if case.given | length <= 1 %}
   garden = {{ case.given | quote }}
   {%- else %}

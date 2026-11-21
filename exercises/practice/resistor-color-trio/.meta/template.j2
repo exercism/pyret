@@ -1,0 +1,8 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_vars(case, name_map, multiline=[]) %}
+  colors = {{ case.given | quote }}
+  expected = {{ "%d %s" | format(case.expected.value, case.expected.unit) | quote }}
+{% endmacro -%}
+
+{{ macros.generic_suite(include_solution, cases, var_writer=write_vars) }}
