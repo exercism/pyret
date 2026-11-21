@@ -1,0 +1,3 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{{ macros.generic_suite(include_solution, cases, name_map={"square": "number"}, func_map={"square": "on-square"}) }}
