@@ -30,18 +30,18 @@ use context starter2024
   {%- else -%}
       is expected
   {%- endif %}
+{%- endmacro %}
+
+
+{%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars, result_check=check_result) -%}
+check {{ description | quote }}:
+  {{- var_writer(case, name_map) }}
+  {{ call_func_with_vars(func, case, name_map) }} {{ result_check(case) }}
 end
 {%- endmacro %}
 
 
-{%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars) -%}
-check {{ description | quote }}:
-  {{- var_writer(case, name_map) }}
-  {{ call_func_with_vars(func, case, name_map) }} {{ check_result(case) }}
-{%- endmacro %}
-
-
-{%- macro generic_suite(include, cases, func=None, name_map={}, func_map={}, var_writer=write_vars) -%}
+{%- macro generic_suite(include, cases, func=None, name_map={}, func_map={}, var_writer=write_vars, result_check=check_result) -%}
 {{ header() }}
 
 {{ include }}
@@ -53,8 +53,9 @@ check {{ description | quote }}:
     case,
     case.descriptions | join(" -> "),
     func_map.get(func or case.property_function, func or case.property_function),
-    name_map,
-    var_writer,
+    name_map=name_map,
+    var_writer=var_writer,
+    result_check=result_check,
   )
 }}
 {%- endfor %}

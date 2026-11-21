@@ -10,37 +10,72 @@ fun around(delta :: Number) -> (Number, Number -> Boolean):
 end
 
 check "age on Earth":
-  on-planet("Earth", 1000000000)  is%(around(0.01)) 31.69
+  planet = "Earth"
+  seconds = 1000000000
+  expected = 31.69
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Mercury":
-  on-planet("Mercury", 2134835688) is%(around(0.01)) 280.88
+  planet = "Mercury"
+  seconds = 2134835688
+  expected = 280.88
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Venus":
-  on-planet("Venus", 189839836) is%(around(0.01)) 9.78
+  planet = "Venus"
+  seconds = 189839836
+  expected = 9.78
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Mars":
-  on-planet("Mars", 2129871239) is%(around(0.01)) 35.88
+  planet = "Mars"
+  seconds = 2129871239
+  expected = 35.88
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Jupiter":
-  on-planet("Jupiter", 901876382) is%(around(0.01)) 2.41
+  planet = "Jupiter"
+  seconds = 901876382
+  expected = 2.41
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Saturn":
-  on-planet("Saturn", 2000000000) is%(around(0.01)) 2.15
+  planet = "Saturn"
+  seconds = 2000000000
+  expected = 2.15
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Uranus":
-  on-planet("Uranus", 1210123456) is%(around(0.01)) 0.46
+  planet = "Uranus"
+  seconds = 1210123456
+  expected = 0.46
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "age on Neptune":
-  on-planet("Neptune", 1821023456) is%(around(0.01)) 0.35
+  planet = "Neptune"
+  seconds = 1821023456
+  expected = 0.35
+
+  on-planet(planet, seconds) is%(around(0.01)) expected
 end
 
 check "invalid planet causes error":
-  on-planet("Sun", 680804807) raises "not a planet"
+  planet = "Sun"
+  seconds = 680804807
+
+  on-planet(planet, seconds) raises "not a planet"
 end
