@@ -3,45 +3,78 @@ use context starter2024
 include file("scrabble-score.arr")
 
 check "lowercase letter":
-  score("a") is 1
+  word = "a"
+  expected = 1
+
+  score(word) is expected
 end
 
 check "uppercase letter":
-  score("A") is 1
+  word = "A"
+  expected = 1
+
+  score(word) is expected
 end
 
 check "valuable letter":
-  score("f") is 4
+  word = "f"
+  expected = 4
+
+  score(word) is expected
 end
 
 check "short word":
-  score("at") is 2
+  word = "at"
+  expected = 2
+
+  score(word) is expected
 end
 
 check "short, valuable word":
-  score("zoo") is 12
+  word = "zoo"
+  expected = 12
+
+  score(word) is expected
 end
 
 check "medium word":
-  score("street") is 6
+  word = "street"
+  expected = 6
+
+  score(word) is expected
 end
 
 check "medium, valuable word":
-  score("quirky") is 22
+  word = "quirky"
+  expected = 22
+
+  score(word) is expected
 end
 
 check "long, mixed-case word":
-  score("OxyphenButazone") is 41
+  word = "OxyphenButazone"
+  expected = 41
+
+  score(word) is expected
 end
 
 check "english-like word":
-  score("pinata") is 8
+  word = "pinata"
+  expected = 8
+
+  score(word) is expected
 end
 
 check "empty input":
-  score("") is 0
+  word = ""
+  expected = 0
+
+  score(word) is expected
 end
 
 check "entire alphabet available":
-  score("abcdefghijklmnopqrstuvwxyz") is 87
+  word = "abcdefghijklmnopqrstuvwxyz"
+  expected = 87
+
+  score(word) is expected
 end
