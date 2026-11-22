@@ -41,7 +41,7 @@ check {{ description | quote }}:
 {%- endmacro %}
 
 
-{%- macro generic_suite(include, cases, func=None, name_map={}) -%}
+{%- macro generic_suite(include, cases, func=None, name_map={}, func_map={}) -%}
 {{ header() }}
 
 {{ include }}
@@ -52,7 +52,7 @@ check {{ description | quote }}:
   generic_test_case(
     case,
     case.descriptions | join(" -> "),
-    func or case.property_function,
+    func_map.get(func or case.property_function, func or case.property_function),
     name_map,
   )
 }}
