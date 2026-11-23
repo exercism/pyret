@@ -1,0 +1,42 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_tree(tree) -%}
+  {%- if tree == None -%}
+empty-tree
+  {%- elif tree.left == None and tree.right == None -%}
+tree-node({{ tree.data }}, empty-tree, empty-tree)
+  {%- else -%}
+tree-node({{ tree.data }},
+  {{ write_tree(tree.left) }},
+  {{ write_tree(tree.right) }})
+  {%- endif %}
+{%- endmacro -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+  node-values = {{ case.given | quote | replace('"', '') }}
+ {%- if case.property == "data" %}
+  {%- if case.expected.left == None and case.expected.right == None %}
+  expected = tree-node({{ case.expected.data }}, empty-tree, empty-tree)
+  {%- else %}
+  expected = tree-node({{ case.expected.data }},
+{{ write_tree(case.expected.left) | indent(4, first=True) }},
+{{ write_tree(case.expected.right) | indent(4, first=True) }})
+  {%- endif %}
+
+  binary-search-tree(node-values) is expected
+ {%- elif case.property == "sortedData" %}
+  expected = {{ case.expected | quote | replace('"', '') }}
+
+  tree = binary-search-tree(node-values)
+  tree.sorted-data() is expected
+ {%- else %}
+  {{ case.error_unhandled }}
+ {%- endif %}
+end
+{%- endfor %}
