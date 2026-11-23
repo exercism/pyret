@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro header() -%}
+{{ include_solution }}
+
+fun around(delta :: Number) -> (Number, Number -> Boolean):
+  doc: "provides a predicate that returns true if the absolute values of two numbers are less than or equal to the specified delta"
+  lam(actual, target):
+    num-abs(target - actual) <= delta
+  end
+end
+{%- endmacro %}
+
+{%- macro check_result(case) -%}
+  {%- if case.expect_error -%}
+    raises {{ case.expect_error_msg | quote }}
+  {%- else -%}
+    is%(around(0.01)) expected
+  {%- endif %}
+{%- endmacro %}
+
+{{ macros.generic_suite(header(), cases, func="on-planet", result_check=check_result) }}
