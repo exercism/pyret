@@ -12,7 +12,10 @@ check "extract row from one number matrix":
 end
 
 check "can extract row":
-  string = "1 2\n3 4"
+  string = ```
+1 2
+3 4
+```
   index = 2
   expected = [list: 3, 4]
 
@@ -21,7 +24,10 @@ check "can extract row":
 end
 
 check "extract row where numbers have different widths":
-  string = "1 2\n10 20"
+  string = ```
+1 2
+10 20
+```
   index = 2
   expected = [list: 10, 20]
 
@@ -30,7 +36,12 @@ check "extract row where numbers have different widths":
 end
 
 check "can extract row from non-square matrix with no corresponding column":
-  string = "1 2 3\n4 5 6\n7 8 9\n8 7 6"
+  string = ```
+1 2 3
+4 5 6
+7 8 9
+8 7 6
+```
   index = 4
   expected = [list: 8, 7, 6]
 
@@ -48,7 +59,11 @@ check "extract column from one number matrix":
 end
 
 check "can extract column":
-  string = "1 2 3\n4 5 6\n7 8 9"
+  string = ```
+1 2 3
+4 5 6
+7 8 9
+```
   index = 3
   expected = [list: 3, 6, 9]
 
@@ -57,7 +72,11 @@ check "can extract column":
 end
 
 check "can extract column from non-square matrix with no corresponding row":
-  string = "1 2 3 4\n5 6 7 8\n9 8 7 6"
+  string = ```
+1 2 3 4
+5 6 7 8
+9 8 7 6
+```
   index = 4
   expected = [list: 4, 8, 6]
 
@@ -66,7 +85,11 @@ check "can extract column from non-square matrix with no corresponding row":
 end
 
 check "extract column where numbers have different widths":
-  string = "89 1903 3\n18 3 1\n9 4 800"
+  string = ```
+89 1903 3
+18 3 1
+9 4 800
+```
   index = 2
   expected = [list: 1903, 3, 4]
 
