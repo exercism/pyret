@@ -1,0 +1,31 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_vars(case, name_map) -%}
+  input = {{ case.input.array | quote }}
+  value = {{ case.input.value | quote }}
+  {%- if not case.expect_error %}
+  expected = {{ case.expected | quote }}
+  {%- endif %}
+{%- endmacro -%}
+
+
+{%- macro check_result(case) -%}
+  {%- if case.expect_error -%}
+    raises {{ case.expect_error_msg | replace("array", "list") | quote }}
+  {%- else -%}
+      is expected
+  {%- endif %}
+end
+{%- endmacro %}
+
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.description | quote }}:
+  {{ write_vars(case) }}
+  binary-search(input, value) {{ check_result(case) }}
+{%- endfor %}
