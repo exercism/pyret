@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_vars(case, name_map) %}
+  {%- if case.given | length <= 1 %}
+  garden = {{ case.given | quote }}
+  {%- else %}
+  garden = [list:{% for line in case.given %}
+    {{ line | quote }}
+    {%- if not loop.last %},{% else %}]{% endif %}
+    {%- endfor %}
+  {%- endif %}
+  {%- if case.expected | length <= 1 %}
+  expected = {{ case.expected | quote }}
+  {%- else %}
+  expected = [list:{% for line in case.expected %}
+    {{ line | quote }}
+    {%- if not loop.last %},{% else %}]{% endif %}
+    {%- endfor %}
+  {%- endif %}
+{% endmacro -%}
+
+{{ macros.generic_suite(include_solution, cases, var_writer=write_vars) }}
