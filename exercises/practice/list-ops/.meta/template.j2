@@ -1,0 +1,49 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%-
+  set lambdas = {
+	"(x) -> x modulo 2 == 1": "lam(x): num-modulo(x, 2) == 1 end",
+	"(x) -> x + 1": "lam(x): x + 1 end",
+	"(acc, el) -> el * acc": "lam(elt, acc): elt * acc end",
+	"(acc, el) -> el / acc": "lam(elt, acc): elt / acc end",
+	"(acc, el) -> el + acc": "lam(elt, acc): elt + acc end",
+	("foldl", "(acc, el) -> el / acc"): "lam(elt, acc): acc / elt end",
+  }
+%}
+
+{%-
+  set func_call = {
+    "append": "my-append(list1, list2)",
+    "concat": "my-concatenate(input)",
+	"filter": "my-filter(input, func)",
+	"map": "my-map(input, func)",
+	"foldr": "my-foldr(input, func, initial)",
+	"foldl": "my-foldl(input, func, initial)",
+	"reverse": "my-reverse(input)",
+	"length": "my-length(input)",
+  }
+%}
+
+{%- macro write_vars(case) -%}
+  {%- for var, value in case.input.items() %}
+    {%- if var == "function" %}
+  func = {{ lambdas.get((case.property, value), lambdas[value]) }}
+	{%- else %}
+  {{ {"list": "input", "lists": "input"}.get(var, var) | camel_to_kebab }} = {{ value | quote }}
+	{%- endif %}
+  {%- endfor %}
+  expected = {{ case.expected | quote }}
+{%- endmacro -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  {{- write_vars(case) }}
+
+  {{ func_call[case.property] }} {{ macros.check_result(case) }}
+end
+{%- endfor %}
