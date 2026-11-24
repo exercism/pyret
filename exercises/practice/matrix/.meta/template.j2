@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  {{- macros.write_vars(case, name_map={}, multiline=["string"]) }}
+  m = matrix(string)
+  m.{{case.property_function}}(index) is expected
+end
+{%- endfor %}

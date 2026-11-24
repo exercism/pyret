@@ -1,6 +1,6 @@
 {%- import "generator_macros.j2" as macros -%}
 
-{%- macro write_vars(case, name_map) %}
+{%- macro write_vars(case, name_map, multiline) %}
   player-a = [list:
     {%- for cards in case.input.playerA | batch(10) %}
       {{ cards | map("quote") | join(", ") }}

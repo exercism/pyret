@@ -3,9 +3,15 @@ use context starter2024
 {%- endmacro -%}
 
 
-{%- macro write_vars(case, name_map) -%}
+{%- macro write_vars(case, name_map, multiline=[]) -%}
   {%- for var, value in case.input.items() %}
+    {%- if var in multiline and "\n" in value %}
+  {{ name_map.get(var, var) | camel_to_kebab }} = ```
+{{ value | replace("\\n", "\n") }}
+```
+	{%- else %}
   {{ name_map.get(var, var) | camel_to_kebab }} = {{ value | quote }}
+	{%- endif %}
   {%- endfor %}
   {%- if not case.expect_error %}
   expected = {{ case.expected | quote }}
@@ -33,15 +39,15 @@ use context starter2024
 {%- endmacro %}
 
 
-{%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars, result_check=check_result) -%}
+{%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars, multiline=[], result_check=check_result) -%}
 check {{ description | quote }}:
-  {{- var_writer(case, name_map) }}
+  {{- var_writer(case, name_map, multiline=[]) }}
   {{ call_func_with_vars(func, case, name_map) }} {{ result_check(case) }}
 end
 {%- endmacro %}
 
 
-{%- macro generic_suite(include, cases, func=None, name_map={}, func_map={}, var_writer=write_vars, result_check=check_result) -%}
+{%- macro generic_suite(include, cases, func=None, name_map={}, func_map={}, var_writer=write_vars, multiline=[], result_check=check_result) -%}
 {{ header() }}
 
 {{ include }}
@@ -55,6 +61,7 @@ end
     func_map.get(func or case.property_function, func or case.property_function),
     name_map=name_map,
     var_writer=var_writer,
+    multiline=multiline,
     result_check=result_check,
   )
 }}
