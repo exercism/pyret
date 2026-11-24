@@ -9,12 +9,20 @@ use context starter2024
   {{ name_map.get(var, var) | camel_to_kebab }} = ```
 {{ value | replace("\\n", "\n") }}
 ```
-	{%- else %}
+    {%- else %}
   {{ name_map.get(var, var) | camel_to_kebab }} = {{ value | quote }}
-	{%- endif %}
+    {%- endif %}
   {%- endfor %}
   {%- if not case.expect_error %}
+    {%- if "expected" in multiline and case.expected is iterable and not case.expected is string and case.expected | length > 1 %}
+  expected = [list:
+      {%- for i in case.expected %}
+    {{ i | quote }}{% if loop.last %}]{% else %},{% endif %}
+      {%- endfor %}
+
+    {%- else %}
   expected = {{ case.expected | quote }}
+    {%- endif %}
   {%- endif %}
   {%- if case.input or not case.expect_error %}{{ "\n" }}{% endif %}
 {%- endmacro -%}
@@ -41,7 +49,7 @@ use context starter2024
 
 {%- macro generic_test_case(case, description, func, name_map={}, var_writer=write_vars, multiline=[], result_check=check_result) -%}
 check {{ description | quote }}:
-  {{- var_writer(case, name_map, multiline=[]) }}
+  {{- var_writer(case, name_map, multiline=multiline) }}
   {{ call_func_with_vars(func, case, name_map) }} {{ result_check(case) }}
 end
 {%- endmacro %}
