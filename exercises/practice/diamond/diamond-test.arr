@@ -14,7 +14,8 @@ check "Degenerate case with no row containing 3 distinct groups of spaces":
   expected = [list:
     " A ",
     "B B",
-    " A "]
+    " A "
+  ]
 
   rows(letter) is expected
 end
@@ -26,7 +27,8 @@ check "Smallest non-degenerate case with odd diamond side length":
     " B B ",
     "C   C",
     " B B ",
-    "  A  "]
+    "  A  "
+  ]
 
   rows(letter) is expected
 end
@@ -40,7 +42,8 @@ check "Smallest non-degenerate case with even diamond side length":
     "D     D",
     " C   C ",
     "  B B  ",
-    "   A   "]
+    "   A   "
+  ]
 
   rows(letter) is expected
 end
@@ -98,7 +101,8 @@ check "Largest possible diamond":
     "                      D     D                      ",
     "                       C   C                       ",
     "                        B B                        ",
-    "                         A                         "]
+    "                         A                         "
+  ]
 
   rows(letter) is expected
 end

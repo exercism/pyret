@@ -17,8 +17,9 @@ use context starter2024
     {%- if "expected" in multiline and case.expected is iterable and not case.expected is string and case.expected | length > 1 %}
   expected = [list:
       {%- for i in case.expected %}
-    {{ i | quote }}{% if loop.last %}]{% else %},{% endif %}
+    {{ i | quote }}{% if not loop.last %},{% endif %}
       {%- endfor %}
+  ]
 
     {%- else %}
   expected = {{ case.expected | quote }}
