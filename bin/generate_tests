@@ -107,7 +107,7 @@ def quote(obj) -> str:
     if obj is False:
         return "false"
     if obj is None:
-        return "NULL"
+        return "nothing"
     if isinstance(obj, (int, float)):
         return f"{obj}"
     if isinstance(obj, str):
