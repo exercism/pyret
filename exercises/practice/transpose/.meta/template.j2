@@ -1,0 +1,30 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_list(name, lines) -%}
+  {%- if lines | length <= 1 %}
+  {{ name }} = {{ lines | quote }}
+  {%- else %}
+  {{ name }} = [list:
+    {%- for line in lines %}
+    {{ line | quote }}{% if not loop.last %},{% else %}]{% endif %}
+    {%- endfor %}
+  {%- endif %}
+{%- endmacro -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+{%- if case.input.lines %}
+  {{- write_list("lines", case.input.lines) }}
+  {{- write_list("expected", case.expected) }}
+
+  transpose(lines) is expected
+{%- else %}
+  transpose({{ case.input.lines | quote }}) is {{ case.expected | quote }}
+{%- endif %}
+end
+{%- endfor %}
