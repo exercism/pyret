@@ -1,0 +1,12 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{{ macros.header() }}
+
+{{ include_solution }}
+
+{%- for case in cases %}
+
+check {{ case.descriptions | join(" -> ") | quote }}:
+  two-fer({{ (case.input.name or "") | quote }}) is {{ case.expected | quote }}
+end
+{%- endfor %}
