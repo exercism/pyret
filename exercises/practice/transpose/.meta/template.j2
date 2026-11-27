@@ -1,0 +1,19 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_list(name, lines) -%}
+  {%- if lines | length <= 1 %}
+  {{ name }} = {{ lines | quote }}
+  {%- else %}
+  {{ name }} = [list:
+    {%- for line in lines %}
+    {{ line | quote }}{% if not loop.last %},{% else %}]{% endif %}
+    {%- endfor %}
+  {%- endif %}
+{%- endmacro -%}
+
+{%- macro write_vars(case, name_map, multiline=[]) -%}
+  {{- write_list("lines", case.input.lines) }}
+  {{- write_list("expected", case.expected) }}{{ "\n" }}
+{%- endmacro -%}
+
+{{ macros.generic_suite(include_solution, cases, func=slug, var_writer=write_vars) }}
