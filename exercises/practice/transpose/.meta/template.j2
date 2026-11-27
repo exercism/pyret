@@ -11,20 +11,9 @@
   {%- endif %}
 {%- endmacro -%}
 
-{{ macros.header() }}
-
-{{ include_solution }}
-
-{%- for case in cases %}
-
-check {{ case.descriptions | join(" -> ") | quote }}:
-{%- if case.input.lines %}
+{%- macro write_vars(case, name_map, multiline=[]) -%}
   {{- write_list("lines", case.input.lines) }}
-  {{- write_list("expected", case.expected) }}
+  {{- write_list("expected", case.expected) }}{{ "\n" }}
+{%- endmacro -%}
 
-  transpose(lines) is expected
-{%- else %}
-  transpose({{ case.input.lines | quote }}) is {{ case.expected | quote }}
-{%- endif %}
-end
-{%- endfor %}
+{{ macros.generic_suite(include_solution, cases, func=slug, var_writer=write_vars) }}

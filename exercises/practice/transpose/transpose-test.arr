@@ -3,7 +3,10 @@ use context starter2024
 include file("transpose.arr")
 
 check "empty string":
-  transpose([list: ]) is [list: ]
+  lines = [list: ]
+  expected = [list: ]
+
+  transpose(lines) is expected
 end
 
 check "two characters in a row":
