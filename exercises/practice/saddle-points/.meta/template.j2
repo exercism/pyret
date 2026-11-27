@@ -1,0 +1,17 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- macro write_vars(case, name_map, multiline=[]) -%}
+  matrix = [list:
+  {%- for line in case.given %}
+    {{ line | quote }}{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ]
+  expected = [list:
+  {%- for item in case.expected | sort(attribute="row,column") %}
+    tree({{ item.row }}, {{ item.column }}){% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ]
+{% endmacro -%}
+
+
+{{ macros.generic_suite(include_solution, cases, var_writer=write_vars) }}
