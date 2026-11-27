@@ -3,13 +3,22 @@ use context starter2024
 include file("two-fer.arr")
 
 check "no name given":
-  two-fer("") is "One for you, one for me."
+  name = ""
+  expected = "One for you, one for me."
+
+  two-fer(name) is expected
 end
 
 check "a name given":
-  two-fer("Alice") is "One for Alice, one for me."
+  name = "Alice"
+  expected = "One for Alice, one for me."
+
+  two-fer(name) is expected
 end
 
 check "another name given":
-  two-fer("Bob") is "One for Bob, one for me."
+  name = "Bob"
+  expected = "One for Bob, one for me."
+
+  two-fer(name) is expected
 end
