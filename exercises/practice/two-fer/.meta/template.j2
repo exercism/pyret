@@ -1,0 +1,7 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{%- for case in cases if case.input.name is none %}
+  {%- set _ = case.input.update({"name": ""}) %}
+{%- endfor %}
+
+{{ macros.generic_suite(include_solution, cases, func=slug) }}
